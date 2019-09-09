@@ -1,0 +1,8 @@
+baseURL = "http://d1mo3mx8wgjhk2.cloudfront.net/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "hugo-theme-learn"
+[params]
+editURL = "https://github.com/yuan00yuan/test_hugo_git/tree/master/content/"
+[outputs]
+home = [ "HTML", "RSS", "JSON"]

@@ -1,0 +1,92 @@
+[
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/ai/",
+	"title": "AI",
+	"tags": [],
+	"description": "",
+	"content": " Amazon Connect + Lex 构建智能聊天机器人 Deep Learning AMI下 Tensorflow环境的安装与切换  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/bi/",
+	"title": "BI",
+	"tags": [],
+	"description": "",
+	"content": " 从Aurora迁移到Redshift并利用Quicksight做数据可视化分析TerraformLogo  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/mobile/",
+	"title": "Mobile",
+	"tags": [],
+	"description": "",
+	"content": " Cognito实现微信用户第三方登陆 S3图片处理 Cognito, OpenID Connect实现S3精细化权限控制  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/alexa/",
+	"title": "Alexa",
+	"tags": [],
+	"description": "",
+	"content": " Cognito User Pool实现账户关联  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/iot/",
+	"title": "IOT",
+	"tags": [],
+	"description": "",
+	"content": " IoT系列动手实验  IoT Core 实验1 IoT Core 实验2 IoT Greengrass实验 Alexa与AWS IoT的集成  环境配置：在 Windows 中配置 Docker 镜像  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/migration/",
+	"title": "Migration",
+	"tags": [],
+	"description": "",
+	"content": " Cognito实现微信用户第三方登陆 S3图片处理 Cognito, OpenID Connect实现S3精细化权限控制TerraformLogo  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/cicd/",
+	"title": "CICD",
+	"tags": [],
+	"description": "",
+	"content": " AWS 资源自动 Tag 方案 基于CodePipeline, ECS的cicd解决方案 基于jenkins的容器蓝绿部署解决方案 基于jenkins的java应用程序CICD解决方案 自动化监测 \u0026amp; 启动可用资源  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/network/",
+	"title": "Network",
+	"tags": [],
+	"description": "",
+	"content": " VPC 配置指南 海外域名部署方案：海外域名向国内用户提供服务 快速自建VPN  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/database/",
+	"title": "Database",
+	"tags": [],
+	"description": "",
+	"content": " RedShift vs. MySQL对比实验 Aurora vs. MySQL性能对比试验 MongoDB自动部署CloudFormationLogo ElastiCache:Redis基准测试 DynamoDB Proxy Using API Gateway  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/storage/",
+	"title": "Storage",
+	"tags": [],
+	"description": "",
+	"content": " NFS: 利用S3FS实现共享存储 自动构建Kafka集群  "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/",
+	"title": "Quick Start",
+	"tags": [],
+	"description": "",
+	"content": " Quick Start 介绍 这个项目目的是为了更快的熟悉aws服务，或者在aws上快速部署服务\nDatabase Storage Network CICD Migration IOT Alexa Mobile AI BI "
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://d1mo3mx8wgjhk2.cloudfront.net/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]
