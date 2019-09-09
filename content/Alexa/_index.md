@@ -6,4 +6,4 @@ chapter = false
 pre = "<b>X. </b>"
 +++
 
-* [Cognito User Pool实现账户关联](https://quickstart.org.cn/alexa/account-linking-cognito.html)
+#### [Cognito User Pool实现账户关联](https://quickstart.org.cn/alexa/account-linking-cognito.html)

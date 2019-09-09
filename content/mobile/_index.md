@@ -7,6 +7,6 @@ pre = "<b>X. </b>"
 +++
 
 
-* [Cognito实现微信用户第三方登陆](https://github.com/lab798/quickstart-guide/blob/master/cognito_android.md)
-* [S3图片处理](https://github.com/lab798/quickstart-guide/blob/master/mobile/serverless-image-handler.md)
-* [Cognito, OpenID Connect实现S3精细化权限控制](https://github.com/lab798/aws-s3-cognito-openid-lab)
+#### [Cognito实现微信用户第三方登陆](https://github.com/lab798/quickstart-guide/blob/master/cognito_android.md)
+#### [S3图片处理](https://github.com/lab798/quickstart-guide/blob/master/mobile/serverless-image-handler.md)
+#### [Cognito, OpenID Connect实现S3精细化权限控制](https://github.com/lab798/aws-s3-cognito-openid-lab)
