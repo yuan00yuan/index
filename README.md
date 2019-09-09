@@ -22,7 +22,7 @@
 1. **Reviewer**: 需要找一位SA对文章进行技术的验证与格式上的review。
 
 ### **对Reviewer的要求**    
-作为reviewer，需要对格式，内容两大方面进行review。技术的可行性验证是最基础以及最必要的环节。以下为reviewer具体的responsibility。
+作为reviewer，需要对格式，内容两大方面进行review。技术的可行性验证是最基础以及最必要的环节。以下为reviewer具体的responsibility。   
 1. **内容方面** 。包括但不局限于
    - 内容验证：验证文档所述的技术方案是否work，按照作者的guide能否成功复现。如不能，与作者沟通缺失的环节。
    - 表述不够清晰：reviewer作为普通阅读者，有没有难以看懂的地方。如果不清楚作者用意，需要与作者沟通
@@ -43,9 +43,10 @@
    - 完整的阅读整篇文章，再次检查上述的所有项目是否正确，是否有缺漏或者二次修改错误的地方
    - 作为reviewer，如果对内容有补充，需要额外的检查自己补充的这些是否正确
 
-### **Lab798 well-written example**
+### **Lab798 Well-Written example**
 1. [AWS STS, OpenID Connect 实现 S3 精细化权限控制](https://github.com/lab798/aws-s3-sts-openid-lab)
 1. [AWS Alexa Workshop: Smart Home](https://github.com/lab798/aws-alexa-workshop-smarthome)。在目录下包含有很多子文档，也可点击相应链接做参考。
+
 
 ## 如何提交文章到Lab798
 1. Author开SIM到[lab798 Folder](https://sim.amazon.com/issues/search?q=status:Open%20in:4b47d75a-a845-48d5-ba89-88a92b2c2684&sort=lastUpdatedDate%20desc&mode=auto),点击跳转到[模板]()。需要填写文章地址，reviewer，repo名称等信息。
