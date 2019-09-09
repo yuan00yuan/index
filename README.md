@@ -52,12 +52,12 @@
 1. Author开SIM到lab798 folder，点击跳转到[Lab798模板](https://sim.amazon.com/issues/create?template=73f6c689-9bba-4fcb-8808-8f7e0a477e17)。需要填写repo的名称(此时还不存在此repo，这里的填写是命名作用)，repo的简介，reviewer等信息。如有兴趣，也可点击[lab798文件夹](https://sim.amazon.com/issues/search?q=status:Open%20in:4b47d75a-a845-48d5-ba89-88a92b2c2684&sort=lastUpdatedDate%20desc&mode=auto)查看其他人的SIM。
 1. Lab798 community收到SIM会根据你的命名，在lab798开启对应的repo并留言通知Author地址。
 1. Author点击此地址，folk此repo到自己的GitHub中，进行内容的更新。更新完毕后，提醒reviewer进行review。以下截图为如何folk的示意图。
-   ![](../img/how-to-folk.png)
+   ![](img/how-to-folk.png)
 1. Reviewer完成review。
 1. Author或者reviewer完成对应修改。
 1. Reviewer进行final review，确保内容没有问题后，在SIM下留言。
 1. Author发起pull request.  以下为具体方法。
-   ![](../img/new-pull-request.png) 
+   ![](img/new-pull-request.png) 
    head选择origin repo & branch，base选择你的target repo & branch
-   ![](../img/pull-request-details.png)
+   ![](img/pull-request-details.png)
 1. Lab798管理员收到pull request，手动Approve此请求。 至此，内容提交完成。
