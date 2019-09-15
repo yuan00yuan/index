@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>基于Amazon ECS的国内外文件同步系统解决方案 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/migration/s3_transmission/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item active">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/Migration/s3_transmission.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/migration/'>Migration</a> > 基于Amazon ECS的国内外文件同步系统解决方案
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#解决方案概述">解决方案概述</a></li>
+<li><a href="#步骤">步骤：</a></li>
+<li><a href="#架构部署">架构部署</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              基于Amazon ECS的国内外文件同步系统解决方案
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>很多跨国企业都会有数据同步的需求，这些大型文件主要是存储在S3桶上，通过console或者命令行的形式从本地上传至S3中。本文描述了一种基于容器化的，在Amazon ECS平台上搭建的、快速同步的且基于负载进行扩容和收缩的、通用的解决方案。</p>
+
+<h3 id="解决方案概述">解决方案概述</h3>
+
+<p>该方案如下图所示。
+ <img src="http://cdn.quickstart.org.cn/assets/s3_transmission/archi.png" alt="图片1" />
+在该方案中，我们会启动以下资源：
+1. 一个global的S3桶：用于global作为数据传输的源
+2. 4个Lambda函数： 分别用于文件分片，容器的扩张与收缩，发送传输完成信号
+3. 1个sqs队列：用于存储传输所用参数
+4. 2个cloud watch警报： 监控sqs内消息数量，分别用于需要收缩和扩张容器
+5. 一个ECS集群，一个服务和若干个task：用于搭载容器
+6. 两个dynamoDB 表： T 和C。表T用于记录传输的uplaodID和分段，传输情况，表C用于记录每个片段的唯一标记值-etag。
+7. 具有相应的权限的角色。</p>
+
+<p><a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ecsStack&amp;templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/ecs.yaml"><img src="http://cdn.quickstart.org.cn/assets/GlobalRegion.png" alt="Image link global" /></a>
+<a href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=lamStackS&amp;templateURL=https://s3-us-west-2.amazonaws.com/chinalabs/templates/s3Transmission/lambda.yaml"><img src="http://cdn.quickstart.org.cn/assets/GlobalRegion.png" alt="Image link global" /></a></p>
+
+<p><strong>在运行cloudformation之前需要您准备好：</strong>
+国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey
+国外：一个VPC和其中的一个公有子网， EC2密钥对，用于接收信息的Email地址</p>
+
+<h3 id="步骤">步骤：</h3>
+
+<ol>
+<li>用户在global bucket中成功上传文件。</li>
+<li>触发lambda函数。Lambda函数会判断新文件的大小判断用哪种方式传输，当小于5M的时候会选择直接进行下载上传，当大于5M的时候会进行分段上传。</li>
+<li>当确定用哪种方式进行传输之后会把相应的信息存储至sqs中，包括文件名称，uploadID, 分段情况等。</li>
+<li>同时Lambda会将传输情况备份至dynamoDB表C中,表1用于记载传输情况。</li>
+<li>容器运行在ecs集群中， SQS内的信息被ecs中的servces和task消耗，</li>
+<li>我们为SQS设定了cloudwatch监控，用于根据负载实现容器的扩张和缩小。</li>
+<li>我们创建了警报A 用于判断是否需要根据情况扩张和缩小容器的数量，当sqs内消息数量较大时会触发警报A</li>
+<li>警报A会触发发送消息给SNS</li>
+<li>SNS接到消息之后会触发LambdaA</li>
+<li>LambdaA会调整容器的数量到10个，实现容器的扩张</li>
+<li>当sqs内消息数量较小时会触发警报B</li>
+<li>警报B会触发发送消息给SNS</li>
+<li>SNS接到消息之后会触发LambdaB</li>
+<li>LambdaB会调整容器的数量到1个，实现容器的收缩</li>
+<li>容器会将下载的片段传至国内S3桶。</li>
+<li>容器更改dynamo DB表C中的数据，更新已完成的片段数量</li>
+<li>容器更改dynamo DB 表P，插入新的数据存入etag和uplaod id partnumber等信息。</li>
+<li>当表C中已完成的片段数量和公有片段数量一致的时候会触发Lambda函数</li>
+
+<li><p>函数搜索同一个uploadID的所有的片段的etag 并按partnumber排序，发送给国内的S3桶。S3桶在核对所有的etag之后进行片段组装，出现在国内的S3桶上。</p>
+
+<h3 id="架构部署">架构部署</h3></li>
+
+<li><p>登录 AWS 管理控制台并通过以下网址打开 AWS CloudFormation 控制台：<a href="https://console.aws.amazon.com/cloudformation。">https://console.aws.amazon.com/cloudformation。</a></p></li>
+
+<li><p>如果这是新的 AWS CloudFormation 账户，请单击“Create New Stack”。否则，请单击“Create Stack”。</p></li>
+
+<li><p>在模板部分，选择指定 Amazon S3 模板 URL</p></li>
+
+<li><p>在 Specify Details 部分的 Name 字段中，输入堆栈名称。堆栈名中不得含有空格。</p></li>
+
+<li><p>在 Specify Parameters (指定参数) 页上，您将看到模板的 Parameters 部分中的参数。 请按实际情况填写。</p></li>
+
+<li><p>单击 Next (下一步)。</p></li>
+
+<li><p>在这种情况下，我们不会添加任何标签。单击“Next”。作为密钥值对的标签可帮助您识别堆栈。</p></li>
+
+<li><p>审查堆栈信息。如果满意该设置，则单击“Create ”。</p></li>
+</ol>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

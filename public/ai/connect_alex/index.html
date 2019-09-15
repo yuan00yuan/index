@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/ai/connect_alex/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item active">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/AI/connect_alex.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/ai/'>AI</a> > 利用Amazon Connect + Lex 快速构建自己的呼叫中心 & 智能语音机器人
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实验概览">实验概览</a></li>
+<li><a href="#架构图">架构图</a></li>
+<li><a href="#demo效果">demo效果</a></li>
+<li><a href="#实现步骤">实现步骤</a>
+<ul>
+<li><a href="#1-搭建呼叫中心-实现可以人工call-in-call-out的基本功能">1. 搭建呼叫中心，实现可以人工call in &amp; call out的基本功能</a></li>
+<li><a href="#2-使用lex创建智能语音机器人">2. 使用Lex创建智能语音机器人</a></li>
+<li><a href="#3-将connect与lex进行集成">3. 将Connect与Lex进行集成</a></li>
+<li><a href="#4-绑定电话号码">4. 绑定电话号码</a></li>
+</ul></li>
+<li><a href="#监控-获取指标">监控 &amp; 获取指标</a></li>
+<li><a href="#参考链接">参考链接</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+            </h1>
+          
+
+        
+
+
+
+
+
+<h2 id="实验概览">实验概览</h2>
+
+<p>此实验搭建了一个智能电话订车系统，通过语音交互可以获取用户需要订车的城市，取车以及还车时间，对车型的要求，以及驾驶人的年龄，并且将这些信息通过lambda上传到dynamoDB当中.</p>
+
+<h2 id="架构图">架构图</h2>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/connect_architecture.png" alt="" /></p>
+
+<h2 id="demo效果">demo效果</h2>
+
+<p>可直接拨打+1 443-692-8678测试，触发词&rdquo;reserve&rdquo;  &ldquo;reserver a car&rdquo;,&ldquo;book a car&rdquo;等。</p>
+
+<h2 id="实现步骤">实现步骤</h2>
+
+<h3 id="1-搭建呼叫中心-实现可以人工call-in-call-out的基本功能">1. 搭建呼叫中心，实现可以人工call in &amp; call out的基本功能</h3>
+
+<p>(1) 创建实例，设置基本选项</p>
+
+<pre><code>打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。   
+</code></pre>
+
+<p>(2) 构建呼叫中心</p>
+
+<pre><code>点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。   
+
+除此之外，你可以定义你的call center的运营时间（比如周一9:00AM-18:00PM, 周六10:00AM-14:00PM,周末不上班）等。其他信息可以暂时不进行设置。   
+</code></pre>
+
+<h3 id="2-使用lex创建智能语音机器人">2. 使用Lex创建智能语音机器人</h3>
+
+<p>(1) 创建并定义Bot</p>
+
+<pre><code>打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。
+
+此时testbots上有两个intents（意图）。代表着用户可以利用此bots做两种触发，一种是订车，一种是订住宿。两者只是定义时的逻辑和数据字段不同，因此此例当中，我们只用到car reservation。
+
+在Interts的设置上，有以下参数：    
+
+* Sample utterances：唤醒词，可自行定义或添加。        
+
+* SLOTS字段：希望Lex帮你获取的信息。默认情况下Lex会按照顺序询问，也可以自己定义priority。       
+
+* Fulfillment：定义拿到这些参数之后，下一步希望做什么。可以选择直接把这些信息返回给客户端，或者是利用lambda做进一步的存储、处理、分析等。
+
+* Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。
+</code></pre>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/lex.png" alt="" /></p>
+
+<p>此外左侧tab还包括：</p>
+
+<ul>
+<li><p>error handling：当获取语音输入失败时，自定义语音，以及重复最多尝试次数。</p></li>
+
+<li><p>slot types: 可以给用户提示，一些选择的example。</p></li>
+</ul>
+
+<p>（2） 创建lambda函数：存储进dynamoDB</p>
+
+<p>在与Lex同一个region创建lambda函数connect_using_lex。我们将利用这个函数将car reservation环节所得参数存储到dynamoDB当中。请确保lambda的IAM role具有往ddb写入的权限，且提前在ddb当中创建了表connect_lex_car_rent</p>
+
+<p>基于python 2.7的实例代码如下。</p>
+
+<pre><code>import json
+import boto3
+import uuid
+
+#替换成自己区域的endpoint
+dynamodb = boto3.resource('dynamodb', region_name='us-east-1', endpoint_url=&quot;http://dynamodb.us-east-1.amazonaws.com&quot;)
+
+def lambda_handler(event, context):
+    print(event['currentIntent']['name'])
+    PickUpCity = event['currentIntent']['slots']['PickUpCity']
+    PickUpDate = event['currentIntent']['slots']['PickUpDate']
+    ReturnDate = event['currentIntent']['slots']['ReturnDate']
+    DriverAge  = event['currentIntent']['slots']['DriverAge']
+    CarType    = event['currentIntent']['slots']['CarType']
+    
+
+	#dynamoDB table setting 
+    table = dynamodb.Table('connect_lex_car_rent')
+    item={
+		'id':str(uuid.uuid4()),
+		'PickUpCity':PickUpCity,
+		'PickUpDate':PickUpDate,
+		'ReturnDate':ReturnDate,
+		'DriverAge':DriverAge,
+		'CarType':CarType
+        
+    }
+
+    resp= table.put_item(Item=item)
+    
+    #定义自己的response
+    msg = &quot;Your reservation has been completed, the pickup city is &quot; + PickUpCity
+    
+    return {
+      &quot;sessionAttributes&quot;: {},
+      &quot;dialogAction&quot;: {
+        &quot;type&quot;: &quot;Close&quot;,
+        &quot;fulfillmentState&quot;: &quot;Fulfilled&quot;,
+        &quot;message&quot;: {
+          &quot;contentType&quot;: &quot;PlainText&quot;,
+          &quot;content&quot;: msg
+        }
+        }
+    }
+
+   
+</code></pre>
+
+<p>（3） 在lex当中指定lambda函数，完成构建</p>
+
+<p>BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此intent的编写并build。在build成功后，即可在右侧界面进行文字或者语音的交互测试。且可以看到下方的return当中，lex可以实时的获取这些参数。当测试没有问题后，Publish the bots。</p>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/testbots.png" alt="" /></p>
+
+<h3 id="3-将connect与lex进行集成">3. 将Connect与Lex进行集成</h3>
+
+<p>回到Amazon Connect，创建自己的contact flow （create contact flow）。实际上是一个逻辑图，所有的逻辑构建都可以拖拽连线完成。左侧的tab提供了丰富的模块选择，他们分别可以提供不同的功能，比如播放，获取输入，存储电话录音等等。 （注：与lex的交互暂不支持语音存储）</p>
+
+<p>示例如图。 在该示例当中，核心元素块包括：play prompt播放语音或者背景音乐，get customer input获取用户语音或者按键输入，disconnect挂断。</p>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/contact-flow.png" alt="" /></p>
+
+<ul>
+<li><p><strong>（1）</strong>： 电话接通后，会自动播放欢迎语音（play prompt），询问客户需要什么帮助，等待客户回答（get customer input设置为lex）。</p></li>
+
+<li><p><strong>（2）</strong>： 如果客户的描述符合Sample utterances（如reserve，reserve a car等），则成功触发Lex的smart robot。</p></li>
+
+<li><p><strong>（3）</strong>： 如无问题(default分支)，则播放感谢语音（play prompt），挂断（disconnect）。</p></li>
+
+<li><p><strong>（4）</strong>： 如lex识别语音失败或者客户迟迟没有响应（可设置timeout），则触发另外一个分支error。重新获取用户输入。</p></li>
+
+<li><p><strong>（5）</strong>： 等待用户按键响应。按1位重新预定，按0直接退出。 按键是通过DTMF设置的</p></li>
+</ul>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/get-customer-input-dtmf.png" alt="" /></p>
+
+<p>完成自己的逻辑设计后，save &amp; publish.</p>
+
+<h3 id="4-绑定电话号码">4. 绑定电话号码</h3>
+
+<p>自定义完contact flow之后，需要将此flow与你的电话号码进行绑定。在dashboard- view phone number当中可以完成此操作。</p>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/bindphone.png" alt="" /></p>
+
+<h2 id="监控-获取指标">监控 &amp; 获取指标</h2>
+
+<p>Amazon connect还提供了完善的指标记录。比如可以查询来电数量，来电录音等。在dashboard当中均可以找到。如图，可以查询某一天的来电状况。</p>
+
+<p><img src="https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/metics.png" alt="" /></p>
+
+<h2 id="参考链接">参考链接</h2>
+
+<p><a href="https://aws.amazon.com/cn/blogs/contact-center/amazon-connect-with-amazon-lex-press-or-say-input/">https://aws.amazon.com/cn/blogs/contact-center/amazon-connect-with-amazon-lex-press-or-say-input/</a></p>
+
+<p><a href="https://aws.amazon.com/cn/blogs/aws/new-amazon-connect-and-amazon-lex-integration/">https://aws.amazon.com/cn/blogs/aws/new-amazon-connect-and-amazon-lex-integration/</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/bi/" title="BI" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

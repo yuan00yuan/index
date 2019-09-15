@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>AWS Cognito User Pool实现Alexa账户关联 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/alexa/account-linking-cognito/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item active">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/Alexa/account-linking-cognito.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/alexa/'>Alexa</a> > AWS Cognito User Pool实现Alexa账户关联
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#什么是账户关联">什么是账户关联</a></li>
+<li><a href="#配置cognito-user-pool">配置Cognito User Pool</a>
+<ul>
+<li><a href="#创建cognito-user-pool">创建Cognito User Pool</a></li>
+<li><a href="#创建应用程序客户端">创建应用程序客户端</a></li>
+<li><a href="#配置应用程序客户端-oauth-2-0-设置">配置应用程序客户端 OAuth 2.0 设置</a></li>
+<li><a href="#配置-cognito-user-pool-认证域名">配置 Cognito User Pool 认证域名</a></li>
+<li><a href="#配置-amazon-cognito认证ui-可选">配置 Amazon Cognito认证UI（可选）</a></li>
+</ul></li>
+<li><a href="#配置alexa-account-linking">配置Alexa Account Linking</a></li>
+<li><a href="#在alexa-app中绑定用户身份">在Alexa App中绑定用户身份</a>
+<ul>
+<li><a href="#创建测试用户">创建测试用户</a></li>
+<li><a href="#账户关联">账户关联</a></li>
+</ul></li>
+<li><a href="#更多阅读">更多阅读</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              AWS Cognito User Pool实现Alexa账户关联
+            </h1>
+          
+
+        
+
+
+
+
+
+<blockquote>
+<p>完成本实验预计使用1小时
+完成该实验需要可以一个已经注册好的 Alexa Skill, 并且能够在 Alexa App 或者 Alex Web Portal 中显示该 Alexa Skill。</p>
+</blockquote>
+
+<p>本文将介绍如何利用AWS Cognito User Pool实现Alexa的账户关联。这里将不涉及到 Cognito 或者 Alexa 相关的开发。有关 Cognito User Pool 的更多资料请参考
+<a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">官方文档</a>。
+有关Alexa的开发资料请参考 <a href="https://developer.amazon.com/alexa">Alexa Developer Portal</a>。</p>
+
+<h2 id="什么是账户关联">什么是账户关联</h2>
+
+<p>账户关联(Account Linking)允许将用户在Alexa账号系统中的身份与另外一个账号系统中的身份关联起来。
+假设这样的一个问题，系统X中存在用户a和用户b, Alexa 账户体系中存在用户A和用户B, 那么系统X收到来自
+Alexa的指令后，如何区分这是来自用户a的请求还是用户b的呢？账户关联就是为了解决这个问题，将Alexa的账户
+系统与另一个账号系统中的身份关联起来。</p>
+
+<p>Alexa账户关联是标准的 OAuth2.0 授权, 本文不深入探讨 OAuth2.0, 有关 OAuth2.0 的理解可以参考
+<a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html">理解OAuth 2.0</a>。</p>
+
+<p>AWS的 <a href="https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-user-identity-pools.html">Cognito User Pool</a>提
+供了标准的 OAuth 2.0 的认证和授权，因此借助 Cognito User Pool 可以快速实现和 Alexa 的账户关联。</p>
+
+<p>下面这张流程图展示了一个用户在 Alexa APP 中进行账户关联，Alexa 是如何从授权服务器获得 AccessToken 的整个过程。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/auth-code-flow.png" alt="Auth-Code-Flow" /></p>
+
+<p>在完成 Alexa 的账户关联之后，用户与 Skill 交互产生的指令会被发送到 Resource Server, 该指令中包含用户的 AccessToken。
+这里的 Resource Server 就是 Alexa Kill 控制中配置的 <a href="https://developer.amazon.com/zh/docs/custom-skills/host-a-custom-skill-as-a-web-service.html"><strong>Endpoint</strong></a>。</p>
+
+<p>在 Resource Server 上，通过 Decode AccessToken, 能够获得用户名。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/skill-interaction-flow.png" alt="Flow" /></p>
+
+<h2 id="配置cognito-user-pool">配置Cognito User Pool</h2>
+
+<p>AWS Cognito User Pool提供了基于OAuth 2.0的实现，这里提供详细的Cognito User Pool的配置流程。</p>
+
+<h3 id="创建cognito-user-pool">创建Cognito User Pool</h3>
+
+<ol>
+<li><p>打开 <a href="https://console.aws.amazon.com/cognito/home">Amazon Cognito Console</a>。</p></li>
+
+<li><p>选择 <strong>管理用户池</strong>。</p></li>
+
+<li><p>在页面右上角，选择<strong>创建用户池</strong>。</p></li>
+
+<li><p>为您的用户池指定一个名称，然后选择<strong>查看默认值</strong>以保存该名称。</p></li>
+
+<li><p>在<strong>属性</strong>页面上，选择<strong>电子邮件地址或电话号码</strong>，然后选择<strong>允许使用电子邮件地址</strong>。</p></li>
+
+<li><p>在页面底部，选择<strong>下一步</strong>以保存属性。</p></li>
+
+<li><p>在页面左侧的导航栏上，选择<strong>审核</strong>。</p></li>
+
+<li><p>在<strong>审核</strong>页面底部，选择<strong>创建池</strong>。</p></li>
+</ol>
+
+<h3 id="创建应用程序客户端">创建应用程序客户端</h3>
+
+<p>您可以为用户池创建多个应用程序，通常一个应用程序对应于该应用程序的平台。在和Alexa的结合的
+场景中，Alexa是用户池的一个应用程序客户端。</p>
+
+<ol>
+<li><p>在页面左侧的导航栏上，选择<strong>应用程序客户端</strong>。</p></li>
+
+<li><p>在<strong>应用程序客户端</strong>选项卡中，选择<strong>添加应用程序客户端</strong></p></li>
+
+<li><p>指定<strong>应用程序客户端名称</strong></p></li>
+
+<li><p>指定应用程序的<strong>刷新令牌的到期时间 (天)</strong>。默认值是 30。
+您可以将其更改为 1 到 3650 之间的任何值。</p></li>
+
+<li><p>在页面底部，选择<strong>创建应用程序客户端</strong>。</p></li>
+</ol>
+
+<h3 id="配置应用程序客户端-oauth-2-0-设置">配置应用程序客户端 OAuth 2.0 设置</h3>
+
+<p>默认情况下应用程序客户端的 OAuth 2.0 是不开放的，按照以下步骤，打开客户端的 OAuth 2.0 认证与授权。</p>
+
+<ol>
+<li><p>在页面左侧的导航栏上，选择<strong>应用程序客户端设置</strong>。</p></li>
+
+<li><p>找到刚才创建的应用程序客户端。</p></li>
+
+<li><p>在<strong>启用身份提供商</strong>中，选择 <strong>Cognito User Pool</strong> 。</p></li>
+
+<li><p>在<strong>回调 URL</strong> 中，指定 Alexa Kill 的 <strong>Redirect URLs</strong>。</p></li>
+</ol>
+
+<blockquote>
+<p>在 Alexa Console 中选择需要配置的 Alexa Skill, 在左侧页面导航栏选择 <strong>Account Linking</strong>, 网页底部找到的 <strong>Redirect URLs</strong>。</p>
+
+<p>Alexa 根据用户在哪里注册的设备，跳转到不同的URL, 为了服务所有Alexa用户，建议将三个Redirect URL都填入Cognito，点击查看<a href="https://developer.amazon.com/docs/account-linking/configure-authorization-code-grant.html#redirect-url-values">更多信息</a></p>
+</blockquote>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/redirect-urls.png" alt="Redirect Urls" /></p>
+
+<ol>
+<li><p>在<strong>允许的 OAuth 流程</strong>中，选择 <strong>Authorization code grant</strong>。</p></li>
+
+<li><p>在<strong>许的 OAuth 范围</strong>中，至少选择 <strong>openid</strong>。</p></li>
+
+<li><p>选择<strong>保存修改</strong>。</p></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/enable-oauth.png" alt="OAuth 2.0配置" /></p>
+
+<h3 id="配置-cognito-user-pool-认证域名">配置 Cognito User Pool 认证域名</h3>
+
+<p>Cognito 域名是 Alexa 进行 OAuth2.0 认证时的跳转域名。默认的域名为<code>https://&lt;domain-prefix&gt;.auth.&lt;region&gt;.amazoncognito.com</code>。
+您可以配置自己的域名，关于如何配置自己的域名，请参考<a href="https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">将自定义域添加到用户池</a>。
+本文将使用AWS提供的默认域名。</p>
+
+<ol>
+<li><p>在页面左侧的导航栏上，选择<strong>域名</strong>。</p></li>
+
+<li><p>指定<strong>您的域名</strong>，选择<strong>检查可用性</strong>。</p></li>
+
+<li><p>当提示为<strong>此域可用</strong>后，选择<strong>保存更改</strong>。</p></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/cognito-domain.png" alt="域名" /></p>
+
+<blockquote>
+<p>请记录 Cognito User Pool 的认证域名，可以使用默认域名或者自己的域名，在后续的Alexa配置中需要使用。</p>
+</blockquote>
+
+<h3 id="配置-amazon-cognito认证ui-可选">配置 Amazon Cognito认证UI（可选）</h3>
+
+<p>Amazon Cognito提供默认的UI, 如下图:</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/cognito-UI.png" alt="默认UI" /></p>
+
+<p>可以根据<a href="https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-user-pools-app-ui-customization.html">自定义内置登录网页和注册网页</a>
+修改登录的页面。如果不希望使用Cognito提供的登录和注册页面，也可以根据API自己实现。</p>
+
+<h2 id="配置alexa-account-linking">配置Alexa Account Linking</h2>
+
+<p>此章节将配置Alex Account Linking, 这里假设已经创建了一个*Alexa SkillSet*或者*Alexa SmartHome Skill*。</p>
+
+<ol>
+<li><p>登录<a href="https://developer.amazon.com/alexa/console/ask">Alexa 控制台</a>。</p></li>
+
+<li><p>在 <strong>Skills</strong> 列表页中，选择需要做账户关联的技能。</p></li>
+
+<li><p>在左侧页面导航栏中，选择 <strong>Account Linking</strong>。</p></li>
+
+<li><p>打开&rdquo;是否允许账号&rdquo;的开关。</p></li>
+
+<li><p>在 <strong>Security Provider Information</strong> 中，选择 <strong>Auth Code Grant</strong>。</p></li>
+
+<li><p>在 <strong>Authorization URI</strong> 中，指定 <code>https://&lt;your-cognito-domain&gt;/oauth2/authorize</code>。</p></li>
+
+<li><p>在 <strong>Access Token URI</strong> 中，指定 <code>https://&lt;your-cognito-domain&gt;/oauth2/token</code>。</p></li>
+
+<li><p>在 <strong>Client ID</strong> 中，指定 Cognito 应用程序客户端的<strong>应用程序客户端 ID</strong>。</p></li>
+</ol>
+
+<blockquote>
+<p>在<strong>Cognito控制台</strong>左侧选择<strong>应用程序客户端</strong>, 点击<strong>显示详细信息</strong>，可以查看<strong>应用程序客户端 ID</strong>和<strong>应用程序客户端密钥</strong>。</p>
+</blockquote>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/app-client.png" alt="App Client" /></p>
+
+<ol>
+<li>在<strong>Client Secret</strong>，指定Cognito应用程序客户端的<strong>应用程序客户端密钥</strong>。</li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/alexa-account-linking.png" alt="Alexa Account Linking" /></p>
+
+<ol>
+<li><p>在页面左上角，选择<strong>Save</strong>。</p></li>
+
+<li><p>（可选）如果是 Custom Skill, 需要重新 Build Skill。选择左侧页面导航栏中的 <strong>CUSTOM</strong>, 选择 <strong>Invocation</strong>,
+点击 <strong>Build Model</strong> 按钮，等待 <strong>Build Success</strong> 的提示。</p></li>
+</ol>
+
+<p>关于更多 Cognito OAuth2.0 的 URI, 请参考<a href="https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html">Amazon Cognito 用户池 Auth API 参考</a></p>
+
+<h2 id="在alexa-app中绑定用户身份">在Alexa App中绑定用户身份</h2>
+
+<h3 id="创建测试用户">创建测试用户</h3>
+
+<ol>
+<li><p>打开 <a href="https://console.aws.amazon.com/cognito/home">Amazon Cognito Console</a>。</p></li>
+
+<li><p>选择刚才创建的用户池。</p></li>
+
+<li><p>在页面左侧导航栏中，选择<strong>用户和组</strong>。</p></li>
+
+<li><p>选择<strong>创建用户</strong>，并指定<strong>用户名</strong>, <strong>临时密码</strong>, <strong>电话号码</strong>及<strong>电子邮件</strong>，并选择创建用户。</p></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/demo-user.png" alt="测试用户" /></p>
+
+<h3 id="账户关联">账户关联</h3>
+
+<blockquote>
+<p>Alexa APP的登录账号，必须和登录Alexa Developer控制台的账号相同，才能看见开发中的Alexa技能。</p>
+</blockquote>
+
+<ol>
+<li><p>在手机上打开 Alexa APP, 或者使用 <a href="https://alexa.amazon.com/spa/index.html">Alexa Web Portal</a>。</p></li>
+
+<li><p>在 APP 左上角，选择&rdquo;汉堡&rdquo;按钮。</p></li>
+
+<li><p>在左侧导航栏页面中，选择 <strong>Skills</strong>。</p></li>
+
+<li><p>在 <strong>All Skills</strong> 页面右上角，选择 <strong>Your Skills</strong>。</p></li>
+
+<li><p>在 <strong>Your Skills</strong> 页面，选择 <strong>DEV SKILLS</strong>, 此处将列出所有开发中的技能。</p></li>
+
+<li><p>选择创建的 Alexa 技能，在详情页，选择 <strong>Enable</strong>。如果已经显示为 <strong>Enable</strong>，可以先选择 <strong>Disable</strong> 之后，再次 <strong>Enable</strong>。</p></li>
+
+<li><p>在弹出的登录页面中，输入 Cognito User Pool 中用户账号和密码。</p></li>
+
+<li><p>(可选) Cognito User Pool 在第一次登录之后，需要修改初始密码。</p></li>
+
+<li><p>账户关联成功。</p></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/alexa/account-linking/link-success.png" alt="" /></p>
+
+<p>此时，账号已经关联成功，Alexa 在后续发送给 HTTP Endpoint 或者 AWS Lambda 的消息体中均会包含用户的 <strong>accessToken</strong>,
+该 <strong>accessToken</strong> 为 JWT 格式。Alexa 发送的 JWT token 中的 <strong>sub</strong> 字段就是 Cognito User Pool 中的用户名。</p>
+
+<h2 id="更多阅读">更多阅读</h2>
+
+<p><a href="https://developer.amazon.com/docs/account-linking/understand-account-linking.html">Understand Account Linking</a></p>
+
+<p><a href="https://tools.ietf.org/html/rfc6749">The OAuth2.0 Authorization Framework</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JSON Web Token</a></p>
+
+<p><a href="https://docs.aws.amazon.com/zh_cn/cognito/latest/developerguide/cognito-user-identity-pools.html">AWS Cognito User Pool</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/alexa/" title="Alexa"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/iot/" title="IOT" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

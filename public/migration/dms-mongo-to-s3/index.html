@@ -1,0 +1,1950 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>使用 AWS DMS 迁移 MongoDB 到 S3 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/migration/dms-mongo-to-s3/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item active">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/Migration/dms-mongo-to-s3.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/migration/'>Migration</a> > 使用 AWS DMS 迁移 MongoDB 到 S3
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#概述">概述</a>
+<ul>
+<li>
+<ul>
+<li><a href="#概念解释">概念解释</a></li>
+<li><a href="#注意事项">注意事项</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#迁移步骤">迁移步骤</a>
+<ul>
+<li><a href="#配置-iam-角色">配置 IAM 角色</a></li>
+<li><a href="#配置复制实例">配置复制实例</a></li>
+<li><a href="#配置源端">配置源端</a></li>
+<li><a href="#配置目标端">配置目标端</a></li>
+<li><a href="#发起任务">发起任务</a></li>
+</ul></li>
+<li><a href="#迁移结果">迁移结果</a>
+<ul>
+<li><a href="#mongodb-中的数据">MongoDB 中的数据</a></li>
+<li><a href="#未触发持续复制的迁移结果">未触发持续复制的迁移结果</a></li>
+<li><a href="#触发了持续复制后的迁移结果">触发了持续复制后的迁移结果</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              使用 AWS DMS 迁移 MongoDB 到 S3
+            </h1>
+          
+
+        
+
+
+
+
+
+<h3 id="概述">概述</h3>
+
+<p>DMS 的迁移部署耗时约十分钟.</p>
+
+<h5 id="概念解释">概念解释</h5>
+
+<ul>
+<li><p><strong>源</strong>:  您需要迁移数据的来源, 在这里的源为您的 <strong>MongoDB 数据库</strong></p></li>
+
+<li><p><strong>目标</strong>: 您需要迁移数据的目的地, 在这里目标为您的 <strong>S3 桶</strong></p></li>
+
+<li><p><strong>复制实例</strong>:  您可以将复制实例理解为一台虚拟主机. AWS DMS 执行数据迁移时, 会先从<strong>源</strong>数据库中读取数据到<strong>复制实例</strong>, 再对数据进行相应的调整( 如格式转换)后, 最终将数据载入到<strong>目标</strong>数据库</p></li>
+</ul>
+
+<p><img src="https://docs.aws.amazon.com/zh_cn/dms/latest/userguide/images/datarep-conceptual2.png" alt="" /></p>
+
+<ul>
+<li><strong>持续复制( 也叫做数据捕获, CDC )</strong>: 在实际生产中, 当<strong>源</strong>数据库中数据发生改变时,  我们需要在<strong>目标</strong>数据库中也应用这些改变, 如若达到这种目的, 可以使用<strong>CDC</strong>.</li>
+</ul>
+
+<p>特别的, CDC 只会读取您<strong>改变</strong>的那一部分数据, 即<strong>增量迁移</strong></p>
+
+<h5 id="注意事项">注意事项</h5>
+
+<ul>
+<li><strong>MongoDB 版本</strong>: 若将 MongoDB 作为<strong>源</strong>, 则 MongoDB 的版本必须为 <strong>2.6.x</strong> 或 <strong>3.x</strong></li>
+<li>若要使用 <strong>CDC</strong> 功能, AWS DMS 必须要具有对 <strong>oplog</strong> 的访问权限, 因此请确保您的 MongoDB 具有可用的<strong>副本集</strong>. 有关更多的信息, 请参阅 <a href="https://docs.mongodb.com/manual/tutorial/deploy-replica-set/">MongoDB 文档</a></li>
+</ul>
+
+<h3 id="迁移步骤">迁移步骤</h3>
+
+<blockquote>
+<p><strong>重要</strong></p>
+
+<p>在本文中所涉及<strong>参数设置</strong>仅为演示作用</p>
+
+<p>通常情况下, 您都需要根据您的实际情况, 设置<strong>适合您自己</strong>的参数</p>
+
+<p>更多的参数细节请参考 <a href="https://docs.aws.amazon.com/zh_cn/dms/latest/userguide/CHAP_BestPractices.html">DMS 最佳实践</a></p>
+</blockquote>
+
+<h4 id="配置-iam-角色">配置 IAM 角色</h4>
+
+<ol>
+<li>在 <strong>IAM</strong> 导航中选择<strong>角色</strong>, 并点击<strong>创建角色</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902135728450.png" alt="image-20180902135728450" /></p>
+
+<ol>
+<li>在<strong>创建角色</strong>面板的<strong>选择受信任实体的类型</strong>中选择 <strong>AWS 产品</strong>, 在<strong>选择将使用此角色的服务</strong>中选择 <strong>DMS</strong>, 最后点击下一步</li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902135929445.png" alt="image-20180902135929445" /></p>
+
+<ol>
+<li>在<strong>附加权限策略</strong>中搜索 <strong>EC2</strong>, 并勾选 <strong>AmazonEC2FullAccess</strong>. 再搜索 <strong>S3</strong>, 并勾选 <strong>AmazonS3FullAccess</strong>, 再点击<strong>下一步</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902140247757.png" alt="image-20180902140247757" /></p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902140421994.png" alt="image-20180902140421994" /></p>
+
+<ol>
+<li>在<strong>审核</strong>页面中, 自定义您的<strong>角色名称</strong>( 本文中设置为了<em>dms-mongo-s3</em> )及<strong>角色描述</strong>( 可选 ), 最后点击创建角色</li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902140720071.png" alt="image-20180902140720071" /></p>
+
+<ol>
+<li>在<strong>完成页面</strong>点击<strong>角色名</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902171518511.png" alt="image-20180902171518511" /></p>
+
+<p>在<strong>摘要</strong>页面中记录下<strong>角色 ARN</strong></p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902171612792.png" alt="image-20180902171612792" /></p>
+
+<h4 id="配置复制实例">配置复制实例</h4>
+
+<ol>
+<li>在 <strong>DMS 导航</strong>中选择<strong>复制实例</strong>, 并选择<strong>创建复制实例</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902164019595.png" alt="image-20180902164019595" /></p>
+
+<ol>
+<li><p>在<strong>创建复制实例</strong>页面, 按以下内容配置, <strong>未说明</strong>的配置项即采用<strong>默认配置</strong></p>
+
+<ul>
+<li><strong>名称</strong>: <strong>用户自定义</strong>, 本文采用<em>dms-mongo-s3</em></li>
+<li><strong>描述</strong>: <strong>用自定义</strong></li>
+<li><strong>实例类</strong>: <strong>请根据您的数据情况选择合适的实例类型</strong>, 本文中采用为 <em>dms.t2.large</em></li>
+<li><strong>VPC</strong>: <strong>请采用能连接到您 MongoDB 数据库所在的 VPC</strong></li>
+<li><strong>多可用区部署</strong>: <strong>请根据您的需要选择是否启用</strong>, 本文采用<em>否</em></li>
+<li><strong>公开访问</strong>: <strong>请根据您的需要选择是否启用</strong>, 本文采用<em>是</em></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902164718794.png" alt="image-20180902164718794" /></p>
+
+<p>再点开<strong>高级</strong></p>
+
+<ul>
+<li><strong>VPC 安全组</strong>: 选择合适的安全组, 确保<strong>您的复制实例能连接到您的 MongoDB 数据库</strong></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902164940267.png" alt="image-20180902164940267" /></p>
+
+<ol>
+<li>点击<strong>创建复制实例</strong></li>
+</ol>
+
+<h4 id="配置源端">配置源端</h4>
+
+<p>在配置源端前, 请确保您的 MongoDB 已满足使用 AWS DMS 的条件</p>
+
+<ol>
+<li>在 <strong>DMS 导航</strong>中选择<strong>终端节点</strong>, 并选择<strong>创建终端节点</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902163224923.png" alt="image-20180902163224923" /></p>
+
+<ol>
+<li><p>在<strong>创建终端节点</strong>, 按以下内容配置, <strong>未说明</strong>的配置项即采用<strong>默认配置</strong></p>
+
+<ul>
+<li><strong>终端节点类型</strong>: <strong>源</strong></li>
+<li><strong>终端节点标识符</strong>: <strong>自定义</strong>, 本文中采用 <em>dms-mongo</em></li>
+<li><strong>源引擎</strong>: <strong>mongodb</strong></li>
+<li><strong>服务器名称</strong>: <strong>&lt;您 MongoDB 数据库所在的 IP 地址&gt;</strong></li>
+<li><strong>端口</strong>: <strong>&lt;您 MongoDB 数据库的的端口号&gt;</strong></li>
+<li><strong>身份验证模式</strong>: 若您的数据库需要用户身份验证, 请选择 <strong>password</strong>, 然后填写以下<strong>四项</strong>内容</li>
+<li><strong>用户名</strong>:  请填入具有<strong>合适权限</strong> 的<strong>MongoDB</strong> 用户的用户名, 关于将 MongoDB 用作 AWS DMS 的源时所需的权限, 请参考<a href="https://docs.aws.amazon.com/zh_cn/dms/latest/userguide/CHAP_Source.MongoDB.html">将 MongoDB 作为 AWS DMS 源</a></li>
+<li><strong>密码</strong>: 您 <strong>MongoDB用户</strong>对应的密码</li>
+<li><strong>身份验证来源</strong>: 您 <strong>MongoDB用户</strong>所在的身份库, 本文中为 MongoDB 默认的身份库<em>admin</em></li>
+<li><strong>数据库名称</strong>: 您<strong>要迁移</strong>的数据库名称</li>
+<li><strong>元数据模式</strong>: <strong>document</strong></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902170355942.png" alt="image-20180902170355942" /></p>
+
+<ol>
+<li><p>在<strong>测试终端节点连接</strong>中,按以下内容配置,并选择<strong>运行测试</strong></p>
+
+<ul>
+<li><strong>VPC</strong>: 选择您在<strong>配置复制实例</strong>这一步骤中创建的<strong>复制实例</strong>所在的<strong>VPC</strong></li>
+<li><strong>复制实例</strong>: 选择您在<strong>配置复制实例</strong>这一步骤中创建的<strong>复制实例</strong></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902170618952.png" alt="image-20180902170618952" /></p>
+
+<ol>
+<li>在点击<strong>运行测试</strong>完成后, 等待一段时间后, 如若配置成功, 则会出现<strong>已成功测试连接</strong>的字样, 之后点击 <strong>Save</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902170921889.png" alt="image-20180902170921889" /></p>
+
+<h4 id="配置目标端">配置目标端</h4>
+
+<p>请先在 <strong>S3</strong> 中建立您需要存放<strong>迁移后数据</strong>的<strong>桶</strong>, 本文所使用的桶为 <em>dms-mongo-s3</em></p>
+
+<ol>
+<li>在 <strong>DMS 导航</strong>中选择<strong>终端节点</strong>, 并选择<strong>创建终端节点</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902171333032.png" alt="image-20180902171333032" /></p>
+
+<ol>
+<li><p>在<strong>创建终端节点</strong>, 按以下内容配置, <strong>未说明</strong>的配置项即采用<strong>默认配置</strong></p>
+
+<ul>
+<li><strong>终端节点类型</strong>: <strong>源</strong></li>
+<li><strong>终端节点标识符</strong>: <strong>自定义</strong>, 本文中采用 <em>dms-s3</em></li>
+<li><strong>目标引擎</strong>: <strong>s3</strong></li>
+<li><strong>服务访问角色 ARN</strong>: 您在<strong>配置 IAM 角色</strong>这一步骤中创建的角色的 <strong>ARN</strong></li>
+<li><strong>存储桶名称</strong>:  存放<strong>迁移后数据</strong>的<strong>桶的名称</strong>, 本文为 <em>dms-mongo-s3</em></li>
+</ul></li>
+</ol>
+
+<p>在<strong>测试终端节点连接</strong>下</p>
+
+<ul>
+<li><strong>VPC</strong>: 选择您在<strong>配置复制实例</strong>这一步骤中创建的<strong>复制实例</strong>所在的<strong>VPC</strong></li>
+<li><strong>复制实例</strong>: 选择您在<strong>配置复制实例</strong>这一步骤中创建的<strong>复制实例</strong></li>
+</ul>
+
+<p>点击<strong>运行测试</strong></p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902171815104.png" alt="image-20180902171815104" /></p>
+
+<ol>
+<li>在点击<strong>运行测试</strong>完成后, 等待一段时间后, 如若配置成功, 则会出现<strong>已成功测试连接</strong>的字样, 之后点击 <strong>Save</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902172249931.png" alt="image-20180902172249931" /></p>
+
+<h4 id="发起任务">发起任务</h4>
+
+<ol>
+<li>在 <strong>DMS 导航</strong>中选择<strong>任务</strong>, 并选择<strong>创建任务</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902172443429.png" alt="image-20180902172443429" /></p>
+
+<ol>
+<li><p>在<strong>创建任务</strong>页面, 按以下内容配置, <strong>未说明</strong>的配置项即采用<strong>默认配置</strong></p>
+
+<ul>
+<li><strong>任务名称</strong>: 用户自定义, 这里采用 <em>dms-mongo-s3</em></li>
+<li><strong>复制实例</strong>: 选择您在<strong>配置复制实例</strong>这一步中创建的<strong>复制实例</strong></li>
+<li><strong>源终端节点</strong>: 选择您在<strong>配置源端</strong>中创建的<strong>源</strong></li>
+<li><strong>目标端节点</strong>: 选择您在<strong>配置目标端</strong>中创建的<strong>目标</strong></li>
+<li><strong>迁移类型</strong>: <strong>迁移现有数据并复制持续更改</strong></li>
+<li><strong>在创建时启动任务</strong>: <strong>勾选</strong></li>
+<li><strong>启用日志记录</strong>: <strong>勾选</strong>(十分建议您<strong>勾选</strong>此项)</li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902174851946.png" alt="image-20180902174851946" /></p>
+
+<ol>
+<li><p>在<strong>表映像</strong>块下,输入以下内容, 并选择<strong>添加选择规则</strong></p>
+
+<ul>
+<li><strong>架构名称是</strong>: 选择<strong>输入架构</strong></li>
+<li><strong>架构名称</strong>: <strong>%</strong></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902173335984.png" alt="image-20180902173335984" /></p>
+
+<ol>
+<li>点击<strong>创建任务</strong></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902173507271.png" alt="image-20180902173507271" /></p>
+
+<h3 id="迁移结果">迁移结果</h3>
+
+<p>当您按照以上步骤中完成所有的配置后,若出现以下内容, 则意味着您开启了一个具有<strong>增量迁移</strong>功能的<strong>从 MongoDB 到 S3</strong> 的数据迁移任务.</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902175225925.png" alt="image-20180902175225925" /></p>
+
+<p>此任务不仅会在第一次启动时从 MongoDB 迁移<strong>所有</strong>的数据到 S3, 还会在之后<strong>每当您在 MongoDB</strong>中的数据有所改变时, 把<strong>改变情况</strong>也反应到 S3</p>
+
+<h4 id="mongodb-中的数据">MongoDB 中的数据</h4>
+
+<p>本文所使用的 MongoDB 数据库中含有两张表, <strong>BookSpider</strong> 与 <strong>test</strong></p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902182454667.png" alt="image-20180902182454667" /></p>
+
+<ul>
+<li><strong>BookSpider</strong> 中的表结构</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902182704584.png" alt="image-20180902182704584" /></p>
+
+<ul>
+<li><strong>test</strong> 中的表结构</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902182559828.png" alt="image-20180902182559828" /></p>
+
+<h4 id="未触发持续复制的迁移结果">未触发持续复制的迁移结果</h4>
+
+<p>当迁移完成后, 如果<strong>源</strong>数据库中的数据未发生改变, 则意味不会触发 <strong>CDC</strong></p>
+
+<p>此时 S3 中目录结构为</p>
+
+<ul>
+<li>Scrapy_data(文件夹, 与<strong>源数据库</strong>同名)
+
+<ul>
+<li>BookSpider(文件夹, 其中一个表同名)</li>
+<li>LOAD00000001.csv</li>
+<li>test( 文件夹, 与另一个表同名)</li>
+<li>LOAD00000001.csv</li>
+</ul></li>
+</ul>
+
+<p>这两个 csv 文件即保存了 MongoDB 中<strong>对应表</strong>的所有的数据信息, 选取 BookSpider 表的LOAD00000001.csv</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902183440025.png" alt="image-20180902183440025" /></p>
+
+<p>如上图, 所有的数据都以 json 格式保存了下来</p>
+
+<h4 id="触发了持续复制后的迁移结果">触发了持续复制后的迁移结果</h4>
+
+<p>我们对 BookSpider 表增加一条数据, 修改一条数据, 再删除一条数据, 使其能够触发 CDC</p>
+
+<ul>
+<li><strong>增</strong></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902184206870.png" alt="image-20180902184206870" /></p>
+
+<ul>
+<li><strong>改</strong></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902184431978.png" alt="image-20180902184431978" /></p>
+
+<ul>
+<li><strong>删</strong></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902184151610.png" alt="image-20180902184151610" /></p>
+
+<p>此时打开 S3,  其目录结构变为了</p>
+
+<ul>
+<li>Scrapy_data
+
+<ul>
+<li>BookSpider</li>
+<li>LOAD00000001.csv</li>
+<li>20180902-104149271.csv(<strong>新增</strong>)</li>
+<li>20180902-104505261.csv(<strong>新增</strong>)</li>
+<li>test( 文件夹, 与另一个表同名)</li>
+<li>LOAD00000001.csv</li>
+</ul></li>
+</ul>
+
+<p>打开两个文件<strong>新增</strong>的 csv 文件</p>
+
+<ul>
+<li>20180902-104505261.csv</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902184912046.png" alt="image-20180902184912046" /></p>
+
+<ul>
+<li>20180902-104149271.csv</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/dms-mongodb-to-s3/image-20180902184938951.png" alt="image-20180902184938951" /></p>
+
+<p>可以看到, 三个改变都被记录了下来, 切前面多了 <strong>U D I</strong> 三个字母, 这意味着这三条操作分别为 <strong>U</strong>pdate, <strong>D</strong>elete,<strong>I</strong>nsert</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -11,5 +11,350 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/bi/aurora_redshift_quicksight/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:36 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/bi/aurora_redshift_quicksight/</guid>
+      <description>实验介绍 利用terraform模板启动DMS任务
+架构图 实验前提  确保您的本机已经安装 Terraform （https://www.terraform.io/） 提前创建好EC2的秘钥对 事先用AWSCLI，aws configure配置好了凭证以有权启动这些资源  步骤 步骤1： 替换terraform变量 替换variable.tf里面的参数, 包括：VPC，DB subnet,EC2 subnet，EC2 key pair, region &amp;amp; 相应地区的AMI ID。
+补充说明: 默认在us-west-2，因启动脚本用了yum install &amp;amp; wget等命令, 如果要换区域，请尽量添加Amazon Linux AMI确保这些命令可以正常运行
+步骤2： 启动terrform模板
+terraform init terraform apply  成功后会创建好以下相关资源 ,且bastion EC2已通过启动脚本(mysql_init.tpl)加载好了Aurora的实验数据。
+记下这些output
+Outputs Example: Aurora database name = lab Aurora endpoint = tf-xxxxxxx.us-west-2.rds.amazonaws.com Aurora master password = xxxx Aurora master username = root DMS Aurora Source ID = pdaxxx DMS RedShift Target ID = ehjxxxx DMS instanace name = vipxxxx EC2 Bastion Endpoint = RedShift Endpoint = xxxxxx.</description>
+    </item>
+    
+    <item>
+      <title>S3图片处理</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/serverless-image-handler/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:31 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/serverless-image-handler/</guid>
+      <description>如果您使用的是AWS Global Region, 您可以停止阅读本文，转向使用Serverless Image Hanlder提供的CloudFormation时间自动部署。
+本文提到的部署方式，仅适用于AWS China; 关于能够实现那些图片处理功能，请参考文档
+修改源代码，配置参数 点击此处下载源代码
+ 修改image_handler/thumbor.conf
+ TC_AWS_REGION 定义为 cn-northwest-1 或者 cn-north-1 TC_AWS_ENDPOINT 定义为https://s3.cn-northwest-1.amazonaws.com.cn 和https://s3.cn-north-1.amazonaws.com.cn TC_AWS_LOADER_BUCKET 定义为源S3的bucket名称  修改tc_aws/__init__.py
+ TC_AWS_REGION 定义为 cn-northwest-1或者cn-north-1 TC_AWS_LOADER_BUCKET 定义为源S3的bucket名称 TC_AWS_ENDPOINT 定义为https://s3.cn-northwest-1.amazonaws.com.cn 或者 https://s3.cn-north-1.amazonaws.com.cn    本文的源代码与global region的源代码还存在以下几处修改，在本文的源代码中已经更改，用户无需再次修改
+  修改image_handler/thumbor.conf
+ ALLOW_UNSAFE_URL 定义为 True（提供的代码已经更改）  修改thumbor/thumbor.conf
+ ALLOW_UNSAFE_URL 改成 True（提供的代码已经更改）  修改image_handler/lambda_function.py
+if str(os.environ.get(&#39;ENABLE_CORS&#39;)).upper() == &amp;quot;YES&amp;quot;: api_response[&#39;headers&#39;][&#39;Access-Control-Allow-Origin&#39;] = os.environ.get(&#39;CORS_ORIGIN&#39;)   改成
+api_response[&#39;headers&#39;][&#39;Access-Control-Allow-Origin&#39;] = os.environ.get(&#39;*&#39;)  上传代码至S3  打包源文件（工程文件必须位于压缩包一级目录） 上传到与 Lambda, API Gateway 在同一个region的S3  配置 IAM Role 创建一个供Lambda使用的 IAM Role, 并且包括如下两条policy</description>
+    </item>
+    
+    <item>
+      <title>基于Cognito的微信第三方登陸系統</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/cognito_android/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:31 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/cognito_android/</guid>
+      <description>步驟  App发起授权，应用唤起微信客戶端，诱导用戶点击授权按鈕 用戶点击授权按钮后 APP得到auth code 应用用auth code作为参数向远端的api发起请求 API 发送auth code到微信接口 返回用戶的openId和AccessToken API发送AccessToken到微信接口 返回userinfo 包括用戶昵稱 头像等信息 API向dynamo DB中加入一条用戶信息 返回得到userId API 將userId和身份池Id发送到cognito接口 返回user的IdentityId和token 将token和 identityId存入dynamo DB API將token和IdentityId userId 返回給客戶端APP 客戶端APP可以用identity 身份池Id context上下文 region和auth code喚起client, 最后用client訪問AWS資源  QA：  步驟原理如上图所示 为什么要进行二次访问： A： 为了得到用户信息，如头像，昵称等 微信的认证授权协议： A: Auth2 允许用户访问个人信息 用户拥有的权限 A：同身份池的权限 准备 A: AWS账号 创建身份池 设定用户的权限 APP在微信公开平台的ID和密钥 Cognito是什么 A：Amazon Cognito 为您的 Web 和移动应用程序提供身份验证、授权和用户管理。您的用户可使用用户名和密码直接登录，也可以通过第三方 (如 Facebook、Amazon 或 Google) 登录。 https://aws.amazon.com/cn/documentation/cognito/?id=docs_gateway 每一个part的作用 数据库用于记录保存用户信息 Cognito通过对身份池的管理对用户做授权 API gateway:微信接只能由后台访问所以用lambda实现， IOS兼容性 AWS提供兼容IOS的开发工具包  code: https://github.</description>
+    </item>
+    
+    <item>
+      <title>AWS Cognito User Pool实现Alexa账户关联</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/alexa/account-linking-cognito/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:19 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/alexa/account-linking-cognito/</guid>
+      <description>完成本实验预计使用1小时 完成该实验需要可以一个已经注册好的 Alexa Skill, 并且能够在 Alexa App 或者 Alex Web Portal 中显示该 Alexa Skill。
+ 本文将介绍如何利用AWS Cognito User Pool实现Alexa的账户关联。这里将不涉及到 Cognito 或者 Alexa 相关的开发。有关 Cognito User Pool 的更多资料请参考 官方文档。 有关Alexa的开发资料请参考 Alexa Developer Portal。
+什么是账户关联 账户关联(Account Linking)允许将用户在Alexa账号系统中的身份与另外一个账号系统中的身份关联起来。 假设这样的一个问题，系统X中存在用户a和用户b, Alexa 账户体系中存在用户A和用户B, 那么系统X收到来自 Alexa的指令后，如何区分这是来自用户a的请求还是用户b的呢？账户关联就是为了解决这个问题，将Alexa的账户 系统与另一个账号系统中的身份关联起来。
+Alexa账户关联是标准的 OAuth2.0 授权, 本文不深入探讨 OAuth2.0, 有关 OAuth2.0 的理解可以参考 理解OAuth 2.0。
+AWS的 Cognito User Pool提 供了标准的 OAuth 2.0 的认证和授权，因此借助 Cognito User Pool 可以快速实现和 Alexa 的账户关联。
+下面这张流程图展示了一个用户在 Alexa APP 中进行账户关联，Alexa 是如何从授权服务器获得 AccessToken 的整个过程。</description>
+    </item>
+    
+    <item>
+      <title>IoT 开发环境： 可编译 C 的 Docker 镜像</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/iot/docker/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:07 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/iot/docker/</guid>
+      <description>该指南包含在 Windows 环境安装 Docker，使用 Dockerfile 配置环境以及相关操作介绍。
+步骤一 在本地安装 Docker 在Docker官网下载 Windows 端安装包
+安装后，在开始菜单输入cmd打开命令窗口，输入
+docker --version  检查是否安装完毕。
+在桌面点击图标，等待加载完成，右下角图标显示：
+步骤二 配置 Docker Docker 中的镜像文件可以通过命令行下载、导入本地镜像文件等方法进行配置。
+（1） 方法一 Dockerfile 配置带 gcc 编译器的 ubuntu 系统。
+FROM ubuntu ENV DEBIAN_FRONTEND noninteractive RUN apt-get update &amp;amp;&amp;amp; \ apt-get -y install gcc mono-mcs &amp;amp;&amp;amp; \ rm -rf /var/lib/apt/lists/*  您可使用上述文本创建 Dockerfile 文件，通过以下命令调用它创建该 docker 镜像：
+docker build -t [your image] [directory of the dockerfile]  docker build 命令将读取指定路径下(包括子目录)的 Dockerfile，并将该路径下的所有内容发送给Docker服务端，由服务端来创建镜像。</description>
+    </item>
+    
+    <item>
+      <title>AWS服务迁移：从北京区到到宁夏</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/bjstozhy/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/bjstozhy/</guid>
+      <description>本指南将逐步介绍如何将您在 AWS 北京区域的服务迁移到宁夏区域，涵括范围如下：
+ EC2 &amp;amp; AMI EBS S3 RDS Redis DynamoDB  1. 将 EC2 &amp;amp; AMI 服务从 BJS 迁移至 ZHY 本部分将逐步介绍如何将 EC2 实例导出为 AMI，并从北京迁移到宁夏区。
+步骤一 创建AMI  在 EC2 控制台中，在左侧选择栏中点击 Instances，选中您希望迁移的实例，右键选择 Image -&amp;gt; Create Image。   也可选择使用 CLI 命令行进行操作。
+aws ec2 create-image &amp;ndash;instance-id [your instance id] &amp;ndash;name [your AMI name]
+ 在控制台左侧选择 Images-&amp;gt; AMIs 检查已创建的 AMI。
+  步骤二 将 AMI 部署在您希望转移的地区  在 EC2 控制台中，右击刚创建的 AMI，选择 Copy AMI。   在 Destination region 部分选择您希望迁移的目标可用区。   您也可选择使用 AWS CLI 命令行创建 AMI。</description>
+    </item>
+    
+    <item>
+      <title>使用 AWS DMS 迁移 MongoDB 到 S3</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/dms-mongo-to-s3/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/dms-mongo-to-s3/</guid>
+      <description>概述 DMS 的迁移部署耗时约十分钟.
+概念解释  源: 您需要迁移数据的来源, 在这里的源为您的 MongoDB 数据库
+ 目标: 您需要迁移数据的目的地, 在这里目标为您的 S3 桶
+ 复制实例: 您可以将复制实例理解为一台虚拟主机. AWS DMS 执行数据迁移时, 会先从源数据库中读取数据到复制实例, 再对数据进行相应的调整( 如格式转换)后, 最终将数据载入到目标数据库
+   持续复制( 也叫做数据捕获, CDC ): 在实际生产中, 当源数据库中数据发生改变时, 我们需要在目标数据库中也应用这些改变, 如若达到这种目的, 可以使用CDC.  特别的, CDC 只会读取您改变的那一部分数据, 即增量迁移
+注意事项  MongoDB 版本: 若将 MongoDB 作为源, 则 MongoDB 的版本必须为 2.6.x 或 3.x 若要使用 CDC 功能, AWS DMS 必须要具有对 oplog 的访问权限, 因此请确保您的 MongoDB 具有可用的副本集. 有关更多的信息, 请参阅 MongoDB 文档  迁移步骤  重要</description>
+    </item>
+    
+    <item>
+      <title>使用 SMS &amp; VM-import 导入 VM 指导</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/sms_vm-import/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/sms_vm-import/</guid>
+      <description>Part 1: 使用SMS导入VM 本指导将逐步描述如何使用 AWS Server Migration Service (SMS)服务将 VMware vSphere 的虚拟机映像自动迁移到 Amazon AWS。
+步骤一 添加IAM用户 首先需要在控制台添加 IAM ，步骤如下：
+ IAM 控制台中选择 Roles 和 Create new role。 在 Search role type 页面上，找到 SMS 并选择 Select。 在 Attach Policy 页面上，选择 ServerMigrationServiceRole，然后选择 Next Step。 在 Set role name and review 页面上，键入 Role name。
+ 选择 Create role。您现在应该能够在可用角色列表中看到该角色。  步骤二 在 VMware 上安装服务器迁移连接器 介绍如何使用 AWS SMS 将 VM 从 VMware 迁移到 Amazon EC2。此信息仅适用于本地 VMware 环境中的 VM。</description>
+    </item>
+    
+    <item>
+      <title>基于Amazon ECS的国内外文件同步系统解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/s3_transmission/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/s3_transmission/</guid>
+      <description>很多跨国企业都会有数据同步的需求，这些大型文件主要是存储在S3桶上，通过console或者命令行的形式从本地上传至S3中。本文描述了一种基于容器化的，在Amazon ECS平台上搭建的、快速同步的且基于负载进行扩容和收缩的、通用的解决方案。
+解决方案概述 该方案如下图所示。 在该方案中，我们会启动以下资源： 1. 一个global的S3桶：用于global作为数据传输的源 2. 4个Lambda函数： 分别用于文件分片，容器的扩张与收缩，发送传输完成信号 3. 1个sqs队列：用于存储传输所用参数 4. 2个cloud watch警报： 监控sqs内消息数量，分别用于需要收缩和扩张容器 5. 一个ECS集群，一个服务和若干个task：用于搭载容器 6. 两个dynamoDB 表： T 和C。表T用于记录传输的uplaodID和分段，传输情况，表C用于记录每个片段的唯一标记值-etag。 7. 具有相应的权限的角色。
+ 
+在运行cloudformation之前需要您准备好： 国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey 国外：一个VPC和其中的一个公有子网， EC2密钥对，用于接收信息的Email地址
+步骤：  用户在global bucket中成功上传文件。 触发lambda函数。Lambda函数会判断新文件的大小判断用哪种方式传输，当小于5M的时候会选择直接进行下载上传，当大于5M的时候会进行分段上传。 当确定用哪种方式进行传输之后会把相应的信息存储至sqs中，包括文件名称，uploadID, 分段情况等。 同时Lambda会将传输情况备份至dynamoDB表C中,表1用于记载传输情况。 容器运行在ecs集群中， SQS内的信息被ecs中的servces和task消耗， 我们为SQS设定了cloudwatch监控，用于根据负载实现容器的扩张和缩小。 我们创建了警报A 用于判断是否需要根据情况扩张和缩小容器的数量，当sqs内消息数量较大时会触发警报A 警报A会触发发送消息给SNS SNS接到消息之后会触发LambdaA LambdaA会调整容器的数量到10个，实现容器的扩张 当sqs内消息数量较小时会触发警报B 警报B会触发发送消息给SNS SNS接到消息之后会触发LambdaB LambdaB会调整容器的数量到1个，实现容器的收缩 容器会将下载的片段传至国内S3桶。 容器更改dynamo DB表C中的数据，更新已完成的片段数量 容器更改dynamo DB 表P，插入新的数据存入etag和uplaod id partnumber等信息。 当表C中已完成的片段数量和公有片段数量一致的时候会触发Lambda函数 函数搜索同一个uploadID的所有的片段的etag 并按partnumber排序，发送给国内的S3桶。S3桶在核对所有的etag之后进行片段组装，出现在国内的S3桶上。
+架构部署 登录 AWS 管理控制台并通过以下网址打开 AWS CloudFormation 控制台：https://console.</description>
+    </item>
+    
+    <item>
+      <title>将域名从GoDaddy迁移至Route 53</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/transferdomainroute53/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/transferdomainroute53/</guid>
+      <description>该指南将逐步介绍如何将 GoDaddy 的域名转移到 Amazon Route 53 服务，在开始前请确认以下几点：
+ 您在该站点的域名已经注册60天以上。 请确认您的域名后缀（.com, .cn, .uk等）在亚马逊业务支持范围内查看可向 Amazon Route 53 注册的域。 部分顶级域名需更改参数，例如所有者名称。 请确保您注册该域名的网站具有转移域名的服务。  注：本实例中使用 GoDaddy 中注册的域名作为案例。
+迁移DNS服务 若您的域的DNS服务处于正在使用中，希望在流量不受影响下迁移域，请参考本节步骤，在迁移域名前将您的 DNS 服务迁移到 Route 53 中，如您的域的 DNS 服务处于空闲状态，或您的运营商迁移域名后也继续支持 DNS 服务，可跳过本部分，从步骤一开始。
+1. 从当前DNS服务提供商获取当前DNS配置文件（可选） 在 GoDaddy 登录后，点击需要迁移的域名右侧的 DNS 按钮，在弹出网页下方的 Advanced Features 下选择对应操作。您可使用该配置文件在 Route 53 中重新配置 DNS 服务。
+2. 创建托管区域 在Route 53中创建一个与您的域同名的托管区域，在该区中创建记录。Route 53 会自动为该域创建名称服务器（NS）和授权起始点（SOA）记录。步骤如下：
+创建托管区域 首先打开Route 53 服务控制台。
+ 若您是首次使用Route 53, 请在 DNS Managment 下点击 Get Started Now。   在 Hosted Zones 中点击 Created Hosted Zone。 在该窗口中，输入您的域名，填写注释（可选）。 Type 选项保留默认值 Public Hosted Zone。 选择 Create。   创建记录 在您创建的托管区域中创建记录，定义您的域和子域的流量的路由规则。有以下三种方式供您选择：</description>
+    </item>
+    
+    <item>
+      <title>基于CodePipeline ECS的CICD解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/codepipeline_ecs/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/codepipeline_ecs/</guid>
+      <description>综述： 通过本文章，您可以通过AWS CodePipeline，AWS CodeBuild，AWS CodeCommit, AWS CloudFormation 来实现基于Amazon ECS的CICD方案。开发人员在AWS CodeCommit中提交的新版本代码，会自动触发代码获取，打包镜像，上传镜像仓库，创建新版本的任务定义和服务。
+所需组件  Code Commit：AWS CodeCommit 是由 Amazon Web Services 托管的版本控制服务，可让您在云中私下存储和管理资产（如文档、源代码和二进制文件）。 Docker：CodeBuild使用Docker container 运行构建过程中需要的应用程序。 Amazon EC2：作为ECS的容器宿主机集群。 Amazon VPC：服务所在的网络。 Amazon ECS：AWS托管的容器编排服务。 Amazon ECR：AWS 托管的容器镜像仓库。 AWS CodePipeline：AWS 托管的持续集成持续交付服务，可以快速可靠的更新应用程序和服务，集成支持GitHub，Jenkins等主流开源工具。 AWS CodeBuild：AWS 托管的构建服务，用于打包代码生成可部署的软件包。 AWS CloudFormation：批量创建和管理AWS资源的自动化脚本。  步骤 流程  开发者将一个新版本的代码工程提交到CodeCommit或者github 触发codepipeline 流程 Pipeline的Source阶段，检测到指定CodeCommit的repo/ github 有新版本的更新 从CodeCommit / github 上拉取工程代码 Pipeline的Build阶段，AWS CodeBuild将新版本的代码按照 buildspec 文件打包为jar包 将打包好的jar包上传到S3 上传到s3的jar包会作为下一步build的source Pipeline的Build阶段，上一部build结束之后会触发第二个构建步骤，本步骤将jar包打包成Docker镜像 将Docker镜像上传到ECR镜像仓库 ECR中的镜像会在下一步中作为容器镜像 Pipeline的Deploy阶段，AWS CodePipeline触发AWS CloudFormation，其定义了Amazon ECS的Task definition和service AWS CloudFormation创建新版本的Task definition关联到新版本的Docker镜像，并更新Service。Amazon ECS从Amazon ECR中取到新版本的Docker镜像，创建新的 Task definition和服务，完成服务的更新   搭建 基础设施 创建VPC，子网  打开 Amazon VPC 控制台 https://console.</description>
+    </item>
+    
+    <item>
+      <title>基于jenkins的java应用程序CICD解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_jar_jenkins/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_jar_jenkins/</guid>
+      <description>概述 本文概述了用jenkins完成java项目的CICD流程的所需步骤，其中涉及到codeBuild和codeDeploy的相关配置在 cicd jar codepipe中详细说明
+步骤  创建jenkins服务器 创建jenkins项目 配置source 配置codeBuild 配置codeDeploy  创建jenkins  创建Amazon EC2实例，选择实例类型和添加存储。  在“高级详细信息”里面输入启动脚本 #!/bin/bash yum -y update yum install -y ruby yum install -y aws-cli yum install –y git cd /home/ec2-user wget https://bucket-name.s3.amazonaws.com/latest/install chmod +x ./install ./install auto  bucket name对应列表为  EC2启动成功后，使用SSH到该EC2，使用如下命令检验Agent是否工作正常。
+sudo service codedeploy-agent status Result: The AWS CodeDeploy agent is running as PID 3523    ### 使用Github托管源代码，并配置webhook自动触发 首先进入自己的Github地址，点击https://github.com/settings/tokens，生成GitHub token，这个token用于jenkins访问GitHub。</description>
+    </item>
+    
+    <item>
+      <title>基于jenkins的容器蓝绿部署解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_docker_blue_jenkins/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_docker_blue_jenkins/</guid>
+      <description>概述： 本文讲述的是用jenkins做容器蓝绿部署所需相关配置， 其中涉及到的codeBuild相关的配置同文章： cicd docker bule codePipe
+步骤：  创建jenkins项目 定义源码地址和代码更新触发 增加构建步骤： 源码-&amp;gt;jar包 增加构建步骤： jar包-&amp;gt; docker镜像 增加构建后操作： 切换生产端口
+1. 创建自由风格的项目 2. 输入github项目的地址 3. 输入github项目的git地址和分支 4. 勾选Github hook trigger for GITScm polling 实现github代码更新的自动触发 5. 点击“添加构建步骤” 选择“AWS cloud build”插件 6. 输入aws的accessId 和accessKey 7. 输入code build项目的项目名称和可用区 8. 点击“添加构建步骤” 选择“AWS cloud build”插件 9. 输入aws的accessId 和accessKey 10. 输入code build项目的项目名称和可用区 11. 此项目目的为把源码打包为jar包并上传到S3桶中 12. 选择“添加构建步骤“ 13. 选择“执行 shell“   本段代码的逻辑是： 1. 根据build_number也就是每次build的环境变量值，我们判断使用哪个任务定义模板 区别在于不同的模板中容器与实例的端口号对应不同 2. 根据新的参数创建新的任务定义， 3.</description>
+    </item>
+    
+    <item>
+      <title>自动化脚本：监测 &amp; 自动启动可用资源</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/automatic-apply-resource/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/automatic-apply-resource/</guid>
+      <description>场景概览 某些时候某可用区的资源暂时不足，启动时会启动失败。如果客户有一些资源要求一定要在特定可用区部署特定机型，需要经常去刷新资源。
+此脚本通过持续申请资源并且一旦有空闲资源，以预留容量的方式锁定资源来解决上述问题。
+示例代码演示了在宁夏cn-northwest-1a可用区申请r5.2xlarge资源。如果失败会持续执行，如果成功自动按预留容量启动。
+点击此链接了解预留容量：https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
+前提条件 1. 安装以及配置AWSCLI 安装：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-install.html
+配置：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-configure.html
+aws configure  2. 安装AWS官方python SDK BOTO3 sudo easy_install pip pip install boto3  3. 执行前需要修改参数：实例类型（如c5.2xlarge），平台/操作系统(如Linux, windows，可添加多个), 可用区。 具体参数说明：https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation
+具体实现 注：以下基于python2.7
+ from botocore.exceptions import ClientError import boto3 import json client = boto3.client(&#39;ec2&#39;,region_name=&#39;cn-northwest-1&#39;) while 1: print(&#39;enter the loop&#39;) try: #revise your own instance type &amp;amp; operating system &amp;amp; availability zone here!! response = client.create_capacity_reservation(InstanceType=&#39;r5.2xlarge&#39;,InstancePlatform=&#39;Linux/UNIX&#39;,AvailabilityZone=&#39;cn-northwest-1a&#39;,InstanceCount=1,EndDateType=&#39;unlimited&#39;) print(&#39;[Success]check the detailed info below or in the console&#39;) print(response) break except ClientError as e: #print(e) #Launch failed.</description>
+    </item>
+    
+    <item>
+      <title># 在中国合法部署海外IP</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/network/bypassicp/</link>
+      <pubDate>Mon, 09 Sep 2019 10:17:53 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/network/bypassicp/</guid>
+      <description>本文将介绍在不将主域名做 ICP 备案的情况下，在 AWS China Region 部署您的服务。若您希望：
+ 在国内备案对应 .cn 域名，访问主域名 www.example.com 时自动跳转至 www.example.cn。 在国内备案对应 .cn 域名，访问主域名 www.example.com 时使用海外 CDN 节点加速。 不在国内备案 .cn 域名，使用 www.example.com 访问，且服务全部部署在海外。  可参考我们为您提供的三种部署方案：
+ 利用部署在海外的 API Gateway 和 Lambda，访问 www.example.com 时返回 301 www.example.cn。 使用 CNC (网宿)的香港、台湾等节点做 CDN 回源 China Region, 经实测延迟大约为700ms, 网宿的 SLA 为2秒，丢包情况很少发生。 使用 CNC 的香港，台湾节点加速；使用电信的 CN2IP 加速访问。  一、 国内备案.cn等域名 该方案使用 Amazon API Gateway 及 Lambda 服务。您可在国内地区部署服务并注册 www.example.cn 域名并备案，当用户访问 www.example.com 时，主域名配置的海外 API Gateway 会为客户自动转调到 www.</description>
+    </item>
+    
+    <item>
+      <title>VPC配置指南</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/network/vpc_guide/</link>
+      <pubDate>Mon, 09 Sep 2019 10:17:53 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/network/vpc_guide/</guid>
+      <description>本文主要包含以下内容
+ 公有子网（public subnet ）和 私有子网（private subnet ）的区别 如何新建 IGW, 如何更改路由表 如何创建 NAT 网关,如何更改路由表 合理的 web hosting 的网络拓扑 VPC Wizard  公有子网与私有子网  子网: VPC 是跨可用区的. 在创建 VPC 后需要为每个可用区添加一个或多个子网. 子网不可跨可用区. 公有子网( public subnet ): 子网的关联路由表 包含 指向 Internet 网关(Internet Gateways)的路由的子网 私有子网( private subnet): 子网的关联路由表 不包含 指向 Internet 网关(Internet Gateways)的路由的子网  仅限 VPN 的子网: 特别的,一个子网没有通向 Internet 网关(Internet Gateways)的路由, 但其流量会被路由到虚拟专用网关以进行 VPN 连接, 则这个子网就是仅限 VPN 的子网   如上图,
+ Subnet 1: 有通向 Internet 网关的路由, 因此它是公有子网 Subnet 2: 没有通向 Internet 网关的路由, 因此它是私有子网 Subnet 3: 没有通向 Internet 网关的路由, 但流量可达 VPN , 因此它是仅限 VPN 的子网  Internet Gateways 使用 Internet 网关(Internet Gateways, igw), 可实现 VPC 中的实例与 Internet 之间的通信</description>
+    </item>
+    
+    <item>
+      <title>Amazon ElastiCache for Redis 基准测试</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/redis_benchmark/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/redis_benchmark/</guid>
+      <description>本文主要目的是为 ElasticCache 下的 Redis 提供测试指南.
+完成测试的时间大约为10分钟
+ 重要
+本测试默认您已经拥有了 AWS 账户并创建了 IAM 用户
+若未执行以上设置，可参考这里
+ 配置安全组 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 准备 Redis  登录 AWS 管理控制台并通过以下网址打开 Amazon ElastiCache 控制台：https://console.amazonaws.cn/elasticache/。
+ 选择控制面板中的 Redis, 在点击创建。
+   在创建您的 Amazon ElasticCache 集群界面, 按照以下内容填写:
+ 集群引擎: Redis Redis 设置  名称: benchmark-redis 节点类型: cache.</description>
+    </item>
+    
+    <item>
+      <title>Aurora VS MySQL 压测</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/aurora-vs-mysql/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/aurora-vs-mysql/</guid>
+      <description>实验目的  本实验大约耗时35分钟
+ 使用 sysbench 对Amazon Aurora与RDS MySQL进行基准测试, 对比二者的读写性能.
+以下是本次测试的架构
+涉及组件 - Aurora - RDS - EC2
+实验步骤 配置 VPC (可选) 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 启动Aurora实例  登录 AWS 管理控制台 并通过以下网址打开 Amazon RDS 控制台：https://console.aws.amazon.com/rds/。
+ 在导航窗格中，选择实例。
+ 选择启动数据库实例。启动数据库实例向导在选择引擎页面打开。
+   选择 Amazon Aurora, 并将版本选择为与 MySQL 5.</description>
+    </item>
+    
+    <item>
+      <title>Redshift &amp; MySQL 性能对比实验</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/redshift_mysql/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/redshift_mysql/</guid>
+      <description>实验目的 提供 Redshift 和 RDS MySQL 在千万级数据中执行联表查询的性能对比。
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+涉及组件  EC2 RedShift RDS S3 VPC  实验步骤  重要
+本实验默认您已经拥有了 AWS 账户并创建了 IAM 用户
+若未执行以上设置，可参考这里
+ 配置 VPC 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 配置 RedShift  为 Amazon Redshift 创建 IAM 角色</description>
+    </item>
+    
+    <item>
+      <title>利用API Gateway访问DynamoDB</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/api-gateway-proxy-for-ddb/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/api-gateway-proxy-for-ddb/</guid>
+      <description>本文介绍如何利用API Gateway作为proxy直接对dynamoDB进行访问，将示例get和post两种方法。
+通过这种方式，无需构建serverside，无需提供credentials，可直接利用标准的https API对ddb内的数据进行读取或者写入操作。
+步骤 1. 创建dynamoDB table 指定表名称，主键即可。
+2. 构建API Get请求 (1) 选择Scan模式：返回DDB中所有结果 新建资源，增加get方法。
+进入Integration Request, 选择DynamoDB服务，action为Scan。
+定义mapping template。
+(2) 选择Query: 查询某项值 新建资源/{year}, 增加get方法。Intergration request的其他选项不变，action改为Query。mapping table更改为如下：
+{ &amp;quot;TableName&amp;quot;: &amp;quot;xxxx&amp;quot;, &amp;quot;KeyConditionExpression&amp;quot;: &amp;quot;account_type = :v1&amp;quot;, &amp;quot;ExpressionAttributeValues&amp;quot;: { &amp;quot;:v1&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.params(&#39;account_type&#39;)&amp;quot; } } }  (3) 测试 选择test测试API。对于query选项，path {year}输入需要查询的value；对于scan无需带参。测试完成后无问题部署即可。
+3. 构建API Post请求 配置如下 mapping table配置如下：
+{ &amp;quot;TableName&amp;quot;: &amp;quot;xxx&amp;quot;, &amp;quot;Item&amp;quot;: { &amp;quot;account_type&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.path(&#39;$.account_type&#39;)&amp;quot; }, &amp;quot;balance&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.path(&#39;$.balance&#39;)&amp;quot; } } }  test时，request body输入数据即可。如</description>
+    </item>
+    
+    <item>
+      <title>将MongoDB部署到现有VPC</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/mongodb/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/mongodb/</guid>
+      <description>您可以启动Quick Start，将 MongoDB 部署到 AWS 账户中现有的 Virtual Private Cloud (VPC) 中。完成部署需要约 15 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+步骤一：加载Quick Start  在您的 AWS 控制台中选择 AWS CloudFormation ，开始部署 MangoDB 集群。   在配置前，请确保您的VPC在不同可用区中有两个公有子网和三个私有子网（可选），以及 DHCP 选项中配置的域名选项，如 Amazon VPC 文档 中所述。 私有子网需配置 NAT 网关或 NAT 实例以用于出站 Internet 连接，并需创建堡垒主机及其关联的安全组以实现入站 SSH 访问。(请参阅 Amazon VPC 快速入门 设置VPC，Linux 堡垒主机快速入门设置堡垒主机。) 检查导航栏右上角显示的所在区域，根据需要进行更改。 在 Select Template 页面上，若使用默认模板则保留模板 URL 的默认设置，或选择上传您的Template文件，然后选择 Next 。   在 Specify Details 页面上，更改堆栈名称（可选）。填写模板的参数，并仔细检查默认设置中的其他参数，根据需要进行更改（见下表）。完成后选择 Next 进入下一步。  选项 1：用于将 MongoDB 部署到现有 VPC 的参数</description>
+    </item>
+    
+    <item>
+      <title>Guide: S3FS快速部署</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/storage/s3fs/</link>
+      <pubDate>Mon, 09 Sep 2019 10:04:24 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/storage/s3fs/</guid>
+      <description>您可以启动Quick Start，将 S3fs 部署到 AWS 账户中。完成部署需要约 5 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+前提条件 需要在目标区域，提前创建好一个可用的S3桶用于挂载。cloudformation不会自动生成此通。 且需注意：最终定义的EBS卷的容量需要大于S3桶的总大小。可通过下列方法调用查看桶的大小. 实现步骤 *步骤一：启动资源*
+ 在您的 AWS 账户中启动 AWS CloudFormation 模板。   请确保您的账户有一个VPC和私网，如 Amazon VPC中所述。 检查导航栏右上角显示的所在区域，根据需要进行更改。 在 Select Template 页面上，保留模板 URL 的默认设置，然后选择 Next 。   在 Specify Details 页面上，填写堆栈名称及相关参数，根据需要进行更改（见下表）。完成后选择 Next 进入下一步。
+部署S3FS的配置参数
+     参数标签 参数名称 默认值 说明     VPC VpcId 需要输入 将部署S3FS实例的 VPC的ID (例如，vpc-0343606e)。   子网 SubnetId 需要输入 要部署S3FS实例的 VPC 中现有子网的 ID (例如，subnet-a0246dcd)。   密钥名称 KeyName 需要输入 公有/私有密钥对，使您能够在实例启动后安全地与它连接。   S3 存储桶名称 BucketName 需要输入 S3FS实例希望挂载的S3 存储桶(需提前创建好)   实例类型 InstanceType 可选 选择您S3FS实例的实例类型。   EBS卷容量 VolumeSize 需要输入 选择您实例EBS卷的容量（大于S3 bucket大小）   安全组 S3FSSecurityGroup 需要输入 选择您的安全实例(需要保证在选择的VPC下)   目录 S3FSDirectory 需要输入 输入需要与您S3相连的实例的目录。（例如，/mnt/s3）    截图如下：</description>
+    </item>
+    
+    <item>
+      <title>Deep Learning AMI下Tensorflow环境的安装与切换</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/ai/tensorflow/</link>
+      <pubDate>Thu, 05 Sep 2019 14:35:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/ai/tensorflow/</guid>
+      <description>在AWS Deep Learning AMI的环境下，如何利用conda管理不同环境，配置所需要的依赖，以及创建新的隔离环境。
+文档来源：尹主任
+教程 0.启动EC2实例，选择Deep Learning AMI 1.切换环境 ML AMI自带多套机器学习的环境，如MXNet(+Keras2) with Python3, TensorFlow(+Keras2) with Python3等等。可以利用source activate的命令方便的做切换。如：
+ #切换到MXNet with python3.6 source activate mxnet_p36  2.安装新的conda环境  # 通过conda安装环境，并配置对应python版本 $ conda create -n tf_gpu14_p35 python=3.5.2 # 进入环境 $ source activate tf_gpu14_p35 # 进⼊入环境后，可以查看已经安装的包 $ pip list installed #安装tensorflow-gpu $ pip install tensorflow-gpu==1.4 # optional 安装其他的画图相关⼯工具或任意工具 $ pip install tensorflow==1.12 jupyter matplotlib pandas seaborn numpy  3.安装notebook&amp;amp;把conda环境加⼊入notebook中 # Install jupyter notebook $ conda install jupyter $ conda install ipykernel # Add your conda env to jupyter notebook kernels (此处特别注意，加载的时候要在对应的虚拟环境加载，否则会出现找不不到依赖包的问题) $ python -m ipykernel install --user --name tf_gpu14_p35 --display-name &amp;quot;my kernel (tensorflow_gpu14_p35)” # 在base目录Launch Jupyter Notebook $ jupyter notebook  5.</description>
+    </item>
+    
+    <item>
+      <title>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/ai/connect_alex/</link>
+      <pubDate>Thu, 05 Sep 2019 14:35:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/ai/connect_alex/</guid>
+      <description>实验概览 此实验搭建了一个智能电话订车系统，通过语音交互可以获取用户需要订车的城市，取车以及还车时间，对车型的要求，以及驾驶人的年龄，并且将这些信息通过lambda上传到dynamoDB当中.
+架构图 demo效果 可直接拨打+1 443-692-8678测试，触发词&amp;rdquo;reserve&amp;rdquo; &amp;ldquo;reserver a car&amp;rdquo;,&amp;ldquo;book a car&amp;rdquo;等。
+实现步骤 1. 搭建呼叫中心，实现可以人工call in &amp;amp; call out的基本功能 (1) 创建实例，设置基本选项
+打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。  (2) 构建呼叫中心
+点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。 除此之外，你可以定义你的call center的运营时间（比如周一9:00AM-18:00PM, 周六10:00AM-14:00PM,周末不上班）等。其他信息可以暂时不进行设置。  2. 使用Lex创建智能语音机器人 (1) 创建并定义Bot
+打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。 此时testbots上有两个intents（意图）。代表着用户可以利用此bots做两种触发，一种是订车，一种是订住宿。两者只是定义时的逻辑和数据字段不同，因此此例当中，我们只用到car reservation。 在Interts的设置上，有以下参数： * Sample utterances：唤醒词，可自行定义或添加。 * SLOTS字段：希望Lex帮你获取的信息。默认情况下Lex会按照顺序询问，也可以自己定义priority。 * Fulfillment：定义拿到这些参数之后，下一步希望做什么。可以选择直接把这些信息返回给客户端，或者是利用lambda做进一步的存储、处理、分析等。 * Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。  此外左侧tab还包括：
+ error handling：当获取语音输入失败时，自定义语音，以及重复最多尝试次数。
+ slot types: 可以给用户提示，一些选择的example。
+  （2） 创建lambda函数：存储进dynamoDB</description>
+    </item>
+    
   </channel>
 </rss>

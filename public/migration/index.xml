@@ -11,5 +11,74 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/migration/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>AWS服务迁移：从北京区到到宁夏</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/bjstozhy/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/bjstozhy/</guid>
+      <description>本指南将逐步介绍如何将您在 AWS 北京区域的服务迁移到宁夏区域，涵括范围如下：
+ EC2 &amp;amp; AMI EBS S3 RDS Redis DynamoDB  1. 将 EC2 &amp;amp; AMI 服务从 BJS 迁移至 ZHY 本部分将逐步介绍如何将 EC2 实例导出为 AMI，并从北京迁移到宁夏区。
+步骤一 创建AMI  在 EC2 控制台中，在左侧选择栏中点击 Instances，选中您希望迁移的实例，右键选择 Image -&amp;gt; Create Image。   也可选择使用 CLI 命令行进行操作。
+aws ec2 create-image &amp;ndash;instance-id [your instance id] &amp;ndash;name [your AMI name]
+ 在控制台左侧选择 Images-&amp;gt; AMIs 检查已创建的 AMI。
+  步骤二 将 AMI 部署在您希望转移的地区  在 EC2 控制台中，右击刚创建的 AMI，选择 Copy AMI。   在 Destination region 部分选择您希望迁移的目标可用区。   您也可选择使用 AWS CLI 命令行创建 AMI。</description>
+    </item>
+    
+    <item>
+      <title>使用 AWS DMS 迁移 MongoDB 到 S3</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/dms-mongo-to-s3/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/dms-mongo-to-s3/</guid>
+      <description>概述 DMS 的迁移部署耗时约十分钟.
+概念解释  源: 您需要迁移数据的来源, 在这里的源为您的 MongoDB 数据库
+ 目标: 您需要迁移数据的目的地, 在这里目标为您的 S3 桶
+ 复制实例: 您可以将复制实例理解为一台虚拟主机. AWS DMS 执行数据迁移时, 会先从源数据库中读取数据到复制实例, 再对数据进行相应的调整( 如格式转换)后, 最终将数据载入到目标数据库
+   持续复制( 也叫做数据捕获, CDC ): 在实际生产中, 当源数据库中数据发生改变时, 我们需要在目标数据库中也应用这些改变, 如若达到这种目的, 可以使用CDC.  特别的, CDC 只会读取您改变的那一部分数据, 即增量迁移
+注意事项  MongoDB 版本: 若将 MongoDB 作为源, 则 MongoDB 的版本必须为 2.6.x 或 3.x 若要使用 CDC 功能, AWS DMS 必须要具有对 oplog 的访问权限, 因此请确保您的 MongoDB 具有可用的副本集. 有关更多的信息, 请参阅 MongoDB 文档  迁移步骤  重要</description>
+    </item>
+    
+    <item>
+      <title>使用 SMS &amp; VM-import 导入 VM 指导</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/sms_vm-import/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/sms_vm-import/</guid>
+      <description>Part 1: 使用SMS导入VM 本指导将逐步描述如何使用 AWS Server Migration Service (SMS)服务将 VMware vSphere 的虚拟机映像自动迁移到 Amazon AWS。
+步骤一 添加IAM用户 首先需要在控制台添加 IAM ，步骤如下：
+ IAM 控制台中选择 Roles 和 Create new role。 在 Search role type 页面上，找到 SMS 并选择 Select。 在 Attach Policy 页面上，选择 ServerMigrationServiceRole，然后选择 Next Step。 在 Set role name and review 页面上，键入 Role name。
+ 选择 Create role。您现在应该能够在可用角色列表中看到该角色。  步骤二 在 VMware 上安装服务器迁移连接器 介绍如何使用 AWS SMS 将 VM 从 VMware 迁移到 Amazon EC2。此信息仅适用于本地 VMware 环境中的 VM。</description>
+    </item>
+    
+    <item>
+      <title>基于Amazon ECS的国内外文件同步系统解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/s3_transmission/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/s3_transmission/</guid>
+      <description>很多跨国企业都会有数据同步的需求，这些大型文件主要是存储在S3桶上，通过console或者命令行的形式从本地上传至S3中。本文描述了一种基于容器化的，在Amazon ECS平台上搭建的、快速同步的且基于负载进行扩容和收缩的、通用的解决方案。
+解决方案概述 该方案如下图所示。 在该方案中，我们会启动以下资源： 1. 一个global的S3桶：用于global作为数据传输的源 2. 4个Lambda函数： 分别用于文件分片，容器的扩张与收缩，发送传输完成信号 3. 1个sqs队列：用于存储传输所用参数 4. 2个cloud watch警报： 监控sqs内消息数量，分别用于需要收缩和扩张容器 5. 一个ECS集群，一个服务和若干个task：用于搭载容器 6. 两个dynamoDB 表： T 和C。表T用于记录传输的uplaodID和分段，传输情况，表C用于记录每个片段的唯一标记值-etag。 7. 具有相应的权限的角色。
+ 
+在运行cloudformation之前需要您准备好： 国内：一个S3桶，用户的访问密钥 AccessId 和AccessKey 国外：一个VPC和其中的一个公有子网， EC2密钥对，用于接收信息的Email地址
+步骤：  用户在global bucket中成功上传文件。 触发lambda函数。Lambda函数会判断新文件的大小判断用哪种方式传输，当小于5M的时候会选择直接进行下载上传，当大于5M的时候会进行分段上传。 当确定用哪种方式进行传输之后会把相应的信息存储至sqs中，包括文件名称，uploadID, 分段情况等。 同时Lambda会将传输情况备份至dynamoDB表C中,表1用于记载传输情况。 容器运行在ecs集群中， SQS内的信息被ecs中的servces和task消耗， 我们为SQS设定了cloudwatch监控，用于根据负载实现容器的扩张和缩小。 我们创建了警报A 用于判断是否需要根据情况扩张和缩小容器的数量，当sqs内消息数量较大时会触发警报A 警报A会触发发送消息给SNS SNS接到消息之后会触发LambdaA LambdaA会调整容器的数量到10个，实现容器的扩张 当sqs内消息数量较小时会触发警报B 警报B会触发发送消息给SNS SNS接到消息之后会触发LambdaB LambdaB会调整容器的数量到1个，实现容器的收缩 容器会将下载的片段传至国内S3桶。 容器更改dynamo DB表C中的数据，更新已完成的片段数量 容器更改dynamo DB 表P，插入新的数据存入etag和uplaod id partnumber等信息。 当表C中已完成的片段数量和公有片段数量一致的时候会触发Lambda函数 函数搜索同一个uploadID的所有的片段的etag 并按partnumber排序，发送给国内的S3桶。S3桶在核对所有的etag之后进行片段组装，出现在国内的S3桶上。
+架构部署 登录 AWS 管理控制台并通过以下网址打开 AWS CloudFormation 控制台：https://console.</description>
+    </item>
+    
+    <item>
+      <title>将域名从GoDaddy迁移至Route 53</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/migration/transferdomainroute53/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:56 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/migration/transferdomainroute53/</guid>
+      <description>该指南将逐步介绍如何将 GoDaddy 的域名转移到 Amazon Route 53 服务，在开始前请确认以下几点：
+ 您在该站点的域名已经注册60天以上。 请确认您的域名后缀（.com, .cn, .uk等）在亚马逊业务支持范围内查看可向 Amazon Route 53 注册的域。 部分顶级域名需更改参数，例如所有者名称。 请确保您注册该域名的网站具有转移域名的服务。  注：本实例中使用 GoDaddy 中注册的域名作为案例。
+迁移DNS服务 若您的域的DNS服务处于正在使用中，希望在流量不受影响下迁移域，请参考本节步骤，在迁移域名前将您的 DNS 服务迁移到 Route 53 中，如您的域的 DNS 服务处于空闲状态，或您的运营商迁移域名后也继续支持 DNS 服务，可跳过本部分，从步骤一开始。
+1. 从当前DNS服务提供商获取当前DNS配置文件（可选） 在 GoDaddy 登录后，点击需要迁移的域名右侧的 DNS 按钮，在弹出网页下方的 Advanced Features 下选择对应操作。您可使用该配置文件在 Route 53 中重新配置 DNS 服务。
+2. 创建托管区域 在Route 53中创建一个与您的域同名的托管区域，在该区中创建记录。Route 53 会自动为该域创建名称服务器（NS）和授权起始点（SOA）记录。步骤如下：
+创建托管区域 首先打开Route 53 服务控制台。
+ 若您是首次使用Route 53, 请在 DNS Managment 下点击 Get Started Now。   在 Hosted Zones 中点击 Created Hosted Zone。 在该窗口中，输入您的域名，填写注释（可选）。 Type 选项保留默认值 Public Hosted Zone。 选择 Create。   创建记录 在您创建的托管区域中创建记录，定义您的域和子域的流量的路由规则。有以下三种方式供您选择：</description>
+    </item>
+    
   </channel>
 </rss>

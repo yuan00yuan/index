@@ -13,7 +13,22 @@
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/bi/aurora_redshift_quicksight/</loc>
+    <lastmod>2019-09-09T10:27:36+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/</loc>
+    <lastmod>2019-09-09T10:27:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/serverless-image-handler/</loc>
+    <lastmod>2019-09-09T10:27:31+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/cognito_android/</loc>
     <lastmod>2019-09-09T10:27:31+08:00</lastmod>
   </url>
   
@@ -23,12 +38,47 @@
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/alexa/account-linking-cognito/</loc>
+    <lastmod>2019-09-09T10:27:19+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/iot/</loc>
     <lastmod>2019-09-09T10:27:07+08:00</lastmod>
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/iot/docker/</loc>
+    <lastmod>2019-09-09T10:27:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/bjstozhy/</loc>
+    <lastmod>2019-09-09T10:26:56+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/</loc>
+    <lastmod>2019-09-09T10:26:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/dms-mongo-to-s3/</loc>
+    <lastmod>2019-09-09T10:26:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/sms_vm-import/</loc>
+    <lastmod>2019-09-09T10:26:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/s3_transmission/</loc>
+    <lastmod>2019-09-09T10:26:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/migration/transferdomainroute53/</loc>
     <lastmod>2019-09-09T10:26:56+08:00</lastmod>
   </url>
   
@@ -38,8 +88,48 @@
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/codepipeline_ecs/</loc>
+    <lastmod>2019-09-09T10:26:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_jar_jenkins/</loc>
+    <lastmod>2019-09-09T10:26:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_docker_blue_jenkins/</loc>
+    <lastmod>2019-09-09T10:26:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/automatic-apply-resource/</loc>
+    <lastmod>2019-09-09T10:26:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/network/bypassicp/</loc>
+    <lastmod>2019-09-09T10:17:53+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/network/</loc>
     <lastmod>2019-09-09T10:17:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/network/vpc_guide/</loc>
+    <lastmod>2019-09-09T10:17:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/database/redis_benchmark/</loc>
+    <lastmod>2019-09-09T10:11:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/database/aurora-vs-mysql/</loc>
+    <lastmod>2019-09-09T10:11:17+08:00</lastmod>
   </url>
   
   <url>
@@ -48,12 +138,42 @@
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/database/redshift_mysql/</loc>
+    <lastmod>2019-09-09T10:11:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/database/api-gateway-proxy-for-ddb/</loc>
+    <lastmod>2019-09-09T10:11:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/database/mongodb/</loc>
+    <lastmod>2019-09-09T10:11:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/storage/s3fs/</loc>
+    <lastmod>2019-09-09T10:04:24+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/storage/</loc>
     <lastmod>2019-09-09T10:04:24+08:00</lastmod>
   </url>
   
   <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/ai/tensorflow/</loc>
+    <lastmod>2019-09-05T14:35:39+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://d1mo3mx8wgjhk2.cloudfront.net/</loc>
+    <lastmod>2019-09-05T14:35:39+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://d1mo3mx8wgjhk2.cloudfront.net/ai/connect_alex/</loc>
     <lastmod>2019-09-05T14:35:39+08:00</lastmod>
   </url>
   

@@ -7,8 +7,8 @@ pre = "<b>X. </b>"
 +++
 
 
-#### [Cognito实现微信用户第三方登陆](https://github.com/lab798/quickstart-guide/blob/master/cognito_android.md)
-#### [S3图片处理](https://quickstart.org.cn/mobile/serverless-image-handler.html)
-#### [Cognito, OpenID Connect实现S3精细化权限控制TerraformLogo](https://github.com/lab798/aws-s3-sts-openid-lab)
-
-
+#### [使用 SMS & VM-import 导入 VM 指导](/migration/sms_vm-import/)
+#### [将域名从GoDaddy迁移至Route 53](/migration/transferdomainroute53/)
+#### [使用 AWS DMS 迁移 MongoDB 到 S3](/migration/dms-mongo-to-s3/)
+#### [AWS服务迁移：从北京区到到宁夏区](/migration/bjstozhy/)
+#### [基于Amazon ECS的国内外文件同步系统解决方案](/migration/s3_transmission/)

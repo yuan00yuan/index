@@ -11,5 +11,54 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/cicd/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>基于CodePipeline ECS的CICD解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/codepipeline_ecs/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/codepipeline_ecs/</guid>
+      <description>综述： 通过本文章，您可以通过AWS CodePipeline，AWS CodeBuild，AWS CodeCommit, AWS CloudFormation 来实现基于Amazon ECS的CICD方案。开发人员在AWS CodeCommit中提交的新版本代码，会自动触发代码获取，打包镜像，上传镜像仓库，创建新版本的任务定义和服务。
+所需组件  Code Commit：AWS CodeCommit 是由 Amazon Web Services 托管的版本控制服务，可让您在云中私下存储和管理资产（如文档、源代码和二进制文件）。 Docker：CodeBuild使用Docker container 运行构建过程中需要的应用程序。 Amazon EC2：作为ECS的容器宿主机集群。 Amazon VPC：服务所在的网络。 Amazon ECS：AWS托管的容器编排服务。 Amazon ECR：AWS 托管的容器镜像仓库。 AWS CodePipeline：AWS 托管的持续集成持续交付服务，可以快速可靠的更新应用程序和服务，集成支持GitHub，Jenkins等主流开源工具。 AWS CodeBuild：AWS 托管的构建服务，用于打包代码生成可部署的软件包。 AWS CloudFormation：批量创建和管理AWS资源的自动化脚本。  步骤 流程  开发者将一个新版本的代码工程提交到CodeCommit或者github 触发codepipeline 流程 Pipeline的Source阶段，检测到指定CodeCommit的repo/ github 有新版本的更新 从CodeCommit / github 上拉取工程代码 Pipeline的Build阶段，AWS CodeBuild将新版本的代码按照 buildspec 文件打包为jar包 将打包好的jar包上传到S3 上传到s3的jar包会作为下一步build的source Pipeline的Build阶段，上一部build结束之后会触发第二个构建步骤，本步骤将jar包打包成Docker镜像 将Docker镜像上传到ECR镜像仓库 ECR中的镜像会在下一步中作为容器镜像 Pipeline的Deploy阶段，AWS CodePipeline触发AWS CloudFormation，其定义了Amazon ECS的Task definition和service AWS CloudFormation创建新版本的Task definition关联到新版本的Docker镜像，并更新Service。Amazon ECS从Amazon ECR中取到新版本的Docker镜像，创建新的 Task definition和服务，完成服务的更新   搭建 基础设施 创建VPC，子网  打开 Amazon VPC 控制台 https://console.</description>
+    </item>
+    
+    <item>
+      <title>基于jenkins的java应用程序CICD解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_jar_jenkins/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_jar_jenkins/</guid>
+      <description>概述 本文概述了用jenkins完成java项目的CICD流程的所需步骤，其中涉及到codeBuild和codeDeploy的相关配置在 cicd jar codepipe中详细说明
+步骤  创建jenkins服务器 创建jenkins项目 配置source 配置codeBuild 配置codeDeploy  创建jenkins  创建Amazon EC2实例，选择实例类型和添加存储。  在“高级详细信息”里面输入启动脚本 #!/bin/bash yum -y update yum install -y ruby yum install -y aws-cli yum install –y git cd /home/ec2-user wget https://bucket-name.s3.amazonaws.com/latest/install chmod +x ./install ./install auto  bucket name对应列表为  EC2启动成功后，使用SSH到该EC2，使用如下命令检验Agent是否工作正常。
+sudo service codedeploy-agent status Result: The AWS CodeDeploy agent is running as PID 3523    ### 使用Github托管源代码，并配置webhook自动触发 首先进入自己的Github地址，点击https://github.com/settings/tokens，生成GitHub token，这个token用于jenkins访问GitHub。</description>
+    </item>
+    
+    <item>
+      <title>基于jenkins的容器蓝绿部署解决方案</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_docker_blue_jenkins/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/cicd_docker_blue_jenkins/</guid>
+      <description>概述： 本文讲述的是用jenkins做容器蓝绿部署所需相关配置， 其中涉及到的codeBuild相关的配置同文章： cicd docker bule codePipe
+步骤：  创建jenkins项目 定义源码地址和代码更新触发 增加构建步骤： 源码-&amp;gt;jar包 增加构建步骤： jar包-&amp;gt; docker镜像 增加构建后操作： 切换生产端口
+1. 创建自由风格的项目 2. 输入github项目的地址 3. 输入github项目的git地址和分支 4. 勾选Github hook trigger for GITScm polling 实现github代码更新的自动触发 5. 点击“添加构建步骤” 选择“AWS cloud build”插件 6. 输入aws的accessId 和accessKey 7. 输入code build项目的项目名称和可用区 8. 点击“添加构建步骤” 选择“AWS cloud build”插件 9. 输入aws的accessId 和accessKey 10. 输入code build项目的项目名称和可用区 11. 此项目目的为把源码打包为jar包并上传到S3桶中 12. 选择“添加构建步骤“ 13. 选择“执行 shell“   本段代码的逻辑是： 1. 根据build_number也就是每次build的环境变量值，我们判断使用哪个任务定义模板 区别在于不同的模板中容器与实例的端口号对应不同 2. 根据新的参数创建新的任务定义， 3.</description>
+    </item>
+    
+    <item>
+      <title>自动化脚本：监测 &amp; 自动启动可用资源</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/automatic-apply-resource/</link>
+      <pubDate>Mon, 09 Sep 2019 10:26:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/cicd/automatic-apply-resource/</guid>
+      <description>场景概览 某些时候某可用区的资源暂时不足，启动时会启动失败。如果客户有一些资源要求一定要在特定可用区部署特定机型，需要经常去刷新资源。
+此脚本通过持续申请资源并且一旦有空闲资源，以预留容量的方式锁定资源来解决上述问题。
+示例代码演示了在宁夏cn-northwest-1a可用区申请r5.2xlarge资源。如果失败会持续执行，如果成功自动按预留容量启动。
+点击此链接了解预留容量：https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html
+前提条件 1. 安装以及配置AWSCLI 安装：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-install.html
+配置：https://docs.aws.amazon.com/zh_cn/cli/latest/userguide/cli-chap-configure.html
+aws configure  2. 安装AWS官方python SDK BOTO3 sudo easy_install pip pip install boto3  3. 执行前需要修改参数：实例类型（如c5.2xlarge），平台/操作系统(如Linux, windows，可添加多个), 可用区。 具体参数说明：https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html#EC2.Client.create_capacity_reservation
+具体实现 注：以下基于python2.7
+ from botocore.exceptions import ClientError import boto3 import json client = boto3.client(&#39;ec2&#39;,region_name=&#39;cn-northwest-1&#39;) while 1: print(&#39;enter the loop&#39;) try: #revise your own instance type &amp;amp; operating system &amp;amp; availability zone here!! response = client.create_capacity_reservation(InstanceType=&#39;r5.2xlarge&#39;,InstancePlatform=&#39;Linux/UNIX&#39;,AvailabilityZone=&#39;cn-northwest-1a&#39;,InstanceCount=1,EndDateType=&#39;unlimited&#39;) print(&#39;[Success]check the detailed info below or in the console&#39;) print(response) break except ClientError as e: #print(e) #Launch failed.</description>
+    </item>
+    
   </channel>
 </rss>

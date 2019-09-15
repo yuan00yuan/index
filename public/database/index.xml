@@ -11,5 +11,93 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/database/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Amazon ElastiCache for Redis 基准测试</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/redis_benchmark/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/redis_benchmark/</guid>
+      <description>本文主要目的是为 ElasticCache 下的 Redis 提供测试指南.
+完成测试的时间大约为10分钟
+ 重要
+本测试默认您已经拥有了 AWS 账户并创建了 IAM 用户
+若未执行以上设置，可参考这里
+ 配置安全组 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 准备 Redis  登录 AWS 管理控制台并通过以下网址打开 Amazon ElastiCache 控制台：https://console.amazonaws.cn/elasticache/。
+ 选择控制面板中的 Redis, 在点击创建。
+   在创建您的 Amazon ElasticCache 集群界面, 按照以下内容填写:
+ 集群引擎: Redis Redis 设置  名称: benchmark-redis 节点类型: cache.</description>
+    </item>
+    
+    <item>
+      <title>Aurora VS MySQL 压测</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/aurora-vs-mysql/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/aurora-vs-mysql/</guid>
+      <description>实验目的  本实验大约耗时35分钟
+ 使用 sysbench 对Amazon Aurora与RDS MySQL进行基准测试, 对比二者的读写性能.
+以下是本次测试的架构
+涉及组件 - Aurora - RDS - EC2
+实验步骤 配置 VPC (可选) 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 启动Aurora实例  登录 AWS 管理控制台 并通过以下网址打开 Amazon RDS 控制台：https://console.aws.amazon.com/rds/。
+ 在导航窗格中，选择实例。
+ 选择启动数据库实例。启动数据库实例向导在选择引擎页面打开。
+   选择 Amazon Aurora, 并将版本选择为与 MySQL 5.</description>
+    </item>
+    
+    <item>
+      <title>Redshift &amp; MySQL 性能对比实验</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/redshift_mysql/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/redshift_mysql/</guid>
+      <description>实验目的 提供 Redshift 和 RDS MySQL 在千万级数据中执行联表查询的性能对比。
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+涉及组件  EC2 RedShift RDS S3 VPC  实验步骤  重要
+本实验默认您已经拥有了 AWS 账户并创建了 IAM 用户
+若未执行以上设置，可参考这里
+ 配置 VPC 新建 VPC 安全组，具体步骤参考适用于 Amazon VPC 的 IPv4 入门
+将安全组的入站规则设置为
+ Type: ALL Traffice Protocol: ALL Port Range: ALL Source: 选择 Custom IP，然后键入 0.0.0.0/0。   重要
+除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。
+ 配置 RedShift  为 Amazon Redshift 创建 IAM 角色</description>
+    </item>
+    
+    <item>
+      <title>利用API Gateway访问DynamoDB</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/api-gateway-proxy-for-ddb/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/api-gateway-proxy-for-ddb/</guid>
+      <description>本文介绍如何利用API Gateway作为proxy直接对dynamoDB进行访问，将示例get和post两种方法。
+通过这种方式，无需构建serverside，无需提供credentials，可直接利用标准的https API对ddb内的数据进行读取或者写入操作。
+步骤 1. 创建dynamoDB table 指定表名称，主键即可。
+2. 构建API Get请求 (1) 选择Scan模式：返回DDB中所有结果 新建资源，增加get方法。
+进入Integration Request, 选择DynamoDB服务，action为Scan。
+定义mapping template。
+(2) 选择Query: 查询某项值 新建资源/{year}, 增加get方法。Intergration request的其他选项不变，action改为Query。mapping table更改为如下：
+{ &amp;quot;TableName&amp;quot;: &amp;quot;xxxx&amp;quot;, &amp;quot;KeyConditionExpression&amp;quot;: &amp;quot;account_type = :v1&amp;quot;, &amp;quot;ExpressionAttributeValues&amp;quot;: { &amp;quot;:v1&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.params(&#39;account_type&#39;)&amp;quot; } } }  (3) 测试 选择test测试API。对于query选项，path {year}输入需要查询的value；对于scan无需带参。测试完成后无问题部署即可。
+3. 构建API Post请求 配置如下 mapping table配置如下：
+{ &amp;quot;TableName&amp;quot;: &amp;quot;xxx&amp;quot;, &amp;quot;Item&amp;quot;: { &amp;quot;account_type&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.path(&#39;$.account_type&#39;)&amp;quot; }, &amp;quot;balance&amp;quot;: { &amp;quot;S&amp;quot;: &amp;quot;$input.path(&#39;$.balance&#39;)&amp;quot; } } }  test时，request body输入数据即可。如</description>
+    </item>
+    
+    <item>
+      <title>将MongoDB部署到现有VPC</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/database/mongodb/</link>
+      <pubDate>Mon, 09 Sep 2019 10:11:17 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/database/mongodb/</guid>
+      <description>您可以启动Quick Start，将 MongoDB 部署到 AWS 账户中现有的 Virtual Private Cloud (VPC) 中。完成部署需要约 15 分钟。请查看下述实施详细信息，按照此指南后面部分提供的分步说明进行操作。
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 
+步骤一：加载Quick Start  在您的 AWS 控制台中选择 AWS CloudFormation ，开始部署 MangoDB 集群。   在配置前，请确保您的VPC在不同可用区中有两个公有子网和三个私有子网（可选），以及 DHCP 选项中配置的域名选项，如 Amazon VPC 文档 中所述。 私有子网需配置 NAT 网关或 NAT 实例以用于出站 Internet 连接，并需创建堡垒主机及其关联的安全组以实现入站 SSH 访问。(请参阅 Amazon VPC 快速入门 设置VPC，Linux 堡垒主机快速入门设置堡垒主机。) 检查导航栏右上角显示的所在区域，根据需要进行更改。 在 Select Template 页面上，若使用默认模板则保留模板 URL 的默认设置，或选择上传您的Template文件，然后选择 Next 。   在 Specify Details 页面上，更改堆栈名称（可选）。填写模板的参数，并仔细检查默认设置中的其他参数，根据需要进行更改（见下表）。完成后选择 Next 进入下一步。  选项 1：用于将 MongoDB 部署到现有 VPC 的参数</description>
+    </item>
+    
   </channel>
 </rss>

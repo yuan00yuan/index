@@ -11,5 +11,27 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/network/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title># 在中国合法部署海外IP</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/network/bypassicp/</link>
+      <pubDate>Mon, 09 Sep 2019 10:17:53 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/network/bypassicp/</guid>
+      <description>本文将介绍在不将主域名做 ICP 备案的情况下，在 AWS China Region 部署您的服务。若您希望：
+ 在国内备案对应 .cn 域名，访问主域名 www.example.com 时自动跳转至 www.example.cn。 在国内备案对应 .cn 域名，访问主域名 www.example.com 时使用海外 CDN 节点加速。 不在国内备案 .cn 域名，使用 www.example.com 访问，且服务全部部署在海外。  可参考我们为您提供的三种部署方案：
+ 利用部署在海外的 API Gateway 和 Lambda，访问 www.example.com 时返回 301 www.example.cn。 使用 CNC (网宿)的香港、台湾等节点做 CDN 回源 China Region, 经实测延迟大约为700ms, 网宿的 SLA 为2秒，丢包情况很少发生。 使用 CNC 的香港，台湾节点加速；使用电信的 CN2IP 加速访问。  一、 国内备案.cn等域名 该方案使用 Amazon API Gateway 及 Lambda 服务。您可在国内地区部署服务并注册 www.example.cn 域名并备案，当用户访问 www.example.com 时，主域名配置的海外 API Gateway 会为客户自动转调到 www.</description>
+    </item>
+    
+    <item>
+      <title>VPC配置指南</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/network/vpc_guide/</link>
+      <pubDate>Mon, 09 Sep 2019 10:17:53 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/network/vpc_guide/</guid>
+      <description>本文主要包含以下内容
+ 公有子网（public subnet ）和 私有子网（private subnet ）的区别 如何新建 IGW, 如何更改路由表 如何创建 NAT 网关,如何更改路由表 合理的 web hosting 的网络拓扑 VPC Wizard  公有子网与私有子网  子网: VPC 是跨可用区的. 在创建 VPC 后需要为每个可用区添加一个或多个子网. 子网不可跨可用区. 公有子网( public subnet ): 子网的关联路由表 包含 指向 Internet 网关(Internet Gateways)的路由的子网 私有子网( private subnet): 子网的关联路由表 不包含 指向 Internet 网关(Internet Gateways)的路由的子网  仅限 VPN 的子网: 特别的,一个子网没有通向 Internet 网关(Internet Gateways)的路由, 但其流量会被路由到虚拟专用网关以进行 VPN 连接, 则这个子网就是仅限 VPN 的子网   如上图,
+ Subnet 1: 有通向 Internet 网关的路由, 因此它是公有子网 Subnet 2: 没有通向 Internet 网关的路由, 因此它是私有子网 Subnet 3: 没有通向 Internet 网关的路由, 但流量可达 VPN , 因此它是仅限 VPN 的子网  Internet Gateways 使用 Internet 网关(Internet Gateways, igw), 可实现 VPC 中的实例与 Internet 之间的通信</description>
+    </item>
+    
   </channel>
 </rss>

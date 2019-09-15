@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>VPC配置指南 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/network/vpc_guide/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item active">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/network/vpc_guide.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/network/'>Network</a> > VPC配置指南
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#公有子网与私有子网">公有子网与私有子网</a></li>
+<li><a href="#internet-gateways">Internet Gateways</a>
+<ul>
+<li>
+<ul>
+<li><a href="#配置-internet-网关">配置 Internet 网关</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#nat-网关">NAT 网关</a>
+<ul>
+<li>
+<ul>
+<li><a href="#配置-nat-网关">配置 NAT 网关</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#合理的-web-hosting-的网络拓扑">合理的 web hosting 的网络拓扑</a></li>
+<li><a href="#vpc-wizard">VPC Wizard</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              VPC配置指南
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>本文主要包含以下内容</p>
+
+<ul>
+<li>公有子网（public subnet ）和 私有子网（private subnet ）的区别</li>
+<li>如何新建 IGW, 如何更改路由表</li>
+<li>如何创建 NAT 网关,如何更改路由表</li>
+<li>合理的 web hosting 的网络拓扑</li>
+<li>VPC Wizard</li>
+</ul>
+
+<h2 id="公有子网与私有子网">公有子网与私有子网</h2>
+
+<ul>
+<li><strong>子网</strong>: VPC 是跨<strong>可用区</strong>的. 在创建 VPC 后需要为<strong>每个可用区</strong>添加一个或多个子网. 子网<strong>不可跨</strong>可用区.</li>
+<li><strong>公有子网</strong>( public subnet ): 子网的<strong>关联路由表</strong> <strong>包含</strong> 指向 <strong>Internet 网关(Internet Gateways)</strong>的路由的子网</li>
+<li><strong>私有子网</strong>( private subnet): 子网的<strong>关联路由表</strong> <strong>不包含</strong> 指向 <strong>Internet 网关(Internet Gateways)</strong>的路由的子网
+
+<ul>
+<li><strong>仅限 VPN 的子网</strong>: 特别的,一个子网没有通向 <strong>Internet 网关(Internet Gateways)</strong>的路由, 但<strong>其流量会被路由到虚拟专用网关以进行 VPN 连接</strong>, 则这个子网就是<strong>仅限 VPN 的子网</strong></li>
+</ul></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821103147315.png" alt="image-20180821103147315" /></p>
+
+<p>如上图,</p>
+
+<ul>
+<li><strong>Subnet 1</strong>: 有通向 Internet 网关的路由, 因此它是<strong>公有子网</strong></li>
+<li><strong>Subnet 2</strong>: 没有通向 Internet 网关的路由, 因此它是<strong>私有子网</strong></li>
+<li><strong>Subnet 3</strong>: 没有通向 Internet 网关的路由, 但流量可达 VPN , 因此它是<strong>仅限 VPN 的子网</strong></li>
+</ul>
+
+<h2 id="internet-gateways">Internet Gateways</h2>
+
+<p>使用 <strong>Internet 网关(Internet Gateways, igw)</strong>, 可实现 VPC 中的实例与 Internet 之间的通信</p>
+
+<p>Internet 网关有两个用途:</p>
+
+<ol>
+<li>在 VPC 路由表中为 Internet 可路由流量提供目标</li>
+<li>为已经分配了公有 IPv4 地址的实例执行网络地址转换 (NAT)</li>
+</ol>
+
+<p>当生成AWS账户的时候，AWS系统会默认的在每一个区域内都生成一个默认的VPC，并且这个默认的VPC已经绑定了一个Internet网关；一个Internet网关一次只能绑定一个VPC；当VPC中有EC2实例等AWS资源的时候，Internet网关是不能手动和相结合的VPC相分离的</p>
+
+<blockquote>
+<p><strong>路由表</strong></p>
+
+<p>每个子网都会和路由表相结合使用，并且只能使用一个路由表；VPC中的子网是共有子网还是私有子网是<strong>由该子网使用的路由表决定的</strong></p>
+
+<p>如果该路由表中有Internet网关路由条目，那么该子网就是共有子网；</p>
+
+<p>路由表由一系列的路由规则组成，决定了子网的访问权限；默认情况下，同一个VPC之间的子网之间是可以相互通信的；当路由表和子网已经结合的情况下，该路由表是不能被删除的。</p>
+</blockquote>
+
+<h4 id="配置-internet-网关">配置 Internet 网关</h4>
+
+<p>Internet 网关在配置时需要具有对应的<strong>子网</strong>, 在配置之前请确保您已经添加了所需的子网, 有关子网的更多信息, 请参阅<a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Subnets.html">VPC 和子网</a></p>
+
+<ul>
+<li><p><strong>创建 Internet 网关并将其附加到 VPC</strong></p>
+
+<ul>
+<li><p>打开 Amazon VPC 控制台 <a href="https://console.aws.amazon.com/vpc/">https://console.aws.amazon.com/vpc/</a>。</p></li>
+
+<li><p>在导航窗格中，选择 <strong>Internet Gateways (Internet 网关)</strong>，然后选择 <strong>Create internet gateway (创建 Internet 网关)</strong>。<img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821114813780.png" alt="image-20180821114813780" /></p></li>
+
+<li><p>(可选) 为 Internet 网关命名，然后选择 <strong>Create (创建)</strong></p></li>
+
+<li><p>选择刚刚创建的 Internet 网关，然后选择 <strong>Actions, Attach to VPC (操作，附加到 VPC)</strong>。<img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821114609079.png" alt="image-20180821114052114" /></p></li>
+
+<li><p>从列表中选择 VPC，然后选择 <strong>Attach (附加)</strong>。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821114448728.png" alt="image-20180821114448728" /></p></li>
+
+<li><p><strong>创建自定义路由表</strong></p>
+
+<ul>
+<li><p>打开 Amazon VPC 控制台 <a href="https://console.aws.amazon.com/vpc/">https://console.aws.amazon.com/vpc/</a>。</p></li>
+
+<li><p>在导航窗格中，选择 <strong>Route Tables</strong>，然后选择 <strong>Create Route Table</strong>。<img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821115416967.png" alt="image-20180821115416967" /></p></li>
+
+<li><p>在 <strong>Create Route Table</strong> 对话框中，可以选择命名您的路由表，选择您的 VPC，然后选择 <strong>Yes, Create</strong>。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821135611911.png" alt="image-20180821135611911" /></p>
+
+<ul>
+<li><p>选择您刚刚创建的自定义路由表。详细信息窗格中会显示选项卡，以供您使用其路径、关联和路线传播。</p></li>
+
+<li><p>在 <strong>Routes</strong> 选项卡中，依次选择 <strong>Edit</strong>、<strong>Add another route</strong>，然后根据需要添加以下路由。完成此操作后，选择 <strong>Save</strong>。</p></li>
+
+<li><p>对于 IPv4 流量，在 <strong>Destination (目的地)</strong> 框中指定 <code>0.0.0.0/0</code>，然后在 <strong>Target (目标)</strong> 列表中选择 Internet 网关 ID。</p></li>
+
+<li><p>对于 IPv6 流量，在 <strong>Destination (目的地)</strong> 框中指定 <code>::/0</code>，然后在 <strong>Target (目标)</strong> 列表中选择 Internet 网关 ID。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821140205194.png" alt="image-20180821140205194" /></p>
+
+<blockquote>
+<p><strong>关于这一步路由表配置的解释</strong></p>
+
+<p>该路由表所属的<strong>VPC</strong> 的CIDR是<code>192.168.0.0/16</code>, 现该路由表有两个条目</p>
+
+<ul>
+<li><strong>local 网关路由条目</strong>(第一行): 默认生成, 手动不能更改</li>
+</ul>
+
+<p><strong>子网</strong>可以通过 <strong>local 网关路由条目</strong>和<strong>该 VPC (192.168.0.0./16)</strong>中的<strong>其他子网互相通信</strong></p>
+
+<p>本条目是 VPC 间互相通信的保证, 无法修改</p>
+
+<ul>
+<li><strong>Internet 网关路由条目</strong>(第二行)</li>
+</ul>
+
+<p>通过 <strong>Internet 网关路由条目</strong>, 子网可以通过其对应的<strong>Internet 网关</strong>和<strong>外部网络(0.0.0.0/0)</strong>通信</p>
+
+<p>此时，这个子网由于有Internet网关路由条目就叫做<strong>共有子网</strong>, 如果这个子网的路由表中没有通过igw-xxxxxx这个Internet网关所对应的路由条目的话, 这个子网就不能访问外网,  就叫做私有子网</p>
+</blockquote>
+
+<ul>
+<li>在 <strong>Subnet Associations</strong> 选项卡上，选择 <strong>Edit</strong>，选中子网的 <strong>Associate</strong> 复选框，然后选择 <strong>Save</strong>。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821140326210.png" alt="image-20180821140326210" /></p></li>
+</ul>
+
+<p>有关路由表的更多信息，请参见<a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">路由表</a>。</p>
+
+<h2 id="nat-网关">NAT 网关</h2>
+
+<p>使用<strong>网络地址转换 (NAT) 网关</strong>允许私有子网中的实例连接到 Internet 或其他 AWS 服务，但阻止 Internet 发起与这些实例的连接</p>
+
+<p>要创建 NAT 网关，您必须指定 NAT 网关应处于哪个公有子网中。有关公有子网和私有子网的更多信息，请参阅<a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Subnets.html#SubnetRouting">子网路由</a>。还必须在创建 NAT 网关时指定与该网关关联的<a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/vpc-eips.html">弹性 IP 地址</a>。创建 NAT 网关之后，必须更新与您的一个或多个私有子网关联的路由表，以将 Internet 绑定流量指向该 NAT 网关。这使您的私有子网中的实例可以与 Internet 通信。</p>
+
+<h4 id="配置-nat-网关">配置 NAT 网关</h4>
+
+<ul>
+<li><p><strong>创建 NAT 网关</strong></p>
+
+<ul>
+<li><p>打开 Amazon VPC 控制台 <a href="https://console.aws.amazon.com/vpc/">https://console.aws.amazon.com/vpc/</a>。</p></li>
+
+<li><p>在导航窗格中，依次选择 <strong>NAT Gateways</strong>、<strong>Create NAT Gateway</strong>。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821152642033.png" alt="image-20180821152642033" /></p>
+
+<ul>
+<li>指定要在其中创建 NAT 网关的子网，并选择要与该 NAT 网关关联的弹性 IP 地址的分配 ID。完成后，选择 <strong>Create a NAT Gateway</strong>。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821160503177.png" alt="image-20180821160503177" /></p>
+
+<blockquote>
+<p><strong>注意</strong></p>
+
+<p>NAT 网关所处的子网必须为<strong>公有子网</strong></p>
+</blockquote>
+
+<ul>
+<li>NAT 网关会显示在控制台中。片刻之后，其状态会更改为 <code>Available</code>，此后它即准备好供您使用。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821160905824.png" alt="image-20180821160905824" /></p></li>
+</ul>
+
+<p>如果 NAT 网关变为 <code>Failed</code> 状态，则表示在创建过程中发生了错误。有关更多信息，请参阅 <a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html#nat-gateway-troubleshooting-failed">NAT 网关变为 Failed 状态</a>。</p>
+
+<ul>
+<li><p><strong>为 NAT 网关配置路由表</strong></p>
+
+<ul>
+<li><p>打开 Amazon VPC 控制台 <a href="https://console.aws.amazon.com/vpc/">https://console.aws.amazon.com/vpc/</a></p></li>
+
+<li><p>在导航窗格中，选择 <strong>Route Tables</strong>。</p></li>
+
+<li><p>选择与私有子网关联的路由表，然后依次选择 <strong>Routes</strong>、<strong>Edit</strong>。</p></li>
+
+<li><p>选择 <strong>Add another route</strong>。对于 <strong>Destination</strong>，键入 <code>0.0.0.0/0</code>。对于 <strong>Target</strong>，选择 NAT 网关的 ID。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821162613752.png" alt="image-20180821162613752" /></p>
+
+<ul>
+<li>在 <strong>Subnet Associations</strong> 选项卡上，选择 <strong>Edit</strong>，选中子网的 <strong>Associate</strong> 复选框，然后选择 <strong>Save</strong></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180821171757732.png" alt="image-20180821171757732" /></p>
+
+<ul>
+<li>选择 <strong>Save</strong>。</li>
+</ul></li>
+</ul>
+
+<p>为确保 NAT 网关可以访问 Internet，与 NAT 网关所在子网关联的路由表必须包含使 Internet 流量指向 Internet 网关的路由。有关更多信息，请参阅 <a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html#Add_IGW_Routing">创建自定义路由表</a>。如果删除 NAT 网关，则 NAT 网关路由会保留为 <code>blackhole</code> 状态，直到您删除或更新这些路由。有关更多信息，请参阅 <a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html#AddRemoveRoutes">在路由表中添加和删除路由</a>。</p>
+
+<h2 id="合理的-web-hosting-的网络拓扑">合理的 web hosting 的网络拓扑</h2>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/Web_Hosting.png" alt="image-20180821171757732" /></p>
+
+<p>一个合理的 Web Hosting 应该包含有以下几部分:</p>
+
+<ul>
+<li><p>Internets Gateway</p></li>
+
+<li><p>Elastic Load Balancing（ELB）</p></li>
+</ul>
+
+<p>Elastic Load Balancing 可以在多个目标（如 Amazon EC2 实例、容器和 IP 地址）之间自动分配传入的应用程序流量，<strong>实现负载均衡</strong>。它可以在单个可用区内处理不断变化的应用程序流量负载，也<strong>可以跨多个可用区</strong>处理此类负载。Elastic Load Balancing 提供<strong>三种负载均衡器</strong>，它们均能实现高可用性、自动扩展和可靠的安全性，因此能让您的应用程序获得容错能力，有关 ELB 的更多信息，请参阅<a href="https://amazonaws-china.com/cn/elasticloadbalancing/?nc2=h_m1">Elastic Load Balancing</a>。</p>
+
+<p>一个合理的 ELB：</p>
+
+<ul>
+<li>直接与 Internets Gateway 连接</li>
+
+<li><p>与 <strong>Auto Scaling  Group</strong> 连接</p></li>
+
+<li><p>堡垒机(可用 NAT 实例代替) / NAT 网关</p></li>
+</ul>
+
+<p>通常情况下，堡垒机（也称为“跳转机”）是在系统中访问私有主机的一个最佳实践。例如，您的系统可能包含一个不希望被公开访问的应用服务器，当需要在这台服务器上进行产品的更新或系统补丁程序的管理时，您通常会登录到堡垒机，然后从那里访问（即“跳转到”）应用服务器。</p>
+
+<p>在本拓扑中，Web 实例以及数据库实例位于<strong>私有子网</strong>中，无法被直接访问。因此，您需要通过堡垒机来访问并管理这些实例。</p>
+
+<p>一个合理的堡垒机：</p>
+
+<ul>
+<li>最好仅向特定的IP地址范围开放，这个地址范围通常可设定为您单位的企业网络</li>
+<li>直接与 Internets Gateway 连接</li>
+
+<li><p>位与<strong>公有子网</strong></p></li>
+
+<li><p>位与 Auto Scaling Group 中的 Web 实例（也可以是其他类型的应用实例）</p></li>
+</ul>
+
+<p>使用 Amazon EC2 Auto Scaling，您可以维持应用程序的可用性，并根据自己定义的条件以动态方式自动扩展或缩减 Amazon EC2 的容量。您可以将 Amazon EC2 Auto Scaling 用于 EC2 实例的队列管理，以帮助维持队列的正常运行和可用性，并确保当前运行的是所需数量的 Amazon EC2 实例。您还能将 Amazon EC2 Auto Scaling 用于 EC2 实例的动态扩展，以便在需求高峰期自动增加 Amazon EC2 实例的数量来维持性能，并在需求较低时自动减少容量来降低成本。</p>
+
+<p>通常情况下，<strong>Auto Scaling 会与 ELB 结合使用</strong>，之后实例在启动后会自动加入 ELB 的目标组，在终止实例前会先等待 ELB 连接耗尽。有关 Auto Scaling 的更多信息，请参阅<a href="https://amazonaws-china.com/cn/ec2/autoscaling/?nc2=h_m1">Auto Scaling</a>。</p>
+
+<ul>
+<li><p>为了保证实例的安全与可用性，实例应分别位于<strong>多个可用区</strong>的<strong>私有子网</strong>中</p></li>
+
+<li><p>数据库实例</p>
+
+<ul>
+<li><p>为了保证您数据的安全，数据库实例不应能直接从外网访问，数据库实例应位于<strong>私有子网</strong>中。</p></li>
+
+<li><p>使用<strong>主从架构</strong>：</p></li>
+
+<li><p>将读操作和写操作分离到不同的数据库上，避免主服务器出现性能瓶颈</p></li>
+
+<li><p>主服务器进行写操作时，不影响查询应用服务器的查询性能，降低阻塞，提高并发</p></li>
+
+<li><p>数据拥有多个容灾副本，提高数据安全性，同时当主服务器故障时，<strong>可立即切换到其他服务器</strong>，提高系统可用性</p></li>
+</ul>
+
+<p>如图所示，图中<strong>橙色实线</strong>为正常状况下流经数据库的流量，当<strong>主服务器</strong>发生故障后，<strong>从服务器</strong>可代替主服务器提供服务，此时的流量如<strong>橙色虚线</strong>所示。</p>
+
+<ul>
+<li>为了保证可用性，<strong>主</strong>数据库与<strong>从</strong>数据库应位与<strong>不同的可用区</strong>中</li>
+</ul></li>
+</ul>
+
+<h2 id="vpc-wizard">VPC Wizard</h2>
+
+<p>VPC 控制台中提供了四种 VPC 向导用于创建常用场景下的 VPC 的创建</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/vpc-start-guide/image-20180822135511214.png" alt="image-20180822135511214" /></p>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario1.html#VPC_Scenario1_Implementation">带单个公有子网的 VPC</a>:</li>
+</ul>
+
+<p>适用于运行单层、面向公众的 Web 应用程序 (如博客或简单网站) 的 VPC。</p>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario2.html">带有公有子网和私有子网( NAT)的 VPC</a>:</li>
+</ul>
+
+<p>适用于运行面向公众的 Web 应用程序的 VPC，同时仍在第二个子网中保留非公开访问的后端服务器。</p>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario3.html">具有公有和私有子网以及 AWS 托管 VPN 访问的 VPC</a>:</li>
+</ul>
+
+<p>适用于将数据中心扩展到云中的 VPC，并实现从 VPC 直接访问 Internet。</p>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/VPC_Scenario4.html">仅具有私有子网, 以及 AWS 托管 VPN 访问权限的 VPC</a>:</li>
+</ul>
+
+<p>适用于将数据中心扩展到云中的 VPC，无需将您的网络连接到 Internet 即可使用 Amazon 基础设备。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/network/bypassicp/" title="# 在中国合法部署海外IP"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/database/" title="Database" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

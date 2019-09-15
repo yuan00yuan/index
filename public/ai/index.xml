@@ -11,5 +11,34 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/ai/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>Deep Learning AMI下Tensorflow环境的安装与切换</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/ai/tensorflow/</link>
+      <pubDate>Thu, 05 Sep 2019 14:35:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/ai/tensorflow/</guid>
+      <description>在AWS Deep Learning AMI的环境下，如何利用conda管理不同环境，配置所需要的依赖，以及创建新的隔离环境。
+文档来源：尹主任
+教程 0.启动EC2实例，选择Deep Learning AMI 1.切换环境 ML AMI自带多套机器学习的环境，如MXNet(+Keras2) with Python3, TensorFlow(+Keras2) with Python3等等。可以利用source activate的命令方便的做切换。如：
+ #切换到MXNet with python3.6 source activate mxnet_p36  2.安装新的conda环境  # 通过conda安装环境，并配置对应python版本 $ conda create -n tf_gpu14_p35 python=3.5.2 # 进入环境 $ source activate tf_gpu14_p35 # 进⼊入环境后，可以查看已经安装的包 $ pip list installed #安装tensorflow-gpu $ pip install tensorflow-gpu==1.4 # optional 安装其他的画图相关⼯工具或任意工具 $ pip install tensorflow==1.12 jupyter matplotlib pandas seaborn numpy  3.安装notebook&amp;amp;把conda环境加⼊入notebook中 # Install jupyter notebook $ conda install jupyter $ conda install ipykernel # Add your conda env to jupyter notebook kernels (此处特别注意，加载的时候要在对应的虚拟环境加载，否则会出现找不不到依赖包的问题) $ python -m ipykernel install --user --name tf_gpu14_p35 --display-name &amp;quot;my kernel (tensorflow_gpu14_p35)” # 在base目录Launch Jupyter Notebook $ jupyter notebook  5.</description>
+    </item>
+    
+    <item>
+      <title>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/ai/connect_alex/</link>
+      <pubDate>Thu, 05 Sep 2019 14:35:39 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/ai/connect_alex/</guid>
+      <description>实验概览 此实验搭建了一个智能电话订车系统，通过语音交互可以获取用户需要订车的城市，取车以及还车时间，对车型的要求，以及驾驶人的年龄，并且将这些信息通过lambda上传到dynamoDB当中.
+架构图 demo效果 可直接拨打+1 443-692-8678测试，触发词&amp;rdquo;reserve&amp;rdquo; &amp;ldquo;reserver a car&amp;rdquo;,&amp;ldquo;book a car&amp;rdquo;等。
+实现步骤 1. 搭建呼叫中心，实现可以人工call in &amp;amp; call out的基本功能 (1) 创建实例，设置基本选项
+打开Amazon Connect，添加实例，设置访问URL，管理用用户密码, 选择功能(call in/ out/both)，通话存储的位置等。  (2) 构建呼叫中心
+点击进入实例（需要管理员密码）。在dashboard当中开始设置。最基本的选项是第一个Claim a phone number，可以选择你的call center number的国家，connect会自动帮你生成一个号码(暂不支持中国+86)。设置完毕后，这个电话就可以使用了，可以进行正常的拨出、拨入，人工对话。 除此之外，你可以定义你的call center的运营时间（比如周一9:00AM-18:00PM, 周六10:00AM-14:00PM,周末不上班）等。其他信息可以暂时不进行设置。  2. 使用Lex创建智能语音机器人 (1) 创建并定义Bot
+打开Lex，创建bots，Lex提供多个模板可供demo选择。这里我们选择基于模板BookTrip。COPPA设置为no。 此时testbots上有两个intents（意图）。代表着用户可以利用此bots做两种触发，一种是订车，一种是订住宿。两者只是定义时的逻辑和数据字段不同，因此此例当中，我们只用到car reservation。 在Interts的设置上，有以下参数： * Sample utterances：唤醒词，可自行定义或添加。 * SLOTS字段：希望Lex帮你获取的信息。默认情况下Lex会按照顺序询问，也可以自己定义priority。 * Fulfillment：定义拿到这些参数之后，下一步希望做什么。可以选择直接把这些信息返回给客户端，或者是利用lambda做进一步的存储、处理、分析等。 * Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。  此外左侧tab还包括：
+ error handling：当获取语音输入失败时，自定义语音，以及重复最多尝试次数。
+ slot types: 可以给用户提示，一些选择的example。
+  （2） 创建lambda函数：存储进dynamoDB</description>
+    </item>
+    
   </channel>
 </rss>

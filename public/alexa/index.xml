@@ -11,5 +11,19 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/alexa/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>AWS Cognito User Pool实现Alexa账户关联</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/alexa/account-linking-cognito/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:19 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/alexa/account-linking-cognito/</guid>
+      <description>完成本实验预计使用1小时 完成该实验需要可以一个已经注册好的 Alexa Skill, 并且能够在 Alexa App 或者 Alex Web Portal 中显示该 Alexa Skill。
+ 本文将介绍如何利用AWS Cognito User Pool实现Alexa的账户关联。这里将不涉及到 Cognito 或者 Alexa 相关的开发。有关 Cognito User Pool 的更多资料请参考 官方文档。 有关Alexa的开发资料请参考 Alexa Developer Portal。
+什么是账户关联 账户关联(Account Linking)允许将用户在Alexa账号系统中的身份与另外一个账号系统中的身份关联起来。 假设这样的一个问题，系统X中存在用户a和用户b, Alexa 账户体系中存在用户A和用户B, 那么系统X收到来自 Alexa的指令后，如何区分这是来自用户a的请求还是用户b的呢？账户关联就是为了解决这个问题，将Alexa的账户 系统与另一个账号系统中的身份关联起来。
+Alexa账户关联是标准的 OAuth2.0 授权, 本文不深入探讨 OAuth2.0, 有关 OAuth2.0 的理解可以参考 理解OAuth 2.0。
+AWS的 Cognito User Pool提 供了标准的 OAuth 2.0 的认证和授权，因此借助 Cognito User Pool 可以快速实现和 Alexa 的账户关联。
+下面这张流程图展示了一个用户在 Alexa APP 中进行账户关联，Alexa 是如何从授权服务器获得 AccessToken 的整个过程。</description>
+    </item>
+    
   </channel>
 </rss>

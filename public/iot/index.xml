@@ -11,5 +11,22 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/iot/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>IoT 开发环境： 可编译 C 的 Docker 镜像</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/iot/docker/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:07 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/iot/docker/</guid>
+      <description>该指南包含在 Windows 环境安装 Docker，使用 Dockerfile 配置环境以及相关操作介绍。
+步骤一 在本地安装 Docker 在Docker官网下载 Windows 端安装包
+安装后，在开始菜单输入cmd打开命令窗口，输入
+docker --version  检查是否安装完毕。
+在桌面点击图标，等待加载完成，右下角图标显示：
+步骤二 配置 Docker Docker 中的镜像文件可以通过命令行下载、导入本地镜像文件等方法进行配置。
+（1） 方法一 Dockerfile 配置带 gcc 编译器的 ubuntu 系统。
+FROM ubuntu ENV DEBIAN_FRONTEND noninteractive RUN apt-get update &amp;amp;&amp;amp; \ apt-get -y install gcc mono-mcs &amp;amp;&amp;amp; \ rm -rf /var/lib/apt/lists/*  您可使用上述文本创建 Dockerfile 文件，通过以下命令调用它创建该 docker 镜像：
+docker build -t [your image] [directory of the dockerfile]  docker build 命令将读取指定路径下(包括子目录)的 Dockerfile，并将该路径下的所有内容发送给Docker服务端，由服务端来创建镜像。</description>
+    </item>
+    
   </channel>
 </rss>

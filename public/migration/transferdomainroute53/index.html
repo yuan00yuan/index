@@ -1,0 +1,1837 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>将域名从GoDaddy迁移至Route 53 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/migration/transferdomainroute53/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item active">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/Migration/TransferDomainRoute53.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/migration/'>Migration</a> > 将域名从GoDaddy迁移至Route 53
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#迁移dns服务">迁移DNS服务</a>
+<ul>
+<li><a href="#1-从当前dns服务提供商获取当前dns配置文件-可选">1. 从当前DNS服务提供商获取当前DNS配置文件（可选）</a></li>
+<li><a href="#2-创建托管区域">2. 创建托管区域</a>
+<ul>
+<li><a href="#创建托管区域">创建托管区域</a></li>
+<li><a href="#创建记录">创建记录</a></li>
+<li><a href="#减小ttl设置">减小TTL设置</a></li>
+<li><a href="#等待原ttl过期">等待原TTL过期</a></li>
+<li><a href="#更新当前dns服务提供商ns记录">更新当前DNS服务提供商NS记录</a></li>
+<li><a href="#监控域的流量-可选">监控域的流量(可选)</a></li>
+<li><a href="#更改ttl时间">更改TTL时间</a></li>
+<li><a href="#将域注册转移到amazon-route-53">将域注册转移到Amazon Route 53</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#步骤一-在godaddy账户中解锁域名转换权限">步骤一 在GoDaddy账户中解锁域名转换权限</a></li>
+<li><a href="#步骤二-从-godaddy-或许授权码到-aws">步骤二 从 GoDaddy 或许授权码到 AWS</a></li>
+<li><a href="#步骤三-在amazon-route-53-控制台提交迁移请求">步骤三 在Amazon Route 53 控制台提交迁移请求</a></li>
+<li><a href="#步骤四-授权-amazon-route-53-迁移域">步骤四 授权 Amazon Route 53 迁移域</a></li>
+<li><a href="#步骤五-在-godaddy-上通过迁移请求">步骤五 在 GoDaddy 上通过迁移请求</a></li>
+<li><a href="#步骤六-完成迁移">步骤六 完成迁移</a></li>
+<li><a href="#备注">备注</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              将域名从GoDaddy迁移至Route 53
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>该指南将逐步介绍如何将 GoDaddy 的域名转移到 Amazon Route 53 服务，在开始前请确认以下几点：</p>
+
+<ul>
+<li>您在该站点的域名已经注册60天以上。</li>
+<li>请确认您的域名后缀（.com, .cn, .uk等）在亚马逊业务支持范围内查看<a href="https://docs.aws.amazon.com/zh_cn/Route53/latest/DeveloperGuide/registrar-tld-list.html">可向 Amazon Route 53 注册的域</a>。</li>
+<li>部分顶级域名需更改参数，例如所有者名称。</li>
+<li>请确保您注册该域名的网站具有转移域名的服务。</li>
+</ul>
+
+<p>注：本实例中使用 GoDaddy 中注册的域名作为案例。</p>
+
+<h2 id="迁移dns服务">迁移DNS服务</h2>
+
+<p>若您的域的DNS服务处于正在使用中，希望在流量不受影响下迁移域，请参考本节步骤，在迁移域名前将您的 DNS 服务迁移到 Route 53 中，如您的域的 DNS 服务处于空闲状态，或您的运营商迁移域名后也继续支持 DNS 服务，可跳过本部分，从<strong>步骤一</strong>开始。</p>
+
+<h3 id="1-从当前dns服务提供商获取当前dns配置文件-可选">1. 从当前DNS服务提供商获取当前DNS配置文件（可选）</h3>
+
+<p>在 GoDaddy 登录后，点击需要迁移的域名右侧的 DNS 按钮，在弹出网页下方的 Advanced Features 下选择对应操作。您可使用该配置文件在 Route 53 中重新配置 DNS 服务。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS01.png" alt="image 01" /></p>
+
+<h3 id="2-创建托管区域">2. 创建托管区域</h3>
+
+<p>在Route 53中创建一个与您的域同名的托管区域，在该区中创建记录。Route 53 会自动为该域创建名称服务器（NS）和授权起始点（SOA）记录。步骤如下：</p>
+
+<h4 id="创建托管区域">创建托管区域</h4>
+
+<p>首先打开<a href="https://console.aws.amazon.com/route53/">Route 53 服务</a>控制台。</p>
+
+<ul>
+<li>若您是首次使用Route 53, 请在 DNS Managment 下点击 Get Started Now。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS02.png" alt="image 02" /></p>
+
+<ul>
+<li>在 Hosted Zones 中点击 Created Hosted Zone。</li>
+<li>在该窗口中，输入您的域名，填写注释（可选）。</li>
+<li>Type 选项保留默认值 Public Hosted Zone。</li>
+<li>选择 Create。
+<br /></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS03.png" alt="image 03" /></p>
+
+<h4 id="创建记录">创建记录</h4>
+
+<p>在您创建的托管区域中创建记录，定义您的域和子域的流量的路由规则。有以下三种方式供您选择：</p>
+
+<ul>
+<li>1.导入区域文件
+<br /></li>
+</ul>
+
+<p>导入 DNS 区域文件自动创建标准 DNS 记录。 请参阅<a href="https://docs.aws.amazon.com/zh_cn/Route53/latest/DeveloperGuide/resource-record-sets-creating-import.html">通过导入区域记录创建记录</a></p>
+
+<ul>
+<li>2.在控制台单独创建记录
+<br /></li>
+</ul>
+
+<p>在控制台中创建记录。Route 53 支持同时创建别名记录和非别名记录。</p>
+
+<ul>
+<li><a href="https://docs.aws.amazon.com/zh_cn/Route53/latest/DeveloperGuide/routing-policy.html">选择路由策越</a></li>
+<li><a href="https://docs.aws.amazon.com/zh_cn/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html">在别名和非别名记录之间做出选择</a></li>
+
+<li><p><a href="https://docs.aws.amazon.com/zh_cn/Route53/latest/DeveloperGuide/resource-record-sets-creating.html">使用Amazon Route 53控制台创建记录</a></p></li>
+
+<li><p>3.以编程方式创建记录</p></li>
+</ul>
+
+<p>您可以使用某个 AWS 开发工具包、AWS CLI、适用于 Windows PowerShell 的 AWS 工具或 Route 53 API。</p>
+
+<h4 id="减小ttl设置">减小TTL设置</h4>
+
+<p>TTL（生存时间）为 DNS 解析程序的缓存记录及使用缓存信息的时间。当 TTL信息过期时，解析程序会向域的 DNS 服务提供商查询最新消息，缩短 TTL 时间可以减小您在发现问题后的恢复时间。</p>
+
+<p>Route 53 NS 的标准 TTL 默认设置为172800秒或2天，您可将其减小到15分钟左右。</p>
+
+<ul>
+<li><p>登录 AWS 管理控制台并通过以下网址打开 Route 53 控制台：<a href="https://console.aws.amazon.com/route53/。">https://console.aws.amazon.com/route53/。</a></p></li>
+
+<li><p>在导航窗格中选择 Hosted Zones。</p></li>
+
+<li><p>选择托管区域的名称。</p></li>
+
+<li><p>点击对应 NS 记录。</p></li>
+
+<li><p>更改 TTL (Seconds) 的值。我们建议您指定一个介于 60 秒和 900 秒 (15 分钟) 之间的值。</p></li>
+
+<li><p>选择 Save Record Set。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS04.png" alt="image 04" /></p>
+
+<h4 id="等待原ttl过期">等待原TTL过期</h4>
+
+<p>若您的域正在使用中，则 DNS 解析程序将会缓存当前 DNS 服务提供商提供的名称服务器的名称。最长会保存近两天。为确保一次性完成 DNS 服务迁移，请在减小 TTL 后等待<strong>两天</strong>。两天后解析程序将获取当前名称服务器，并且获取您在指定的新 TTL 数值。</p>
+
+<h4 id="更新当前dns服务提供商ns记录">更新当前DNS服务提供商NS记录</h4>
+
+<p>该步骤将配置 Amazon Route 53 作为域的 DNS 服务，更新当前 DNS 服务提供商的 NS 记录，请参考以下步骤：</p>
+
+<ol>
+<li><p>在 Route 53 控制台中，获取您的托管区域的名称服务器：</p>
+
+<ul>
+<li><p>登录 AWS 管理控制台并通过以下网址打开 Route 53 控制台：<a href="https://console.aws.amazon.com/route53/。">https://console.aws.amazon.com/route53/。</a></p></li>
+
+<li><p>在导航窗格中，选择 Hosted zones。</p></li>
+
+<li><p>在 Hosted zones 页面上，选择适用的托管区域的单选按钮 (而不是名称)。</p></li>
+
+<li><p>记下列出的针对 Name Servers 的四个名称。</p></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS05.png" alt="image 05" /></p>
+
+<ol>
+<li><p>在 GoDaddy 更新托管区域的 NS 记录。进入 DNS Management 页面,更改 NameServer 部分。</p>
+
+<ul>
+<li>记录当前托管区域的 NS 记录中的 NS 名称，用于保存记录。</li>
+<li>添加您在上步中获取的四个 Route 53 NameServer 的名称。</li>
+<li>点击 Save。
+<br /></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS06.png" alt="image 06" /></p>
+
+<h4 id="监控域的流量-可选">监控域的流量(可选)</h4>
+
+<p>更改后，您可以监控域的流量，确定未受影响后，继续下一个步骤。</p>
+
+<h4 id="更改ttl时间">更改TTL时间</h4>
+
+<p>在 Hosted Zones 中选择托管区域的名称，点击 NS 记录，将 TTL 时间改为最大，我们建议更改为172800秒，点击 Save Record Set。</p>
+
+<h4 id="将域注册转移到amazon-route-53">将域注册转移到Amazon Route 53</h4>
+
+<p>现在您已将域的 DNS 服务转移到 Amazon Route 53，您可以继续将域注册商转为 Route 53。</p>
+
+<h2 id="步骤一-在godaddy账户中解锁域名转换权限">步骤一 在GoDaddy账户中解锁域名转换权限</h2>
+
+<p>登录 GoDaddy 网站，点击 My Products，选择对应域名下方的 Manage 进入 Domain Settings 界面。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/01.png" alt="image 01" /></p>
+
+<p>在该页面中找到 Additional Setting，点击 Domain lock 旁的 Edit。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/03.png" alt="image 02" /></p>
+
+<p>关闭 Domain lock，等待 GoDaddy 执行您的更改。完成后，您将收到一封来自 GoDaddy 的邮件，标题为 Domain Status Notification, 提示您修改完毕。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/02.png" alt="image 03" /></p>
+
+<h2 id="步骤二-从-godaddy-或许授权码到-aws">步骤二 从 GoDaddy 或许授权码到 AWS</h2>
+
+<p>我们需要从 GoDaddy 获取授权码，授权 Route 53 获取该域名。该步骤需要在 AWS 控制台使用授权码提交域名迁移请求。</p>
+
+<p>同样在 Domain Setting 页面，在 Additional Settings 下面，点击 Get authorization code。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/04.png" alt="image 04" /></p>
+
+<p>您将收到一封邮件提示您获取授权码。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/DNS07.png" alt="image 042" /></p>
+
+<h2 id="步骤三-在amazon-route-53-控制台提交迁移请求">步骤三 在Amazon Route 53 控制台提交迁移请求</h2>
+
+<p>进入 AWS 控制台，点击 Amazon Route 53。在 Domain 下方，点击 Registered Domains -&gt; Transfer Domain。 输入域名并选择您域名的后缀。点击 Check。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/05.png" alt="image 05" /></p>
+
+<p>在弹出确认框勾选可选框。通常您需要将 DNS 解析服务迁移到 Route 53来保证服务正常运行。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/06.png" alt="image 06" /></p>
+
+<p>点击 Add to cart。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/07.png" alt="image 07" /></p>
+
+<p>可在该页面继续添加其他您希望迁移的域名。点击位于页面底部 Continue 提交。</p>
+
+<p>下一个页面中输入您 GoDaddy 账户的 Authorization code。 AWS 会询问如何管理您的 NS 服务。如果您已将 DNS 服务迁移到 Amazon Route 53，可选择第二个选项。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/08.png" alt="image 08" /></p>
+
+<p>点击 Continue 并填写注册信息表。您可以选择是否隐藏信息，如选择是，您的个人信息将仅被提供给 ICANN 用于注册。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/09.png" alt="image 09" /></p>
+
+<p>点击 Continue，并确认您填写的信息是否正确。如是，勾选下图中的选择框，并点击 Complete Purchase。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/10.png" alt="image 10" /></p>
+
+<h2 id="步骤四-授权-amazon-route-53-迁移域">步骤四 授权 Amazon Route 53 迁移域</h2>
+
+<p>完成上述操作后，您将看到您的域名处于 Pending Transfer 的状态。 AWS 将会给域的所有者发送一封邮件。点击该邮件中的链接，在弹出页面中选择 Yes，并点击 Submit。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/12.png" alt="image 12" /></p>
+
+<h2 id="步骤五-在-godaddy-上通过迁移请求">步骤五 在 GoDaddy 上通过迁移请求</h2>
+
+<p>当您完成步骤四后，GoDaddy 将会给您发送一封请求通过迁移的邮件。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/14.jpg" alt="image 14" /></p>
+
+<p>进入您的 GoDaddy 账户，依次选择 My Domains -&gt; Pending transfer out 下面的 view details。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/13.png" alt="image 13" /></p>
+
+<p>选择您需要转移的域名，点击 Accept or Decline。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/15.png" alt="image 13" /></p>
+
+<p>在弹出页面选择 Accept，点击 OK。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/16.png" alt="image 13" /></p>
+
+<h2 id="步骤六-完成迁移">步骤六 完成迁移</h2>
+
+<p>在迁移结束后，您将收到 AWS 的邮件通知域名迁移成功。 Route 53 的  Registered domains 将会显示您已迁移的域名。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/transfer-domain-route53/17.png" alt="image 13" /></p>
+
+<h2 id="备注">备注</h2>
+
+<p>如您未提前迁移 DNS 服务，需等待48个小时。迁移您的域名注册商不会产生额外的时间开销。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/cicd/" title="CICD" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

@@ -1,0 +1,2012 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>AWS服务迁移：从北京区到到宁夏 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/migration/bjstozhy/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item active">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item ">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/Migration/BJStoZHY.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/migration/'>Migration</a> > AWS服务迁移：从北京区到到宁夏
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#1-将-ec2-ami-服务从-bjs-迁移至-zhy">1. 将 EC2 &amp; AMI 服务从 BJS 迁移至 ZHY</a>
+<ul>
+<li>
+<ul>
+<li><a href="#步骤一-创建ami">步骤一 创建AMI</a></li>
+<li><a href="#步骤二-将-ami-部署在您希望转移的地区">步骤二 将 AMI 部署在您希望转移的地区</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#2-将ebs服务从bjs迁移至zhy">2. 将EBS服务从BJS迁移至ZHY</a>
+<ul>
+<li>
+<ul>
+<li><a href="#步骤一-创建快照">步骤一 创建快照</a></li>
+<li><a href="#步骤二-迁移到其他可用区">步骤二 迁移到其他可用区</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#3-将-rds-服务从-bjs-迁移至zhy">3. 将 RDS 服务从 BJS 迁移至ZHY</a></li>
+<li><a href="#4-将-s3-服务从-bjs-迁移至-zhy">4. 将 S3 服务从 BJS 迁移至 ZHY</a>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#1-创建新的s3桶">（1）创建新的S3桶</a></li>
+<li><a href="#2-重新创建s3桶">（2）重新创建S3桶</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#5-将-elasticache-服务从-bjs-迁移至-zhy">5. 将 ElastiCache 服务从 BJS 迁移至 ZHY</a>
+<ul>
+<li>
+<ul>
+<li><a href="#步骤一-备份-redis-服务到s3">步骤一 备份 Redis 服务到S3</a></li>
+<li><a href="#步骤二-将备份部署到宁夏区">步骤二 将备份部署到宁夏区</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#6-将-dynamodb-服务从-bjs-迁移至-zhy">6. 将 DynamoDB 服务从 BJS 迁移至 ZHY</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              AWS服务迁移：从北京区到到宁夏
+            </h1>
+          
+
+        
+
+
+
+
+
+<p>本指南将逐步介绍如何将您在 AWS 北京区域的服务迁移到宁夏区域，涵括范围如下：</p>
+
+<ul>
+<li>EC2 &amp; AMI</li>
+<li>EBS</li>
+<li>S3</li>
+<li>RDS</li>
+<li>Redis</li>
+<li>DynamoDB</li>
+</ul>
+
+<h2 id="1-将-ec2-ami-服务从-bjs-迁移至-zhy">1. 将 EC2 &amp; AMI 服务从 BJS 迁移至 ZHY</h2>
+
+<p>本部分将逐步介绍如何将 EC2 实例导出为 AMI，并从北京迁移到宁夏区。</p>
+
+<h4 id="步骤一-创建ami">步骤一 创建AMI</h4>
+
+<ul>
+<li>在 EC2 控制台中，在左侧选择栏中点击 Instances，选中您希望迁移的实例，右键选择 Image -&gt; Create Image。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/01.png" alt="image 01" /></p>
+
+<ul>
+<li><p>也可选择使用 CLI 命令行进行操作。</p>
+
+<p>aws ec2 create-image &ndash;instance-id [your instance id] &ndash;name [your AMI name]</p></li>
+
+<li><p>在控制台左侧选择 Images-&gt; AMIs 检查已创建的 AMI。</p></li>
+</ul>
+
+<h4 id="步骤二-将-ami-部署在您希望转移的地区">步骤二 将 AMI 部署在您希望转移的地区</h4>
+
+<ul>
+<li>在 EC2 控制台中，右击刚创建的 AMI，选择 Copy AMI。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/02.png" alt="image 01" /></p>
+
+<ul>
+<li>在 Destination region 部分选择您希望迁移的目标可用区。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/03.png" alt="image 01" /></p>
+
+<ul>
+<li><p>您也可选择使用 AWS CLI 命令行创建 AMI。</p>
+
+<p>aws &ndash;region cn-northwest-1 ec2 copy-image &ndash;source-region cn-north-1 &ndash;source-image-id [your image id] &ndash;name [your AMI name]</p></li>
+
+<li><p>在控制台左侧选择栏，选择 Images-&gt; AMIs 查看刚刚创建的 AMI,右键点击 Launch 部署您的 EC2 服务。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/04.png" alt="image 01" /></p>
+
+<h2 id="2-将ebs服务从bjs迁移至zhy">2. 将EBS服务从BJS迁移至ZHY</h2>
+
+<p>本部分将逐步介绍如何将 EBS 卷从北京迁移到宁夏区。</p>
+
+<h4 id="步骤一-创建快照">步骤一 创建快照</h4>
+
+<ul>
+<li>为对应 EBS 卷创建实例。右击卷名称，选择 Create Snapshot。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/05.png" alt="image 01" /></p>
+
+<h4 id="步骤二-迁移到其他可用区">步骤二 迁移到其他可用区</h4>
+
+<ul>
+<li>在控制台左侧选择栏点击 Snapshots, 选中您刚创建的实例，点击 Action -&gt; Copy 复制快照到其他可用区。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/06.png" alt="image 01" /></p>
+
+<ul>
+<li>在目标区域中选择宁夏，点击 Copy。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/07.png" alt="image 01" /></p>
+
+<ul>
+<li>创建完成后，请将控制台切换到宁夏区，可以查看上一步骤中复制的快照，右击快照选择 Create Volume 部署 EBS。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/08.png" alt="image 01" /></p>
+
+<h2 id="3-将-rds-服务从-bjs-迁移至zhy">3. 将 RDS 服务从 BJS 迁移至ZHY</h2>
+
+<p>本实例使用 RDS 的 MySQL 作为案例，您也可以迁移 RDS 中其他数据库服务。</p>
+
+<p>（1）方案一 创建快照部署到其他区域</p>
+
+<p>该方法使用 RDS 数据库在宁夏区创建快照，并重新部署快照，实例与快照之间转换时间较长，若您的数据库较小，可选用该方案。</p>
+
+<ul>
+<li>在RDS控制台选中您希望转移的实例，依次选择 Action -&gt; Take a DB snapshot。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/09.png" alt="image 01" /></p>
+
+<ul>
+<li>填写快照名称。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/10.png" alt="image 01" /></p>
+
+<ul>
+<li>在左侧导航栏中选择 Snapshot，右击刚创建的快照，选择 copy snapshot 复制 RDS 服务快照。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/11.png" alt="image 01" /></p>
+
+<ul>
+<li>选择宁夏区作为您复制快照的目标区域。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/12.png" alt="image 01" /></p>
+
+<ul>
+<li>您可以在宁夏区的 snapshot 中查看上一步复制的快照，并在宁夏区重新部署该服务。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/13.png" alt="image 01" /></p>
+
+<p>（2）方案二 基于 BJS Master Node 迁移数据</p>
+
+<p>使用 RDS 平台中 Read Replica 功能将数据拷贝到宁夏区，步骤如下：</p>
+
+<ul>
+<li>在北京区点击您希望迁移的数据库，进入页面后，选择 Instance actions -&gt; Create read replica。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/22.png" alt="image 01" /></p>
+
+<ul>
+<li>选择将复制实例放在宁夏区，Multi-AZ deployment 选择 Yes。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/23.png" alt="image 01" /></p>
+
+<ul>
+<li><p>按需求配置复制实例其他参数。</p></li>
+
+<li><p>选择 Create read replica，等待数据库部署完毕。</p></li>
+
+<li><p>监控数据库实例的 Replication 状态，等待滞后时间 Lag 变为 0。</p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/26.png" alt="image 01" /></p>
+
+<ul>
+<li>选择 Instance actions -&gt; Promote Read Replica。将其升为主库。</li>
+</ul>
+
+<p>注意：</p>
+
+<p>宁夏区 MySQL 最低版本为 5.6.29，若您北京区的 MySQL 版本低于宁夏区，需要选择 Modify 升级数据库。</p>
+
+<p>若您的数据库有其他 Read Replica, 需先升级复制项。</p>
+
+<h2 id="4-将-s3-服务从-bjs-迁移至-zhy">4. 将 S3 服务从 BJS 迁移至 ZHY</h2>
+
+<p>本部分将逐步介绍如何将 S3 服务迁移到新的可用区，您有以下两种迁移方案：</p>
+
+<ol>
+<li>在宁夏区（目标区）创建一个新的 S3 桶，将数据拷贝到该桶中。</li>
+
+<li><p>删除原数据桶并在宁夏区（目标区）重新创建同名 S3 桶，该方案需要一个临时桶作为转移媒介。</p>
+
+<p>注意:该方法需要在删除旧 S3 桶后等待24小时至名称再次有效。</p></li>
+</ol>
+
+<h5 id="1-创建新的s3桶">（1）创建新的S3桶</h5>
+
+<ul>
+<li>在 S3 控制台中，点击 Create Bucket，选择宁夏作为桶的可用区，在 Copy settings from an existing bucket 选项中，选择您欲做迁移的 S3 桶，可同步两个桶的配置。</li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/14.png" alt="image 01" /></p>
+
+<ul>
+<li><p>在 CLI 端运行以下命令行，开始复制桶内文件。</p>
+
+<p>aws s3 sync s3://SOURCE_BUCKET_NAME s3://NEW_BUCKET_NAME</p></li>
+</ul>
+
+<h5 id="2-重新创建s3桶">（2）重新创建S3桶</h5>
+
+<ul>
+<li>创建临时桶，步骤参见（1）。</li>
+
+<li><p>在 CLI 端逐步运行以下命令行，将旧 S3 桶中的内容存入临时桶。</p>
+
+<p>aws s3 sync s3://foobucket s3://tmpbucket</p></li>
+
+<li><p>在控制台中旧 S3 桶删除，等待24小时后该命名重新生效。</p></li>
+
+<li><p>重新在宁夏区注册同名 S3 桶。</p></li>
+
+<li><p>在 CLI 端逐步运行以下命令行，将临时桶中的文件存入目标桶。</p>
+
+<p>aws s3 sync s3://tmpbucket s3://foobucket</p></li>
+</ul>
+
+<h2 id="5-将-elasticache-服务从-bjs-迁移至-zhy">5. 将 ElastiCache 服务从 BJS 迁移至 ZHY</h2>
+
+<p>本例中将逐步介绍如何将 ElastiCache 服务迁移到另一可用区，本实例使用 Redis 作为案例。</p>
+
+<h4 id="步骤一-备份-redis-服务到s3">步骤一 备份 Redis 服务到S3</h4>
+
+<ul>
+<li><p>创建备份前请停止写入操作。</p></li>
+
+<li><p>在控制台选中希望迁移的 Redis 服务，点击上方的 Backup 按钮创建备份。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/15.png" alt="image 01" /></p></li>
+
+<li><p>在控制台左侧选择栏中点击 Backups 选项，查看您刚创建的备份。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/16.png" alt="image 01" /></p></li>
+
+<li><p>创建一个 S3 桶用来存储 ElastiCache 备份。
+注意：桶的<strong>可用区</strong>需要和 ElastiCache 相同。</p></li>
+
+<li><p>登录 AWS <a href="https://console.aws.amazon.com/s3">S3 控制台</a>，并创建新的 S3 桶，请参考本指南 4 创建桶。</p></li>
+
+<li><p>依次选择 Permissions -&gt; Access Control List。</p></li>
+
+<li><p>在 Access for other AWS accounts 下, 选择 + Add account。</p></li>
+
+<li><p>在窗口内添加地区的 canonical id。</p>
+
+<p>BJD (Beijing) 和 ZHY (Ningxia) :<br />
+b14d6a125bdf69854ed8ef2e71d8a20b7c490f252229b806e514966e490b8d83</p></li>
+
+<li><p>下述选项勾选Yes:
+<em>List objects
+Write objects
+Read bucket permissions</em></p></li>
+</ul>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/17.png" alt="image 01" /></p>
+
+<ul>
+<li>选择 Save，授权 ElastiCache 读写 S3 桶内文件.</li>
+</ul>
+
+<h4 id="步骤二-将备份部署到宁夏区">步骤二 将备份部署到宁夏区</h4>
+
+<ul>
+<li><p>参考 4 将位于北京区的 S3 桶中文件迁移至宁夏区，或下载备份文件，上传到您位于宁夏的 S3 桶中。</p></li>
+
+<li><p>参考步骤一，在宁夏区 S3 桶添加 ElastiCache 读文件权限。</p></li>
+
+<li><p>在宁夏区建立新的 Redis 服务。</p></li>
+
+<li><p>在 Import data to cluster 项中填入位于宁夏 S3 桶中的备份文件路径。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/18.png" alt="image 01" /></p></li>
+</ul>
+
+<h2 id="6-将-dynamodb-服务从-bjs-迁移至-zhy">6. 将 DynamoDB 服务从 BJS 迁移至 ZHY</h2>
+
+<p>将您的 DynamoDB 服务迁移到宁夏区。</p>
+
+<p>（1）使用自定义 API</p>
+
+<p>您可以使用 API 将 BJS 的数据转移到 ZHY，您可根据需要编写程序配置参数，示例程序如下：</p>
+
+<pre><code>from __future__ import print_function
+import boto3
+import argparse
+
+def replicate(table_name, existing_region, new_region, new_table_name):
+&quot;&quot;&quot;
+Replicate table in new region.
+Creates a new table with existing KeySchema and AttributeDefinitions
+default read and write capacity units are set to 5. Change it as required.
+Parameters
+----------
+table_name: string
+    Name of the existing table to be replicated.
+existing_region: string
+    Region in which the table is present.
+new_region: string
+    Region in which the table needs to be replicated.
+new_table_name: string
+    Name for the new table to be created, if not given
+    existing table name is used.
+&quot;&quot;&quot;
+
+    existing_table = boto3.resource(
+        'dynamodb', region_name=existing_region).Table(table_name)
+    items = existing_table.scan()['Items']
+
+    dynamodb = boto3.resource('dynamodb', region_name=new_region)
+
+    print(&quot;Creating table '{0}' in region '{1}'&quot;.format(
+    new_table_name, new_region))
+
+    table = dynamodb.create_table(
+        TableName=new_table_name,
+        KeySchema=existing_table.key_schema,
+        AttributeDefinitions=existing_table.attribute_definitions,
+        ProvisionedThroughput={
+            'ReadCapacityUnits': 5,
+            'WriteCapacityUnits': 5
+        })
+    print(&quot;Table status:&quot;, table.table_status)
+
+    table.wait_until_exists()
+    table.reload()
+
+    print(&quot;Table status:&quot;, table.table_status)
+    print(&quot;Updating table with data...&quot;)
+    if table.table_status == 'ACTIVE':
+        for item in items:
+            response = table.put_item(Item=item)
+            print(&quot;PutItem status:&quot;,
+                response['ResponseMetadata']['HTTPStatusCode'])
+
+    print(&quot;Total items created:&quot;, table.scan()['Count'])
+
+if __name__ == &quot;__main__&quot;:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-t',
+        '--table_name',
+        type=str,
+        required=True,
+        help=&quot;Name of the table to be replicated in new region&quot;)
+    parser.add_argument(
+        '-r',
+        '--region',
+        type=str,
+        required=True,
+        help=&quot;Region in which the table is present&quot;)
+    parser.add_argument(
+        '-nr',
+        '--new_region',
+        type=str,
+        required=True,
+        help=&quot;Region in which the table needs to be replicated&quot;)
+    parser.add_argument(
+        '-nt',
+        '--new_table_name',
+        type=str,
+        help=&quot;Name for the new table [Optional], Old table name will be used&quot;)
+    args = parser.parse_args()
+    if args.new_table_name is None:
+        args.new_table_name = args.table_name
+
+    replicate(args.table_name, args.region, args.new_region,
+          args.new_table_name)
+</code></pre>
+
+<p>您可以在终端执行如下代码：</p>
+
+<pre><code>python transferDynamoDB.py -t [source table] -r [source region] -nr [destination region]
+</code></pre>
+
+<p>（2）使用 EMR Hive 中转迁移数据到宁夏</p>
+
+<p>使用 Amazon EMR 服务创建集群，使用 EMR Hive 将 BJS 数据迁移到 ZHY。</p>
+
+<ul>
+<li><p>在 <a href="https://console.amazonaws.cn/elasticmapreduce/home?region=cn-north-1">EMR 控制台</a>创建集群。</p></li>
+
+<li><p>使用 SSH 连接主机。</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/24.png" alt="image 01" /></p></li>
+
+<li><p>登入 Hive</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/bjs-to-zhy/25.png" alt="image 01" /></p></li>
+
+<li><p>在 Hive 创建2个 External table，location 分别指向 BJS 和 ZHY。</p>
+
+<p>CREATE EXTERNAL TABLE hive_table
+    (hive_column1_name hive_column1_datatype, hive_column2_name hive_column2_datatype&hellip;)</p>
+
+<p>STORED BY &lsquo;org.apache.hadoop.hive.dynamodb.DynamoDBStorageHandler&rsquo;</p>
+
+<p>TBLPROPERTIES (
+    &ldquo;dynamodb.table.name&rdquo; = &ldquo;dynamodb_table&rdquo;,
+    &ldquo;dynamodb.column.mapping&rdquo; = &ldquo;hive_column1_name:dynamodb_attribute1_name,hive_column2_name:dynamodb_attribute2_name&hellip;&rdquo;
+);</p></li>
+
+<li><p>使用 query 将 BJS 数据复制到 ZHY。</p>
+
+<p>注意：可使用 insert into 进行复制，以免覆盖原数据。</p></li>
+</ul>
+
+<p>数据库迁移完毕后，请及时更改服务器配置。</p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/migration/" title="Migration"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

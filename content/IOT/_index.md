@@ -17,5 +17,5 @@ pre = "<b>X. </b>"
 
 
 &ensp;&ensp;&ensp; **[Alexa与AWS IoT的集成](https://github.com/lab798/aws-iot-labs/blob/master/docs/lab1.IoTCore.1.md)**
-#### [环境配置：在 Windows 中配置 Docker 镜像](https://quickstart.org.cn/DockerGuide.html)
+#### [环境配置：在 Windows 中配置 Docker 镜像](/iot/docker/)
 

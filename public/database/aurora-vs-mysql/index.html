@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.57.2" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Aurora VS MySQL 压测 :: My New Hugo Site</title>
+
+    
+    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
+    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
+    <link href="/css/theme.css?1568557564" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/database/aurora-vs-mysql/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="http://d1mo3mx8wgjhk2.cloudfront.net/">
+</a>
+<a> quickstart</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1568557564"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/ai/" title="AI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/ai/">
+          <b>X. </b>AI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/tensorflow/" title="Deep Learning AMI下Tensorflow环境的安装与切换" class="dd-item ">
+        <a href="/ai/tensorflow/">
+        <b>X. </b>Deep Learning AMI下Tensorflow环境的安装与切换
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/ai/connect_alex/" title="利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人" class="dd-item ">
+        <a href="/ai/connect_alex/">
+        <b>X. </b>利用Amazon Connect &#43; Lex 快速构建自己的呼叫中心 &amp; 智能语音机器人
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/bi/" title="BI" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/bi/">
+          <b>X. </b>BI
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/bi/aurora_redshift_quicksight/" title="从Aurora迁移到Redshift并利用Quicksight做数据可视化分析" class="dd-item ">
+        <a href="/bi/aurora_redshift_quicksight/">
+        <b>X. </b>从Aurora迁移到Redshift并利用Quicksight做数据可视化分析
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/mobile/" title="Mobile" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/mobile/">
+          <b>X. </b>Mobile
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/serverless-image-handler/" title="S3图片处理" class="dd-item ">
+        <a href="/mobile/serverless-image-handler/">
+        <b>X. </b>S3图片处理
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/mobile/cognito_android/" title="基于Cognito的微信第三方登陸系統" class="dd-item ">
+        <a href="/mobile/cognito_android/">
+        <b>X. </b>基于Cognito的微信第三方登陸系統
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/alexa/" title="Alexa" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/alexa/">
+          <b>X. </b>Alexa
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/alexa/account-linking-cognito/" title="AWS Cognito User Pool实现Alexa账户关联" class="dd-item ">
+        <a href="/alexa/account-linking-cognito/">
+        <b>X. </b>AWS Cognito User Pool实现Alexa账户关联
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/iot/" title="IOT" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/iot/">
+          <b>X. </b>IOT
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/iot/docker/" title="IoT 开发环境： 可编译 C 的 Docker 镜像" class="dd-item ">
+        <a href="/iot/docker/">
+        <b>X. </b>IoT 开发环境： 可编译 C 的 Docker 镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/migration/" title="Migration" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/migration/">
+          <b>X. </b>Migration
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/bjstozhy/" title="AWS服务迁移：从北京区到到宁夏" class="dd-item ">
+        <a href="/migration/bjstozhy/">
+        <b>X. </b>AWS服务迁移：从北京区到到宁夏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/dms-mongo-to-s3/" title="使用 AWS DMS 迁移 MongoDB 到 S3" class="dd-item ">
+        <a href="/migration/dms-mongo-to-s3/">
+        <b>X. </b>使用 AWS DMS 迁移 MongoDB 到 S3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/sms_vm-import/" title="使用 SMS &amp; VM-import 导入 VM 指导" class="dd-item ">
+        <a href="/migration/sms_vm-import/">
+        <b>X. </b>使用 SMS &amp; VM-import 导入 VM 指导
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/s3_transmission/" title="基于Amazon ECS的国内外文件同步系统解决方案" class="dd-item ">
+        <a href="/migration/s3_transmission/">
+        <b>X. </b>基于Amazon ECS的国内外文件同步系统解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/migration/transferdomainroute53/" title="将域名从GoDaddy迁移至Route 53" class="dd-item ">
+        <a href="/migration/transferdomainroute53/">
+        <b>X. </b>将域名从GoDaddy迁移至Route 53
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cicd/" title="CICD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/cicd/">
+          <b>X. </b>CICD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/codepipeline_ecs/" title="基于CodePipeline ECS的CICD解决方案" class="dd-item ">
+        <a href="/cicd/codepipeline_ecs/">
+        <b>X. </b>基于CodePipeline ECS的CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_jar_jenkins/" title="基于jenkins的java应用程序CICD解决方案" class="dd-item ">
+        <a href="/cicd/cicd_jar_jenkins/">
+        <b>X. </b>基于jenkins的java应用程序CICD解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/cicd_docker_blue_jenkins/" title="基于jenkins的容器蓝绿部署解决方案" class="dd-item ">
+        <a href="/cicd/cicd_docker_blue_jenkins/">
+        <b>X. </b>基于jenkins的容器蓝绿部署解决方案
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/cicd/automatic-apply-resource/" title="自动化脚本：监测 &amp; 自动启动可用资源" class="dd-item ">
+        <a href="/cicd/automatic-apply-resource/">
+        <b>X. </b>自动化脚本：监测 &amp; 自动启动可用资源
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/network/" title="Network" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/network/">
+          <b>X. </b>Network
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/bypassicp/" title="# 在中国合法部署海外IP" class="dd-item ">
+        <a href="/network/bypassicp/">
+        <b>X. </b># 在中国合法部署海外IP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/network/vpc_guide/" title="VPC配置指南" class="dd-item ">
+        <a href="/network/vpc_guide/">
+        <b>X. </b>VPC配置指南
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/database/" title="Database" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/database/">
+          <b>X. </b>Database
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试" class="dd-item ">
+        <a href="/database/redis_benchmark/">
+        <b>X. </b>Amazon ElastiCache for Redis 基准测试
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/aurora-vs-mysql/" title="Aurora VS MySQL 压测" class="dd-item active">
+        <a href="/database/aurora-vs-mysql/">
+        <b>X. </b>Aurora VS MySQL 压测
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" class="dd-item ">
+        <a href="/database/redshift_mysql/">
+        <b>X. </b>Redshift &amp; MySQL 性能对比实验
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/api-gateway-proxy-for-ddb/" title="利用API Gateway访问DynamoDB" class="dd-item ">
+        <a href="/database/api-gateway-proxy-for-ddb/">
+        <b>X. </b>利用API Gateway访问DynamoDB
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/database/mongodb/" title="将MongoDB部署到现有VPC" class="dd-item ">
+        <a href="/database/mongodb/">
+        <b>X. </b>将MongoDB部署到现有VPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/storage/" title="Storage" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/storage/">
+          <b>X. </b>Storage
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/storage/s3fs/" title="Guide: S3FS快速部署" class="dd-item ">
+        <a href="/storage/s3fs/">
+        <b>X. </b>Guide: S3FS快速部署
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p> </p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/yuan00yuan/test_hugo_git/tree/master/content/database/Aurora-vs-Mysql.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Quick Start</a> > <a href='/database/'>Database</a> > Aurora VS MySQL 压测
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#实验目的">实验目的</a></li>
+<li><a href="#实验步骤">实验步骤</a>
+<ul>
+<li><a href="#配置-vpc-可选">配置 VPC (可选)</a></li>
+<li><a href="#启动aurora实例">启动Aurora实例</a></li>
+<li><a href="#启动mysql实例">启动MySQL实例</a></li>
+<li><a href="#启动压测机ec2">启动压测机EC2</a></li>
+<li><a href="#安装sysbench">安装Sysbench</a></li>
+<li><a href="#进行sysbench测试">进行Sysbench测试</a></li>
+</ul></li>
+<li><a href="#更多阅读">更多阅读</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Aurora VS MySQL 压测
+            </h1>
+          
+
+        
+
+
+
+
+
+<h2 id="实验目的">实验目的</h2>
+
+<blockquote>
+<p>本实验大约耗时<strong>35分钟</strong></p>
+</blockquote>
+
+<p>使用 <a href="https://github.com/akopytov/sysbench">sysbench</a> 对Amazon Aurora与RDS MySQL进行基准测试, 对比二者的读写性能.</p>
+
+<p>以下是本次测试的架构</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/architecture.jpg" alt="" /></p>
+
+<p><strong>涉及组件</strong>
+- Aurora
+- RDS
+- EC2</p>
+
+<h2 id="实验步骤">实验步骤</h2>
+
+<h3 id="配置-vpc-可选">配置 VPC (可选)</h3>
+
+<p>新建 VPC 安全组，具体步骤参考<a href="https://docs.aws.amazon.com/zh_cn/AmazonVPC/latest/UserGuide/getting-started-ipv4.html#getting-started-create-security-group">适用于 Amazon VPC 的 IPv4 入门</a></p>
+
+<p>将安全组的<strong>入站规则</strong>设置为</p>
+
+<ul>
+<li><strong>Type</strong>: ALL Traffice</li>
+<li><strong>Protocol</strong>: ALL</li>
+<li><strong>Port Range</strong>: ALL</li>
+<li><strong>Source</strong>: 选择 <strong>Custom IP</strong>，然后键入 <code>0.0.0.0/0</code>。</li>
+</ul>
+
+<blockquote>
+<p><strong>重要</strong></p>
+
+<p>除演示之外，建议不要使用 0.0.0.0/0，因为它允许从 Internet 上的任何计算机进行访问。在实际环境中，您需要根据自己的网络设置创建入站规则。</p>
+</blockquote>
+
+<h3 id="启动aurora实例">启动Aurora实例</h3>
+
+<ol>
+<li><p>登录 AWS 管理控制台 并通过以下网址打开 Amazon RDS 控制台：<a href="https://console.aws.amazon.com/rds/">https://console.aws.amazon.com/rds/</a>。</p></li>
+
+<li><p>在导航窗格中，选择<strong>实例</strong>。</p></li>
+
+<li><p>选择<strong>启动数据库实例</strong>。<strong>启动数据库实例向导</strong>在<strong>选择引擎</strong>页面打开。</p></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/aurora-1.png" alt="" /></p>
+
+<ol>
+<li><p>选择 <strong>Amazon Aurora</strong>, 并将<strong>版本</strong>选择为<strong>与 MySQL 5.6 兼容</strong>，然后选择<strong>下一步</strong>。</p></li>
+
+<li><p>在<strong>指定数据库详细信息</strong>页面上，指定数据库实例信息。选择下列值，然后选择 <strong>下一步</strong>。
+<img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/aurora-2.png" alt="" /></p>
+
+<ul>
+<li><strong>数据库实例类</strong>: <strong>db.r4.xlarge</strong></li>
+<li><strong>多可用区部署</strong>: <strong>是</strong></li>
+<li><strong>数据库实例标识符</strong>: 例如<code>my-aurora</code></li>
+<li><strong>主用户名</strong>: 例如<code>root</code></li>
+<li><strong>主密码</strong>: 用户自定义</li>
+</ul></li>
+
+<li><p>在<strong>配置高级设置</strong>页面上，提供 RDS 启动 MySQL 数据库实例所需的其他信息。选择下列值，然后选择 <strong>下一步</strong>。</p>
+
+<ul>
+<li><strong>Virtual Private Cloud (VPC)</strong>：选择您在<strong>配置 VPC</strong>这一步骤中创建的安全组所对应的 VPC</li>
+<li><strong>公开可用性</strong>：否</li>
+<li><strong>可用区</strong>: 根据您的实际区域来更改, 但请保证之后的MySQL与EC2都在这一区域中</li>
+<li><strong>VPC安全组</strong>：创建新的VPC安全组</li>
+<li><strong>数据库集群标识符</strong>: <code>my-mysql-cluster</code></li>
+<li><strong>数据库名称</strong>：<code>dbname</code></li>
+<li><strong>备份保留期</strong>：1 天</li>
+<li><strong>加密</strong>: <strong>禁用加密</strong></li>
+<li><strong>备份保留期</strong>: <strong>1天</strong></li>
+<li><strong>监控</strong>: <strong>禁用增强监控</strong></li>
+<li><strong>其他请选择默认</strong></li>
+</ul></li>
+</ol>
+
+<h3 id="启动mysql实例">启动MySQL实例</h3>
+
+<ol>
+<li><p>登录AWS管理控制台,并通过以下网址打开Amazon RDS控制台：<a href="https://console.aws.amazon.com/rds/">https://console.aws.amazon.com/rds/</a>。</p></li>
+
+<li><p>在导航窗格中，选择<strong>实例</strong>。</p></li>
+
+<li><p>选择<strong>启动数据库实例</strong>。<strong>启动数据库实例向导</strong>在<strong>选择引擎</strong>页面打开。</p></li>
+
+<li><p>选择 <strong>MySQL</strong>，然后选择<strong>下一步</strong>。</p></li>
+
+<li><p><strong>选择使用案例</strong>页面询问您是否计划使用所创建的数据库实例进行生产。选择 <strong>生产</strong>，然后选择 <strong>下一步</strong> 。
+<img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/mysql-1.png" alt="" /></p></li>
+
+<li><p>在<strong>指定数据库详细信息</strong>页面上，指定数据库实例信息。选择下列值，然后选择 <strong>下一步</strong>。</p>
+
+<ul>
+<li><strong>数据库引擎版本</strong>: <strong>MySQL 5.6.41</strong></li>
+<li><strong>数据库实例类</strong>：<strong>db.r4.xlarge</strong></li>
+<li><strong>多可用区部署</strong>：<strong>是</strong></li>
+<li><strong>存储类型</strong>：<strong>预置IOPS(SSD)</strong></li>
+<li><strong>分配的存储空间</strong>：<strong>100</strong>GiB</li>
+<li><strong>预置 IOPS</strong>: <code>1000</code></li>
+<li><strong>数据库实例标识符</strong>：键入 <code>my-mysql</code>。</li>
+<li><strong>主用户名</strong>：键入 <code>root</code>。</li>
+<li><strong>主密码</strong>和<strong>确认密码</strong>：用户自定义</li>
+<li><strong>其他设置保持默认</strong></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/mysql-2.png" alt="" /></p>
+
+<ol>
+<li><p>在<strong>配置高级设置</strong>页面上，提供 RDS 启动 MySQL 数据库实例所需的其他信息。选择下列值，然后选择 <strong>下一步</strong>。</p>
+
+<ul>
+<li><strong>Virtual Private Cloud (VPC)</strong>：选择Aurora使用的安全组</li>
+<li><strong>公开可用性</strong>：否</li>
+<li><strong>可用区</strong>: 与之前 Aurora 的可用区相同</li>
+<li><strong>VPC安全组</strong>：选择现有 VPC 安全组，并且选择<strong>配置 VPC</strong>这一步骤中创建的安全组</li>
+<li><strong>数据库名称</strong>：键入<code>dbname</code></li>
+<li><strong>备份保留期</strong>：1 天</li>
+<li><strong>其他请选择默认</strong>
+<br /></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/mysql-3.png" alt="" /></p>
+
+<p><em>启动Aurora Multi-AZ部署方式，可以在控制台看到2个数据库实例；启动RDS MySQL Multi-AZ部署方式，在控制台只能看到一个主实例</em></p>
+
+<h3 id="启动压测机ec2">启动压测机EC2</h3>
+
+<ol>
+<li><p>启动实例</p>
+
+<ul>
+<li><p>打开 Amazon EC2 控制台 <a href="https://console.aws.amazon.com/ec2/">https://console.aws.amazon.com/ec2/</a>。选择您要在其中创建EC2实例的区域。这里请保证与之前创建Aurora,MySQL 的区域相同。</p></li>
+
+<li><p>从控制台控制面板中，选择 <strong>启动实例</strong>。</p></li>
+
+<li><p><strong>Choose an Amazon Machine Image (AMI)</strong> 页面显示一组称为 <em>Amazon 系统映像 (AMI)</em> 的基本配置，作为您的实例的模板。选择 Amazon Linux AMI 2 的 HVM 版本 AMI。</p></li>
+
+<li><p>在<strong>选择实例类型</strong> 页面上，您可以选择实例的硬件配置。<strong>实例的数量</strong>输入<code>4</code>并选择 <code>r4.xlarge</code> 类型</p></li>
+
+<li><p>在<strong>配置实例详细信息</strong>页面上，自动分配公有 IP 选择<strong>启用</strong>，并保证选择子网和刚才的数据库在同一个可用区，点击<strong>下一步</strong></p></li>
+</ul></li>
+</ol>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/ec2-1.png" alt="" /></p>
+
+<ul>
+<li><p>在<strong>添加存储</strong>页面上, 点击<strong>下一步</strong></p></li>
+
+<li><p>在<strong>添加标签</strong>页面上，点击<strong>下一步</strong></p></li>
+
+<li><p>在<strong>配置安全组</strong>页面选择<strong>选择一个现有的安全组</strong>，或者创建一个新的安全组，</p></li>
+
+<li><p>在<strong>审核</strong>页面选择<strong>启动</strong></p></li>
+
+<li><p>当系统提示提供密钥时，选择 <strong>选择现有的密钥对</strong>，然后选择合适的密钥对。若没有创建密钥对，请参考<a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#create-a-key-pair">创建密钥对</a></p>
+
+<p>准备好后，选中确认复选框，然后选择 <strong>启动实例</strong>。</p></li>
+</ul>
+
+<h3 id="安装sysbench">安装Sysbench</h3>
+
+<p>请参考<a href="https://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">使用 SSH 连接到 Linux 实例</a></p>
+
+<p><strong>在连接到 EC2 实例后</strong>，依次输入以下命令，在实例中安装<code>sysbench</code>, 您需要在4台EC2上分别执行如下命令</p>
+
+<p>下载<code>sysbench</code></p>
+
+<pre><code class="language-shell">sudo yum -y install bzr automake libtool mysql mysql-devel
+bzr branch lp:sysbench 
+</code></pre>
+
+<p>编译和安装<code>sysbench</code></p>
+
+<pre><code class="language-shell">cd sysbench
+./autogen.sh
+./configure
+make
+cd sysbench
+</code></pre>
+
+<h3 id="进行sysbench测试">进行Sysbench测试</h3>
+
+<ul>
+<li>准备数据</li>
+</ul>
+
+<p>只需要在一台EC2上执行以下命令，为<code>sysbench</code>测试准备数据；您在为MySQL准备数据的同时，可以在另外一台机器上为Aurora准备数据。</p>
+
+<p>请根据您的实际情况替换下面命令中的<code>mysql-host</code>, <code>mysql-user</code>, <code>mysql-password</code>,<code>mysql-db</code>参数</p>
+
+<pre><code class="language-shell">./sysbench --test=tests/db/oltp.lua --mysql-host=&lt;rds-mysql-instancehost-name&gt; \
+--mysql-port=3306 --mysql-user=&lt;db-username&gt; --mysql-password=&lt;db-password&gt; \
+--mysql-db=&lt;db-name&gt; --mysql-table-engine=innodb --oltp-table-size=25000 \
+--oltp-tables-count=250 --db-driver=mysql prepare
+</code></pre>
+
+<ul>
+<li>执行read heavy测试</li>
+</ul>
+
+<blockquote>
+<p>请在4台EC2上同时执行以下命令</p>
+</blockquote>
+
+<pre><code class="language-shell">./sysbench --test=tests/db/oltp.lua --mysql-host=&lt;rds-aurora-instancehost-name&gt; \
+--oltp-tables-count=250 --mysql-user=&lt;db-username&gt; --mysql-password=&lt;db-password&gt; \
+--mysql-port=3306 --db-driver=mysql --oltp-tablesize=25000 \
+--mysql-db=&lt;db-name&gt; --max-requests=0 --oltp_simple_ranges=0 --oltp-distinct-ranges=0 \
+--oltp-sum-ranges=0 --oltp-order-ranges=0 --max-time=300 \
+--oltp-read-only=on --num-threads=300 run
+</code></pre>
+
+<p>以下是MySQL测试结果，我们需要将以下4台主机的测试结果相加才是我们的最终结果</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/msyql-read.png" alt="mysql测试结果" /></p>
+
+<p>以下是Aurora的测试结果</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/aurora-read.png" alt="Aurora测试结果" /></p>
+
+<ul>
+<li>执行write heavy测试</li>
+</ul>
+
+<blockquote>
+<p>请在4台EC2上同时执行以下命令</p>
+</blockquote>
+
+<pre><code class="language-shell">./sysbench --test=tests/db/oltp.lua --mysql-host=&lt;rds-aurora-instancehost-name&gt; \
+--oltp-tables-count=250 --mysql-user=&lt;db-username&gt; --mysql-password=&lt;db-password&gt; \
+--mysql-port=3306 --db-driver=mysql --oltp-tablesize=25000 \
+--mysql-db=&lt;db-name&gt; --max-requests=0 --max-time=300 --oltp_simple_ranges=0 \
+--oltp-distinct-ranges=0 --oltp-sum-ranges=0 --oltporder-ranges=0 \
+--oltp-point-selects=0 --num-threads=450 --randtype=uniform run
+</code></pre>
+
+<p>以下是MySQL的测试结果</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/mysql-write.png" alt="MySQL测试结果" /></p>
+
+<p>以下是Aurora测试结果</p>
+
+<p><img src="http://cdn.quickstart.org.cn/assets/aurora-vs-mysql/aurora-write.png" alt="Aurora测试结果" /></p>
+
+<p>由于机型的差异，选择更大的机型，Aurora与MySQL的性能差异表现得更加明显。</p>
+
+<h2 id="更多阅读">更多阅读</h2>
+
+<p><a href="https://d0.awsstatic.com/product-marketing/Aurora/RDS_Aurora_Performance_Assessment_Benchmarking_v1-2.pdf">Amazon Aurora Performance Assessment</a></p>
+
+<p><a href="https://amazonaws-china.com/cn/blogs/china/aurora-test/">知己知彼-对Aurora进行压力测试</a></p>
+
+<p><a href="https://www.allthingsdistributed.com/files/p1041-verbitski.pdf">Amazon Aurora: Design Considerations for High Throughput Cloud-Native Relational Databases</a></p>
+
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/database/redis_benchmark/" title="Amazon ElastiCache for Redis 基准测试"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/database/redshift_mysql/" title="Redshift &amp; MySQL 性能对比实验" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
+    <script src="/js/jquery.sticky.js?1568557564"></script>
+    <script src="/js/featherlight.min.js?1568557564"></script>
+    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
+    <script src="/js/learn.js?1568557564"></script>
+    <script src="/js/hugo-learn.js?1568557564"></script>
+
+    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

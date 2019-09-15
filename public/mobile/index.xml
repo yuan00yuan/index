@@ -11,5 +11,33 @@
 	<atom:link href="http://d1mo3mx8wgjhk2.cloudfront.net/mobile/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>S3图片处理</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/serverless-image-handler/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:31 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/serverless-image-handler/</guid>
+      <description>如果您使用的是AWS Global Region, 您可以停止阅读本文，转向使用Serverless Image Hanlder提供的CloudFormation时间自动部署。
+本文提到的部署方式，仅适用于AWS China; 关于能够实现那些图片处理功能，请参考文档
+修改源代码，配置参数 点击此处下载源代码
+ 修改image_handler/thumbor.conf
+ TC_AWS_REGION 定义为 cn-northwest-1 或者 cn-north-1 TC_AWS_ENDPOINT 定义为https://s3.cn-northwest-1.amazonaws.com.cn 和https://s3.cn-north-1.amazonaws.com.cn TC_AWS_LOADER_BUCKET 定义为源S3的bucket名称  修改tc_aws/__init__.py
+ TC_AWS_REGION 定义为 cn-northwest-1或者cn-north-1 TC_AWS_LOADER_BUCKET 定义为源S3的bucket名称 TC_AWS_ENDPOINT 定义为https://s3.cn-northwest-1.amazonaws.com.cn 或者 https://s3.cn-north-1.amazonaws.com.cn    本文的源代码与global region的源代码还存在以下几处修改，在本文的源代码中已经更改，用户无需再次修改
+  修改image_handler/thumbor.conf
+ ALLOW_UNSAFE_URL 定义为 True（提供的代码已经更改）  修改thumbor/thumbor.conf
+ ALLOW_UNSAFE_URL 改成 True（提供的代码已经更改）  修改image_handler/lambda_function.py
+if str(os.environ.get(&#39;ENABLE_CORS&#39;)).upper() == &amp;quot;YES&amp;quot;: api_response[&#39;headers&#39;][&#39;Access-Control-Allow-Origin&#39;] = os.environ.get(&#39;CORS_ORIGIN&#39;)   改成
+api_response[&#39;headers&#39;][&#39;Access-Control-Allow-Origin&#39;] = os.environ.get(&#39;*&#39;)  上传代码至S3  打包源文件（工程文件必须位于压缩包一级目录） 上传到与 Lambda, API Gateway 在同一个region的S3  配置 IAM Role 创建一个供Lambda使用的 IAM Role, 并且包括如下两条policy</description>
+    </item>
+    
+    <item>
+      <title>基于Cognito的微信第三方登陸系統</title>
+      <link>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/cognito_android/</link>
+      <pubDate>Mon, 09 Sep 2019 10:27:31 +0800</pubDate>
+      
+      <guid>http://d1mo3mx8wgjhk2.cloudfront.net/mobile/cognito_android/</guid>
+      <description>步驟  App发起授权，应用唤起微信客戶端，诱导用戶点击授权按鈕 用戶点击授权按钮后 APP得到auth code 应用用auth code作为参数向远端的api发起请求 API 发送auth code到微信接口 返回用戶的openId和AccessToken API发送AccessToken到微信接口 返回userinfo 包括用戶昵稱 头像等信息 API向dynamo DB中加入一条用戶信息 返回得到userId API 將userId和身份池Id发送到cognito接口 返回user的IdentityId和token 将token和 identityId存入dynamo DB API將token和IdentityId userId 返回給客戶端APP 客戶端APP可以用identity 身份池Id context上下文 region和auth code喚起client, 最后用client訪問AWS資源  QA：  步驟原理如上图所示 为什么要进行二次访问： A： 为了得到用户信息，如头像，昵称等 微信的认证授权协议： A: Auth2 允许用户访问个人信息 用户拥有的权限 A：同身份池的权限 准备 A: AWS账号 创建身份池 设定用户的权限 APP在微信公开平台的ID和密钥 Cognito是什么 A：Amazon Cognito 为您的 Web 和移动应用程序提供身份验证、授权和用户管理。您的用户可使用用户名和密码直接登录，也可以通过第三方 (如 Facebook、Amazon 或 Google) 登录。 https://aws.amazon.com/cn/documentation/cognito/?id=docs_gateway 每一个part的作用 数据库用于记录保存用户信息 Cognito通过对身份池的管理对用户做授权 API gateway:微信接只能由后台访问所以用lambda实现， IOS兼容性 AWS提供兼容IOS的开发工具包  code: https://github.</description>
+    </item>
+    
   </channel>
 </rss>
