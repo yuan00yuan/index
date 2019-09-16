@@ -21,7 +21,7 @@ pre = "<b>X. </b>"
 
 ## 步骤
   
-   ![图片1](./assets/CICD/flowchart.png)
+   ![图片1](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/cicd/codepipeline_ecs/flowchart.png)
    
 ### 流程
 1.	开发者将一个新版本的代码工程提交到CodeCommit或者github  触发codepipeline 流程

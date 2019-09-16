@@ -12,18 +12,18 @@
     <title>IoT 开发环境： 可编译 C 的 Docker 镜像 :: My New Hugo Site</title>
 
     
-    <link href="/css/nucleus.css?1568557564" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1568557564" rel="stylesheet">
-    <link href="/css/hybrid.css?1568557564" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1568557564" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1568557564" rel="stylesheet">
-    <link href="/css/auto-complete.css?1568557564" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1568557564" rel="stylesheet">
-    <link href="/css/theme.css?1568557564" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1568557564" rel="stylesheet">
+    <link href="/css/nucleus.css?1568602790" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1568602790" rel="stylesheet">
+    <link href="/css/hybrid.css?1568602790" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1568602790" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1568602790" rel="stylesheet">
+    <link href="/css/auto-complete.css?1568602790" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1568602790" rel="stylesheet">
+    <link href="/css/theme.css?1568602790" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1568602790" rel="stylesheet">
     
 
-    <script src="/js/jquery-3.3.1.min.js?1568557564"></script>
+    <script src="/js/jquery-3.3.1.min.js?1568602790"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -52,14 +52,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1568557564"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1568557564"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1568602790"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1568602790"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/d1mo3mx8wgjhk2.cloudfront.net\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1568557564"></script>
+<script type="text/javascript" src="/js/search.js?1568602790"></script>
 
     
   </div>
@@ -959,7 +959,7 @@
 
 <p>在Docker官网下载 <a href="https://docs.docker.com/docker-for-windows/install/">Windows 端安装包</a></p>
 
-<p><img src="assets/docker_guide/03.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/03.png" alt="image 01" /></p>
 
 <p>安装后，在开始菜单输入cmd打开命令窗口，输入</p>
 
@@ -968,11 +968,11 @@
 
 <p>检查是否安装完毕。</p>
 
-<p><img src="assets/docker_guide/07.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/07.png" alt="image 01" /></p>
 
 <p>在桌面点击图标，等待加载完成，右下角图标显示：</p>
 
-<p><img src="assets/docker_guide/11.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/11.png" alt="image 01" /></p>
 
 <h2 id="步骤二-配置-docker">步骤二 配置 Docker</h2>
 
@@ -1008,11 +1008,11 @@ RUN apt-get update &amp;&amp; \
 
 <p>查看本机安装的 docker 列表</p>
 
-<p><img src="assets/docker_guide/05.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/05.png" alt="image 01" /></p>
 
 <p>到此处您的 docker 已经配置完毕，您可以新建并启动镜像，开始编译 C 程序了。</p>
 
-<p><img src="assets/docker_guide/08.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/08.png" alt="image 01" /></p>
 
 <p>依次执行下述命令配置编译环境</p>
 
@@ -1023,11 +1023,11 @@ rm -rf /var/lib/apt/lists
 
 <p>使用下述命令可以将本机文件拷贝进容器</p>
 
-<p><img src="assets/docker_guide/09.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/09.png" alt="image 01" /></p>
 
 <p>输入 gcc main.c 后生成 a.out 执行文件</p>
 
-<p><img src="assets/docker_guide/10.png" alt="image 01" /></p>
+<p><img src="https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/10.png" alt="image 01" /></p>
 
 <p>您也可使用 gcc main.c -o main 命令直接生成可执行文件</p>
 
@@ -1690,19 +1690,19 @@ docker ps
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1568557564"></script>
-    <script src="/js/perfect-scrollbar.min.js?1568557564"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1568557564"></script>
-    <script src="/js/jquery.sticky.js?1568557564"></script>
-    <script src="/js/featherlight.min.js?1568557564"></script>
-    <script src="/js/highlight.pack.js?1568557564"></script>
+    <script src="/js/clipboard.min.js?1568602790"></script>
+    <script src="/js/perfect-scrollbar.min.js?1568602790"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1568602790"></script>
+    <script src="/js/jquery.sticky.js?1568602790"></script>
+    <script src="/js/featherlight.min.js?1568602790"></script>
+    <script src="/js/highlight.pack.js?1568602790"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1568557564"></script>
-    <script src="/js/learn.js?1568557564"></script>
-    <script src="/js/hugo-learn.js?1568557564"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1568602790"></script>
+    <script src="/js/learn.js?1568602790"></script>
+    <script src="/js/hugo-learn.js?1568602790"></script>
 
-    <link href="/mermaid/mermaid.css?1568557564" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1568557564"></script>
+    <link href="/mermaid/mermaid.css?1568602790" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1568602790"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

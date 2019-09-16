@@ -22,7 +22,7 @@ pre = "<b>X. </b>"
 
 该方案使用 Amazon API Gateway 及 Lambda 服务。您可在国内地区部署服务并注册 www.example.cn 域名并备案，当用户访问 www.example.com 时，主域名配置的海外 API Gateway 会为客户自动转调到 www.example.cn。
 
-![image 01](assets/ICP/01.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/network/bypassicp/01.png)
 
 架构搭建：
 
@@ -44,7 +44,7 @@ pre = "<b>X. </b>"
 
 该方案使用 CDN 加速，您需在国内部署网络服务，当国内用户访问主域名时，可使用位于香港的 CNC 回源位于国内的服务。
 
-![image 02](assets/ICP/02.png)
+![image 02](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/network/bypassicp/02.png)
 
 架构搭建：
 
@@ -67,7 +67,7 @@ pre = "<b>X. </b>"
 
 该方案使用海外 CNC 节点加速，当用户访问主域名时，可使用位于海外的 CDN 节点加速访问，您也可选择 CN2 链路优化访问速度，该方案不需要在国内部署代理服务。
 
-![image 03](assets/ICP/03.png)
+![image 03](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/network/bypassicp/03.png)
 
 架构搭建：
 

@@ -63,7 +63,7 @@ $ jupyter notebook
 
 在对应的训练环境中可以创建对应的ipynb。如果从第三⽅下载的ipynb，必须notebook instance要有对应的环境才可以;比如如下，引入了了第三⽅方的xxx.ipynb，但是其存在于特定的环境conda_mxnet_p36中，但是本机不存在就会报错;
 
-![](https://salander.s3.cn-north-1.amazonaws.com.cn/public/tensorflow-env/error.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/tensorflow/error.png)
 
 ### 6.如何查看已经安装的conda env & 如何从notebook中删除conda env 查看列列表
 

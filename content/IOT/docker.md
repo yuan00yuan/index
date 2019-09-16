@@ -12,7 +12,7 @@ pre = "<b>X. </b>"
 
 在Docker官网下载 [Windows 端安装包](https://docs.docker.com/docker-for-windows/install/)
 
-![image 01](assets/docker_guide/03.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/03.png)
 
 安装后，在开始菜单输入cmd打开命令窗口，输入
 
@@ -20,11 +20,11 @@ pre = "<b>X. </b>"
 
 检查是否安装完毕。
 
-![image 01](assets/docker_guide/07.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/07.png)
 
 在桌面点击图标，等待加载完成，右下角图标显示：
 
-![image 01](assets/docker_guide/11.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/11.png)
 
 ## 步骤二 配置 Docker
 
@@ -56,11 +56,11 @@ docker build 命令将读取指定路径下(包括子目录)的 Dockerfile，并
 
 查看本机安装的 docker 列表
 
-![image 01](assets/docker_guide/05.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/05.png)
 
 到此处您的 docker 已经配置完毕，您可以新建并启动镜像，开始编译 C 程序了。
 
-![image 01](assets/docker_guide/08.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/08.png)
 
 依次执行下述命令配置编译环境
 
@@ -70,11 +70,11 @@ docker build 命令将读取指定路径下(包括子目录)的 Dockerfile，并
 
 使用下述命令可以将本机文件拷贝进容器
 
-![image 01](assets/docker_guide/09.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/09.png)
 
 输入 gcc main.c 后生成 a.out 执行文件
 
-![image 01](assets/docker_guide/10.png)
+![image 01](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/iot/docker-c/10.png)
 
 您也可使用 gcc main.c -o main 命令直接生成可执行文件 
 

@@ -12,7 +12,7 @@ pre = "<b>X. </b>"
 
 ## 架构图
 
-![](dms.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/bi/aurora_redshift_dms/dms.png)
 
 ## 实验前提
 

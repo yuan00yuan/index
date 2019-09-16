@@ -22,15 +22,15 @@ pre = "<b>X. </b>"
 
 新建资源，增加get方法。
 
-![](https://s3.cn-north-1.amazonaws.com.cn/salander/public/api-gateway-proxy-for-ddb/get-method.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/database/api-gateway-proxy-for-ddb/get-method.png)
 
 进入Integration Request, 选择DynamoDB服务，action为Scan。
 
-![](https://s3.cn-north-1.amazonaws.com.cn/salander/public/api-gateway-proxy-for-ddb/get-intergration-request.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/database/api-gateway-proxy-for-ddb/get-intergration-request.png)
 
 定义mapping template。
 
-![](https://s3.cn-north-1.amazonaws.com.cn/salander/public/api-gateway-proxy-for-ddb/get-mapping-table.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/database/api-gateway-proxy-for-ddb/get-mapping-table.png)
 
 #### (2) 选择Query: 查询某项值
 
@@ -55,7 +55,7 @@ pre = "<b>X. </b>"
 ### 3. 构建API Post请求
 
 配置如下
-![](https://s3.cn-north-1.amazonaws.com.cn/salander/public/api-gateway-proxy-for-ddb/post-request.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/database/api-gateway-proxy-for-ddb/post-request.png)
 
 mapping table配置如下：
 

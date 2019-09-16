@@ -13,7 +13,7 @@ pre = "<b>X. </b>"
 
 ## 架构图
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/connect_architecture.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/connect_architecture.png)
 
 ## demo效果
 
@@ -53,7 +53,7 @@ pre = "<b>X. </b>"
 
     * Response：执行完毕后，可以利用这些response做进一步的唤醒。注意，如果这里的fulfillment是lambda，且lambda有return message，将忽略这里的response的设置。 此lab中，我们将用lambda作为car reservation的实现。
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/lex.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/lex.png)
 
 此外左侧tab还包括：   
 
@@ -121,7 +121,7 @@ def lambda_handler(event, context):
 
 BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此intent的编写并build。在build成功后，即可在右侧界面进行文字或者语音的交互测试。且可以看到下方的return当中，lex可以实时的获取这些参数。当测试没有问题后，Publish the bots。   
    
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/testbots.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/testbots.png)
 
 
 ### 3. 将Connect与Lex进行集成
@@ -130,7 +130,7 @@ BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此inten
 
 示例如图。 在该示例当中，核心元素块包括：play prompt播放语音或者背景音乐，get customer input获取用户语音或者按键输入，disconnect挂断。
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/contact-flow.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/contact-flow.png)
 
 * **（1）**： 电话接通后，会自动播放欢迎语音（play prompt），询问客户需要什么帮助，等待客户回答（get customer input设置为lex）。
 
@@ -142,7 +142,7 @@ BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此inten
 
 * **（5）**： 等待用户按键响应。按1位重新预定，按0直接退出。 按键是通过DTMF设置的   
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/get-customer-input-dtmf.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/get-customer-input-dtmf.png)
 
 完成自己的逻辑设计后，save & publish.   
 
@@ -150,14 +150,14 @@ BookCar Intent的fufillment为此lambda函数，BookHotel不变。保存此inten
 
 自定义完contact flow之后，需要将此flow与你的电话号码进行绑定。在dashboard- view phone number当中可以完成此操作。
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/bindphone.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/bindphone.png)
 
 
 ## 监控 & 获取指标
 
 Amazon connect还提供了完善的指标记录。比如可以查询来电数量，来电录音等。在dashboard当中均可以找到。如图，可以查询某一天的来电状况。
 
-![](https://s3.ap-northeast-2.amazonaws.com/salander/quickstarter/Amazon+Connect/metics.png)
+![](https://lab798.s3.cn-north-1.amazonaws.com.cn/legacy/ai/connect_alex/metics.png)
 
 
 ## 参考链接
